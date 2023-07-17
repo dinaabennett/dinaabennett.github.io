@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/clusters/query-service/query-workbench.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
-<meta name="description" content="The Query Workbench is a user interface tool that can perform query development.">
+<meta name="description" content="Use menu:Data Tools[Query] to perform query development.">
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
 
 
@@ -197,41 +197,54 @@
 <div class="sectionbody">
 <div class="quoteblock abstract">
 <blockquote>
-The Query Workbench is a user interface tool that can perform query development.
+Use <span class="menuseq"><b class="menu">Data Tools</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Query</b></span> to perform query development.
 </blockquote>
 </div>
 <div class="paragraph">
-<p>Use the Query Workbench, to explore data, create, edit, run, and save SQL++ queries, view and save query results, and explore the document structures in a bucket.</p>
+<p>You can use <span class="menuseq"><b class="menu">Data Tools</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Query</b></span> (Query Workbench) to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Explore data</p>
+</li>
+<li>
+<p>Create, edit, and run queries</p>
+</li>
+<li>
+<p>Save SQL++ queries</p>
+</li>
+<li>
+<p>View and save query results</p>
+</li>
+<li>
+<p>Explore the document structures in a bucket</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
 <div class="sectionbody">
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p>Your database must have the Query Service running.</p>
+</li>
+<li>
+<p>To view the Query Workbench and run queries that <em>read</em> documents, you need the <a href="../../projects/project-roles.html#project-cluster-data-reader" class="xref page"><code>Database Data Reader</code></a> project role.</p>
+</li>
+<li>
+<p>To run queries that read and modify documents, you need the <a href="../../projects/project-roles.html#project-owner-role" class="xref page"><code>Project Owner</code></a> or <a href="../../projects/project-roles.html#project-cluster-data-reader-writer" class="xref page"><code>Database Data / Reader</code></a> role.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="access-the-query-workbench"><a class="anchor" href="#access-the-query-workbench"></a>Access the Query Workbench</h2>
 <div class="sectionbody">
-<div id="permissions-required" class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="title">Permissions Required</div>
-<div class="paragraph">
-<p>To view the Query Workbench and run queries that <em>read</em> documents, you need the <a href="../../projects/project-roles.html#project-cluster-data-reader" class="xref page"><code>Database Data Reader</code></a> project role.
-To run queries that read and modify documents, you need the <a href="../../projects/project-roles.html#project-owner-role" class="xref page"><code>Project Owner</code></a> or <a href="../../projects/project-roles.html#project-cluster-data-reader-writer" class="xref page"><code>Database Data / Reader</code></a> role.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>To open the Query Workbench in a database running the Query Service:</p>
 </div>
@@ -290,12 +303,15 @@ The number of collections within the bucket is displayed to the right of the buc
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>To add a new bucket, scope, or collection for your data in the Data Insights area, click <strong>+Create</strong>.</p>
+<p>To add a new bucket, scope, or collection for your data in the Data Insights area, click <b class="button">+Create</b>.</p>
 </li>
 <li>
-<p>Choose <strong>New</strong> and enter a name for your bucket, scope, or collection, and click <b class="button">Create</b>.</p>
+<p>Choose <strong>New</strong> and enter a name for your bucket, scope, or collection.</p>
+</li>
+<li>
+<p>Click <b class="button">Create</b>.</p>
 <div class="paragraph">
-<p>See <a href="../data-service/manage-buckets.html#add-bucket" class="xref page">Create a Bucket</a> to create a bucket from the <strong>Settings</strong> menu.</p>
+<p>For more information about how to create a bucket with custom settings, see <a href="../data-service/manage-buckets.html#add-bucket" class="xref page">Create a Bucket</a>.</p>
 </div>
 </li>
 </ol>
@@ -348,14 +364,14 @@ When you set the query context to a bucket and scope, you can write queries usin
 </div>
 </div>
 <div class="paragraph">
-<p>To specify the query context, from <strong>Query Context</strong>, choose a Bucket and Scope from the drop-down lists.</p>
+<p>To set the query context, from <strong>Query Context</strong>, choose a Bucket and Scope from the lists.</p>
 </div>
 <div class="paragraph">
-<p>To remove the query context, choose <strong>select a bucket</strong> from the <strong>Bucket</strong> drop-down list.</p>
+<p>To remove the query context, choose <strong>select a bucket</strong> from the <strong>Bucket</strong> list.</p>
 </div>
 <div class="paragraph">
-<p>For more information about scopes and collections, refer to
-<a href="../../../server/current/learn/data/scopes-and-collections.html" class="xref page">Scopes and Collections</a>.</p>
+<p>For more information about scopes and collections, see
+<a href="#cloud:clusters:data-service/scope-collections">Scopes and Collections</a>.</p>
 </div>
 </div>
 </div>
@@ -423,8 +439,7 @@ For more information about Couchbase transactions, see <a href="../../../server/
 <h2 id="query-settings"><a class="anchor" href="#query-settings"></a>Modify Query Settings</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can specify various settings for the Query Workbench by clicking <strong>Query Options</strong> above the Query Editor.
-This opens the <strong>Query Options</strong> window.</p>
+<p>You can specify various settings for the Query Workbench by clicking <strong>Query Options</strong>.</p>
 </div>
 <div class="paragraph">
 <p>Configure the following settings and click <b class="button">Save Settings</b> to save the configuration.</p>
@@ -462,19 +477,19 @@ This opens the <strong>Query Options</strong> window.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Use Cost-Based Optimizer</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specifies whether the <a href="../../../server/current/n1ql/n1ql-language-reference/cost-based-optimizer.html" class="xref page">cost-based optimizer</a> is enabled.</p>
+<p>Turns the cost-based optimizer on or off. For more information, see <a href="../../../server/current/n1ql/n1ql-language-reference/cost-based-optimizer.html" class="xref page">cost-based optimizer</a> in the Server documentation.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Don&#8217;t save query history</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Disables auto-saving query history to local storage in your browser. This is a consideration for shared machines. When selected, any query history will be lost when you leave or refresh the query workbench.</p>
+<p>Disables auto-saving query history to local storage in your browser. This is a consideration for shared machines. When selected, any query history will be lost when you leave or refresh the Query Workbench.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Max Parallelism</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specifies the maximum parallelism for the query. If you do not specify, the cbq-engine uses its default value. For more information, refer to the <a href="../../../server/current/settings/query-settings.html#max_parallelism" class="xref page">max_parallelism parameter</a>.</p>
+<p>Specifies the maximum parallelism for the query. If you do not specify, the cbq-engine uses its default value. For more information about maximum parallelism, see the <a href="../../../server/current/settings/query-settings.html#max_parallelism" class="xref page">max_parallelism parameter</a> in the Server documentation.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -508,7 +523,7 @@ Select one of the following options:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>For more information, refer to <a href="../../../server/current/settings/query-settings.html#scan_consistency" class="xref page">Settings and Parameters</a> in the Couchbase Server documentation.</p>
+<p>For more information, see <a href="../../../server/current/settings/query-settings.html#scan_consistency in xref:7.2@server:settings:query-settings.adoc" class="xref page">Settings and Parameters</a> in the Couchbase Server documentation.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -606,8 +621,8 @@ Since large result sets can take a long time to display, it&#8217;s recommended 
 <p>The <strong>Table</strong> tab presents the results in a tabular format.
 The tool converts the JSON documents to HTML tables and presents sub-objects or sub-arrays as sub-tables.
 This format works well for queries that return an array of objects, like <code>select `beer-sample`.* from `beer-sample`;</code>.
-You can hover the mouse pointer over a data value to see the path to that value in a tooltip.
-You can sort a column by clicking the column header.</p>
+Point to a data value to see the path to that value in a tooltip.
+You can sort the data based on a column by clicking the column header.</p>
 </div>
 </div>
 <div class="sect2">
