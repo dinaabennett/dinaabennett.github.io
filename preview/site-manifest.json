@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "generated": 1689600811503,
+  "generated": 1689709617952,
   "url": "https://dinaabennett.github.io/preview",
   "components": [
     {
@@ -610,7 +610,7 @@
               "module": "get-started",
               "path": "connect.adoc",
               "url": "/cloud/get-started/connect.html",
-              "title": "Generate Your Code Snippet"
+              "title": "Connect Via Your Application"
             },
             {
               "module": "get-started",
@@ -1876,7 +1876,7 @@
               "module": "organizations",
               "path": "ui-auth/add-sso-auth.adoc",
               "url": "/cloud/organizations/ui-auth/add-sso-auth.html",
-              "title": "Add Federated &amp; SSO Authentication"
+              "title": "Add Federated and SSO Authentication"
             },
             {
               "module": "organizations",

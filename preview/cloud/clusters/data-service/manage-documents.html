@@ -200,7 +200,7 @@ The Couchbase Capella UI provides the Documents tool that you can use to view an
 </blockquote>
 </div>
 <div class="paragraph">
-<p>This page describes how you can interact with and manage documents in a Couchbase database using the Documents tool in the Capella UI.</p>
+<p>This page describes how you can manage documents in a Couchbase database using the Documents tool in the Capella UI.</p>
 </div>
 <div id="permissions-required" class="admonitionblock important">
 <table>
@@ -216,10 +216,10 @@ The Couchbase Capella UI provides the Documents tool that you can use to view an
 <div class="ulist">
 <ul>
 <li>
-<p>To <em>view</em> the documents within a database, you must have the <a href="../../projects/project-roles.html#project-cluster-data-reader" class="xref page"><code><strong>Database Data Reader</strong></code></a> project role for the project containing the database.</p>
+<p>To <em>view</em> the documents within a database, you must have the <a href="../../projects/project-roles.html#project-cluster-data-reader" class="xref page">Database Data Reader</a> project role for the project containing the database.</p>
 </li>
 <li>
-<p>To <em>view</em>, <em>add</em>, <em>edit</em>, and <em>delete</em> documents in a database, you must have the <a href="../../projects/project-roles.html#project-cluster-data-reader-writer" class="xref page"><code><strong>Database Data Reader/Writer</strong></code></a> project role for the project containing the database.</p>
+<p>To <em>view</em>, <em>create</em>, <em>edit</em>, and <em>delete</em> documents in a database, you must have the <a href="../../projects/project-roles.html#project-cluster-data-reader-writer" class="xref page">Database Data Reader/Writer</a> project role for the project containing the database.</p>
 </li>
 </ul>
 </div>
@@ -272,29 +272,26 @@ You can use the drop-down menu to select from a list of all the collections with
 <p><strong>Offset</strong>: The number of documents in the entire set of the current bucket that is skipped, before display begins.</p>
 </li>
 <li>
-<p><strong>Document ID</strong>: Accepts the ID of a specific document.
+<p><strong>Filter By</strong>: This field is enabled if the <a href="../query-service/query-service.html" class="xref page">Query Service</a> is running on the database.</p>
+<div class="paragraph">
+<p>You can toggle the following options in the <strong>Filter By</strong> field:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>ID</strong>: Accepts the ID value of a specific document.
 Leave this field blank to retrieve documents based on <strong>Limit</strong> and <strong>Offset</strong>.</p>
 </li>
 <li>
-<p><strong>N1QL WHERE</strong>: Accepts a SQL++ query-—a WHERE clause-—which determines the subset of documents to show.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-This field is enabled if the <a href="../query-service/query-service.html" class="xref page">Query Service</a> is running on the database.
-</td>
-</tr>
-</table>
-</div>
+<p><strong>ID Range</strong>: Accepts the <strong>Starting ID</strong> and <strong>Ending ID</strong> values to specify the ID range.</p>
+</li>
+<li>
+<p><strong>SQL++ WHERE</strong>: Accepts a SQL++ query. A WHERE clause which determines the subset of documents to show.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>When you use the <strong>Bucket</strong>, <strong>Scope</strong>, or <strong>Collections</strong> controls, the set of documents is automatically updated based on your selections.
-After using the <strong>Limit</strong>, <strong>Offset</strong>, <strong>Document ID</strong>, or <strong>N1QL WHERE</strong> controls, you must click <b class="button">Retrieve Docs</b> to retrieve a new set of documents based on your new configuration.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -302,34 +299,105 @@ After using the <strong>Limit</strong>, <strong>Offset</strong>, <strong>Documen
 <h2 id="view-and-edit-existing-documents"><a class="anchor" href="#view-and-edit-existing-documents"></a>View and Edit Existing Documents</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After retrieving a set of documents, clicking on a document name in the results area opens that document in the <strong>Document</strong> fly-out menu.
-This fly-out menu allows you to view and edit the document directly.</p>
+<p>When you use <strong>Bucket</strong>, <strong>Scope</strong>, or <strong>Collection</strong>, the set of retrieved documents is automatically updated based on your selections.</p>
 </div>
 <div class="paragraph">
-<p>The document displays in the <strong>JSON</strong> tab and consists of a series of key-value pairs&#8212;&#8203;which are sometimes expressed as name-value pairs.
-You can make modifications to key-values in the <strong>JSON</strong> editor.
-Click <b class="button">Save</b> to save your changes.</p>
+<p>To view and edit documents:</p>
 </div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#retrieve-documents">Retrieve</a> a set of documents.</p>
+</li>
+<li>
+<p>When using <strong>Limit</strong>, <strong>Offset</strong>, <strong>Filter BY</strong>, or <strong>SQL++ WHERE</strong>, click <b class="button">Get Documents</b> to retrieve a new set of documents based on your new configuration.</p>
+</li>
+<li>
+<p>Click on a document name in the results area to view and edit the document.</p>
 <div class="paragraph">
-<p>You can view the document&#8217;s metadata by clicking on the <strong>Meta</strong> tab.
-It&#8217;s not possible to edit a document&#8217;s metadata as Couchbase Capella generates it in association with each document when they&#8217;re saved.
-For more information, see <a href="../../../server/current/learn/data/data.html#metadata" class="xref page">document metadata</a>.</p>
+<p>Toggle the following tabs:</p>
+</div>
+<table id="json-metadata" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tab</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>JSON</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comprises a series of key-value pairs sometimes expressed as name-value pairs.
+You can make modifications to key-values.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Metadata</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View the document&#8217;s metadata.</p>
+<p class="tableblock">It&#8217;s not possible to edit a document&#8217;s metadata as Couchbase Capella generates it in association with each document when they&#8217;re saved.
+For more information, see <a href="../../../server/current/learn/data/data.html#metadata" class="xref page">document metadata</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Click <b class="button">Save Document</b> to save your changes.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="add-and-delete-documents"><a class="anchor" href="#add-and-delete-documents"></a>Add and Delete Documents</h2>
+<h2 id="create-documents"><a class="anchor" href="#create-documents"></a>Create Documents</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you want to create a new document, you can click <b class="button">Add Document</b>.
-This opens the <strong>Document</strong> fly-out menu, which has a field for entering the <strong>Document ID</strong>, and an editor for entering the contents of the document.
-Click <b class="button">Save</b> to create the document.</p>
+<p>To create a document:</p>
 </div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click <b class="button">Create Document</b>.</p>
+</li>
+<li>
+<p>Enter the <strong>Document ID</strong> and edit the <strong>JSON</strong> contents of the document.</p>
+</li>
+<li>
+<p>Click <b class="button">Save Document</b> to create the document.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="delete-documents"><a class="anchor" href="#delete-documents"></a>Delete Documents</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>To delete a document, start by <a href="#retrieve-documents">retrieving</a> the desired document so that it appears in the results area.
-Then click the Trash icon <span class="icon"><i class="fa fa-trash-alt"></i></span> at the end of the row on the right side.
-When prompted to confirm the deletion, click <b class="button">Confirm</b>.</p>
+<p>To delete a document:</p>
 </div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#retrieve-documents">Retrieve</a> the document to display it in the results area.</p>
+</li>
+<li>
+<p>Click the Trash icon <span class="icon"><i class="fa fa-trash-alt"></i></span> at the end of the row on the right side.</p>
+</li>
+<li>
+<p>In the confirmation field, type <code>delete</code>.</p>
+</li>
+<li>
+<p>Click <b class="button">Delete Document</b>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="import-documents"><a class="anchor" href="#import-documents"></a>Import Documents</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>To import a set of JSON documents or a CSV file, see the <a href="import-data-documents.html" class="xref page">Import page</a>.</p>
 </div>
