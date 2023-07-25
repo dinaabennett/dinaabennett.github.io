@@ -183,9 +183,7 @@
 <div class="page-heading-title">
 <h1 class="page">Capella UI Authentication</h1>
 <div class="labels">
-<ul>
-<li class="concept"><span><i class="far fa-lightbulb"></i> concept</span></li>
-</ul>
+<ul></ul>
 </div>
 
 
@@ -201,17 +199,19 @@
 Couchbase Capella supports federated authentication with Single Sign-On (SSO) and Multi-Factor Authentication (MFA) for the Capella UI.
 </blockquote>
 </div>
+<div class="paragraph">
+<p>Couchbase Capella offers the following options for Capella UI authentication.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="federated-sso-authentication"><a class="anchor" href="#federated-sso-authentication"></a>Federated &amp; SSO Authentication</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Couchbase Capella allows users to sign in to the Capella UI using federated and SSO authentication after configuring Capella to authenticate using data passed from your identity provider (IdP).
-Couchbase Capella&#8217;s SSO services use the SAML (Security Assertion Markup Language) 2.0 standard.</p>
+<p>Couchbase Capella allows users to sign in to the Capella UI using federated and SSO authentication after configuring Capella to authenticate using data passed from your identity provider (IdP). <a href="https://www.okta.com/">Okta</a>, <a href="https://azure.microsoft.com/en-ca/services/active-directory/">Azure AD</a>, <a href="https://www.pingidentity.com">Ping Identity</a>, and <a href="https://www.cyberark.com/">CyberArk</a> are supported IdPs.</p>
 </div>
 <div class="paragraph">
-<p>As part of your company&#8217;s existing security infrastructure, SSO provides the following advantages:</p>
+<p>By fitting into your company&#8217;s existing security infrastructure, federated and SSO powered by an IdP has the following advantages:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -236,21 +236,7 @@ Your administrators can onboard, offboard, and manage Capella users with existin
 <dl>
 <dt class="hdlist1">Identity Provider (IdP)</dt>
 <dd>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-While you can configure Capella with other SAML identity providers, Couchbase provides instructions and support for only the IdPs on this list.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
 <p>Capella supports the following IdPs:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
@@ -263,13 +249,7 @@ While you can configure Capella with other SAML identity providers, Couchbase pr
 <p><a href="https://www.pingidentity.com">Ping Identity</a></p>
 </li>
 <li>
-<p><a href="https://workspace.google.com">Google Workspace</a></p>
-</li>
-<li>
 <p><a href="https://www.cyberark.com/">CyberArk</a></p>
-</li>
-<li>
-<p><a href="https://www.onelogin.com/">OneLogin</a></p>
 </li>
 </ul>
 </div>
@@ -307,7 +287,7 @@ Every user in an organization can view team information.</p>
 Non-SSO users can continue to use the Capella MFA.</p>
 </li>
 <li>
-<p>SSO Users within the organization can&#8217;t change their name, email, or set a password.</p>
+<p>SSO Users within the organization can&#8217;t change their name, email or set a password.</p>
 </li>
 <li>
 <p>Capella adds each SSO user to the <a href="manage-role-mapping.html#default-teams" class="xref page">default team</a> ("My First Team") as they sign in, unless you specify another default team or create IdP group mappings.
@@ -334,7 +314,7 @@ After SSO users sign in, you can manage their organization roles using the <stro
 </div>
 </div>
 <div class="sect1">
-<h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2>
+<h2 id="next-steps"><a class="anchor" href="#next-steps"></a>Next Steps</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>

@@ -6,17 +6,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
-<title>Generate Your Code Snippet | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/get-started/connect.html">
+<title>Turn Provisioned Databases Off or On | Couchbase Docs</title>
+<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/clusters/off-on-database.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
-<meta name="description" content="Use the Connect page to choose how you want to connect to your database and generate your code snippet.">
+<meta name="description" content="You can turn your provisioned database off to save costs. To resume operations, turn it back on.">
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
 
 
 <meta name="dcterms.subject" content="cloud">
 <meta name="dcterms.identifier" content="">
-<meta name="page-url" content="/cloud/get-started/connect.html">
+<meta name="page-url" content="/cloud/clusters/off-on-database.html">
 <meta name="generator" content="Antora 3.1.2">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
 </head>
@@ -103,8 +103,8 @@
     <a href="#" class="menu-expand-toggle"><span>Navigation</span><i class="fas fa-times-circle"></i><i class="fas fa-chevron-circle-left"></i></a>
     <template id="page-versions" style="display: none">
       <select class="version_list" data-component="cloud">
-        <option value="" data-url="connect.html" selected>Provisioned</option>
-        <option value="serverless" data-url="../serverless/get-started/connect.html">Serverless</option>
+        <option value="" data-url="off-on-database.html" selected>Provisioned</option>
+        <option value="serverless" data-url="../serverless/index.html">Serverless</option>
       </select>
     </template>
   </div>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="file:///C:/Docs/couchbase-cloud/docs/public/modules/get-started/pages/connect.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/couchbase-cloud/docs/public/modules/clusters/pages/off-on-database.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,14 +174,15 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Connect to Your Database</li>
-<li class="crumb"><a href="connect.html">Generate Your Code Snippet </a></li>
+<li class="crumb">Configure Database</li>
+<li class="crumb">Manage Databases</li>
+<li class="crumb"><a href="off-on-database.html">Turn a Database Off or On</a></li>
 </ul>
 </nav>
 </div>
 <article class="doc">
 <div class="page-heading-title">
-<h1 class="page">Generate Your Code Snippet</h1>
+<h1 class="page">Turn Provisioned Databases Off or On</h1>
 <div class="labels">
 <ul><li class="guide"><span><i class="far fa-check-square"></i> how-to</span></li>
 </ul>
@@ -197,94 +198,262 @@
 <div class="sectionbody">
 <div class="quoteblock abstract">
 <blockquote>
-Use the Connect page to choose how you want to connect to your database and generate your code snippet.
+You can turn your provisioned database off to save costs. To resume operations, turn it back on.
 </blockquote>
-</div>
-<div class="paragraph">
-<p>You can connect your App to your database using an SDK or Couchbase Shell.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
+<h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The procedures on this page assume the following:</p>
+<p>Turning off your database turns off the compute for your cluster but the storage remains. All of your data, schema (buckets, scopes, and collections), and indexes remain, as well as your cluster configuration, including users and allow lists.</p>
+</div>
+<div class="paragraph">
+<p>When you turn your provisoned database off, you will be charged the OFF amount for the database.</p>
+</div>
+<div class="paragraph">
+<p>Variable backup and data transfer costs still apply when your database is off.</p>
+</div>
+<div class="paragraph">
+<p>Private endpoint charges still apply when your database is off.
+To avoid charges, delete your endpoints and turn off Private Endpoints before you turn off your database.</p>
+</div>
+<div class="paragraph">
+<p>You can turn your database off for a maximum of 30 days. Capella will notify you by email and automatically turn on your database after 30 days.</p>
+</div>
+<div class="paragraph">
+<p>You can <a href="off-on-schedule.html" class="xref page">create a schedule</a> to turn your database on or off.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Public API</div>
+<div class="paragraph">
+<p>You can also turn your database on or off using the <a href="#public-api-reference:index.adoc" class="xref unresolved">Public API</a>:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>You&#8217;ve <a href="../clusters/manage-database-users.html#configure-database-access" class="xref page">configured database access</a> by creating a database access credential.
-You&#8217;ll need the username and password for the database credential to connect to the cluster.</p>
+<p><a href="#public-api-reference:index.adoc#clusters/v3off" class="xref unresolved"><code>Turn selected cluster off</code></a></p>
 </li>
 <li>
-<p>You&#8217;ve <a href="../clusters/allow-ip-address.html#allow-ip-address" class="xref page">added your IP address</a> to the cluster&#8217;s list of allowed IPs.</p>
+<p><a href="#public-api-reference:index.adoc#clusters/v3on" class="xref unresolved"><code>Turn selected cluster on</code></a></p>
 </li>
 </ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="generate-your-sdk-code-snippet"><a class="anchor" href="#generate-your-sdk-code-snippet"></a>Generate Your SDK Code Snippet</h2>
+<h2 id="when-a-database-is-turned-off"><a class="anchor" href="#when-a-database-is-turned-off"></a>When a Database is Turned Off</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Linked App Services</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Linked App services will be turned off.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Application and client connections</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Application and client connections will be disconnected.</p>
+<div class="paragraph">
+<p>You cannot connect to or read/write from your database.</p>
+</div>
+</li>
+<li>
+<p>You will receive an authentication error if you try to connect to a provisioned database that is off. <a href="#verify-database-status">Verify the database status</a> if the application returns an authentication error.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Replications</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Replications will be deleted.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Backups and scheduled backups</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Backups cannot run, be downloaded, or restored - even to another database.</p>
+<div class="paragraph">
+<p>Backups can expire. Download backups you want to keep before turning off your database, or do not turn your database off past the expiration dates of your existing backups.</p>
+</div>
+</li>
+<li>
+<p>If the database is scheduled to turn off while a backup or restore operation is running, Capella waits for the operation to complete before turning off the database. If you try to manually turn off the database while a backup or restore operation is running, Capella will return an error and the database will not turn off.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Maintenance</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>If the database is running maintenance or due to run maintenance in the next hour, the database cannot be turned off manually or through a schedule.</p>
+</li>
+<li>
+<p>If the database is turned back on, it might need maintenance. Avoid scheduling an off soon after turning your database back on.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="turn-database-onoff"><a class="anchor" href="#turn-database-onoff"></a>Turn Database On/Off</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If a database that is off requires maintenance, the maintenance begins when it turns on.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To turn your provisioned database on or off:</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to <span class="menuseq"><b class="menu">Connect</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">SDKs</b></span>.</p>
+<p>Log in to your account and click <strong>Databases</strong>.</p>
 </li>
 <li>
-<p>Choose your database access credentials.</p>
+<p>Find your provisioned database in the database list, click the <strong>More options</strong> <span class="icon"><i class="fa fa-ellipsis-v"></i></span> icon.</p>
 </li>
 <li>
-<p>Choose your SDK language.</p>
+<p>Choose <strong>Turn Off</strong>/<strong>Turn On</strong>.</p>
 </li>
 <li>
-<p>Install the <a href="../reference/sdk-compatibility.html" class="xref page">Couchbase SDK</a> for your language.</p>
+<p>In the confirmation window, type "yes" to confirm, and click <b class="button">Yes, Proceed</b>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to your account and click <strong>Databases</strong>.</p>
 </li>
 <li>
-<p>Choose to generate a code snippet or a full code sample.</p>
+<p>Click your provisioned database in the database list to go to your database page.</p>
 </li>
 <li>
-<p>Replace <code>password</code> with the password from your database access credentials and copy the code snippet.</p>
+<p>Click on the <strong>Settings</strong> tab.</p>
 </li>
 <li>
-<p>Use your code snippet to connect your application to your database. For more information, refer to the <a href="../reference/sdk-compatibility.html" class="xref page">Couchbase SDK documentation</a>.</p>
+<p>In the navigation menu, click <b class="button">General</b>.</p>
+</li>
+<li>
+<p>Scroll down to <strong>Database On/Off</strong> and click <b class="button">Turn On/Off Database</b>.</p>
+</li>
+<li>
+<p>In the confirmation window, type "yes" to confirm, and click <b class="button">Yes, Proceed</b>.</p>
+<div class="paragraph">
+<p>Turning on or off database operations will take a few minutes.</p>
+</div>
+<div class="paragraph">
+<p>If a database backup is running or if maintenance is scheduled within 1 hour, Capella will not turn off the database.</p>
+</div>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="generate-your-couchbase-shell-code-snippet"><a class="anchor" href="#generate-your-couchbase-shell-code-snippet"></a>Generate Your Couchbase Shell Code Snippet</h2>
+<h2 id="verify-database-status"><a class="anchor" href="#verify-database-status"></a>Verify Database Status</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>To check the status of your provisioned database:</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download and install <a href="https://couchbase.sh/docs">cbsh</a> for your operating system.</p>
+<p>Log in to your account and click <strong>Databases</strong>.</p>
 </li>
 <li>
-<p>Go to <span class="menuseq"><b class="menu">Connect</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Couchbase Shell</b></span>.</p>
-</li>
-<li>
-<p>Choose your database credentials.</p>
-<div class="paragraph">
-<p>Capella generates your code snippet.</p>
+<p>Find your database in the database list and check the status in the <strong>status</strong> column.</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Status</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OFF</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Your provisioned database is OFF.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Turning Off</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Your provisioned database is turning OFF.</p>
 </div>
-</li>
-<li>
-<p>Replace <code>password</code> with the password from your database access credentials and copy the code snippet.</p>
-</li>
-<li>
-<p>Create a .cbsh dot folder in the same folder where you unzipped the binaries.</p>
-</li>
-<li>
-<p>Create a file named <code>config</code> and paste the code.</p>
-</li>
-<li>
-<p>Move the config file to the .cbsh dot folder.</p>
-</li>
-<li>
-<p>Launch the cbsh binary to connect to your Capella database. For more information, refer to the <a href="https://couchbase.sh/docs">Couchbase Shell documentation</a></p>
+<div class="paragraph">
+<p>Wait for the status to change to <strong>OFF</strong> before trying to turn on.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Turning On</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Your provisioned database is turning on.</p>
+</div>
+<div class="paragraph">
+<p>This may take a few minutes. You can use your database when the status changes to <strong>Healthy</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Healthy</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Your database is operational.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </li>
 </ol>
 </div>

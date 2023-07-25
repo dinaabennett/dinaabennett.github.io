@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "generated": 1689709617952,
+  "generated": 1690311079053,
   "url": "https://dinaabennett.github.io/preview",
   "components": [
     {
@@ -474,6 +474,18 @@
               "title": "Monitoring and Alerting"
             },
             {
+              "module": "clusters",
+              "path": "off-on-database.adoc",
+              "url": "/cloud/clusters/off-on-database.html",
+              "title": "Turn Provisioned Databases Off or On"
+            },
+            {
+              "module": "clusters",
+              "path": "off-on-schedule.adoc",
+              "url": "/cloud/clusters/off-on-schedule.html",
+              "title": "Schedule Provisioned Database On or Off"
+            },
+            {
               "alias": true,
               "module": "clusters",
               "path": "pause-replication.adoc",
@@ -610,7 +622,7 @@
               "module": "get-started",
               "path": "connect.adoc",
               "url": "/cloud/get-started/connect.html",
-              "title": "Connect Via Your Application"
+              "title": "Generate Your Code Snippet"
             },
             {
               "module": "get-started",
@@ -1876,7 +1888,7 @@
               "module": "organizations",
               "path": "ui-auth/add-sso-auth.adoc",
               "url": "/cloud/organizations/ui-auth/add-sso-auth.html",
-              "title": "Add Federated and SSO Authentication"
+              "title": "Add Federated &amp; SSO Authentication"
             },
             {
               "module": "organizations",
