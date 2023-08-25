@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "generated": 1692971661980,
+  "generated": 1692976320130,
   "url": "https://docs.couchbase.com",
   "components": [
     {
@@ -171,14 +171,14 @@
               "module": "architecture",
               "path": "global-secondary-indexes.adoc",
               "url": "/cloud/learn/services-and-indexes/indexes/global-secondary-indexes.html",
-              "title": "Using Indexes"
+              "title": "Indexes"
             },
             {
               "alias": true,
               "module": "architecture",
               "path": "gsi-versus-views.adoc",
               "url": "/cloud/learn/services-and-indexes/indexes/global-secondary-indexes.html",
-              "title": "Using Indexes"
+              "title": "Indexes"
             },
             {
               "alias": true,
@@ -515,7 +515,7 @@
               "module": "clusters",
               "path": "query-service/query-workbench.adoc",
               "url": "/cloud/clusters/query-service/query-workbench.html",
-              "title": "Query Tab"
+              "title": "Use the Query Tab"
             },
             {
               "module": "clusters",
@@ -895,7 +895,7 @@
               "module": "indexes",
               "path": "gsi-for-n1ql.adoc",
               "url": "/cloud/learn/services-and-indexes/indexes/global-secondary-indexes.html",
-              "title": "Using Indexes"
+              "title": "Indexes"
             },
             {
               "alias": true,
@@ -909,7 +909,7 @@
               "module": "indexes",
               "path": "indexing-overview.adoc",
               "url": "/cloud/learn/services-and-indexes/indexes/global-secondary-indexes.html",
-              "title": "Using Indexes"
+              "title": "Indexes"
             },
             {
               "alias": true,
@@ -1075,7 +1075,7 @@
               "module": "learn",
               "path": "services-and-indexes/indexes/global-secondary-indexes.adoc",
               "url": "/cloud/learn/services-and-indexes/indexes/global-secondary-indexes.html",
-              "title": "Using Indexes"
+              "title": "Indexes"
             },
             {
               "module": "learn",
@@ -2422,7 +2422,7 @@
               "module": "understanding-couchbase",
               "path": "services-and-indexes/indexes/global-secondary-indexes.adoc",
               "url": "/cloud/learn/services-and-indexes/indexes/global-secondary-indexes.html",
-              "title": "Using Indexes"
+              "title": "Indexes"
             },
             {
               "alias": true,
