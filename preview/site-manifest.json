@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "generated": 1692986607747,
+  "generated": 1692995021847,
   "url": "https://docs.couchbase.com",
   "components": [
     {
@@ -509,7 +509,7 @@
               "module": "clusters",
               "path": "query-service/query-service.adoc",
               "url": "/cloud/clusters/query-service/query-service.html",
-              "title": "Query Your Data"
+              "title": "Use the Query Service"
             },
             {
               "module": "clusters",

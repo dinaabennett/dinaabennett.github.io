@@ -6,10 +6,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
-<title>Query Your Data | Couchbase Docs</title>
+<title>Use the Query Service | Couchbase Docs</title>
 <link rel="canonical" href="https://docs.couchbase.com/cloud/clusters/query-service/query-service.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
+<meta name="description" content="Use the Query Service to query your data using the SQL++ query language.">
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
 
 
@@ -96,7 +97,7 @@
     </div>
    </div>
 </header>
-<div class="body container">
+<div class="body container tiles -toc">
 <aside class="nav left-sidebar">
   <div class="nav-container">
     <a href="#" class="menu-expand-toggle"><span>Navigation</span><i class="fas fa-times-circle"></i><i class="fas fa-chevron-circle-left"></i></a>
@@ -181,7 +182,7 @@
 </div>
 <article class="doc">
 <div class="page-heading-title">
-<h1 class="page">Query Your Data</h1>
+<h1 class="page">Use the Query Service</h1>
 <div class="labels">
 <ul></ul>
 </div>
@@ -194,39 +195,93 @@
 <span  id="otherContributor"> + </span>
 </div><div id="preamble">
 <div class="sectionbody">
+<style type="text/css">
+  /* Extend heading across page width */
+  div.page-heading-title{
+    flex-basis: 100%;
+  }
+</style>
 <div class="quoteblock abstract">
 <blockquote>
 Use the Query Service to query your data using the SQL++ query language.
 </blockquote>
 </div>
-<div class="paragraph">
-<p>Use SQL++ to run queries that extract, define, and manipulate data in Couchbase databases.</p>
-</div>
-<div class="paragraph">
-<p>For more information about SQL++, see <a href="../../n1ql/n1ql-language-reference/index.html" class="xref page">SQL++ Language Reference</a>.</p>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="deploy-the-query-service"><a class="anchor" href="#deploy-the-query-service"></a>Deploy the Query Service</h2>
+<h2>Deployment</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can deploy the Query Service during <a href="#databases:create-database.adoc" class="xref unresolved">database creation</a> or by <a href="../scale-database.html" class="xref page">adding it to an existing database</a>.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2>Requirements</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Using a database with the Query Service deployed, you can make SQL++ queries using the Couchbase SDK and the <a href="query-workbench.html" class="xref page">Query tab</a> in the Capella UI.</p>
+<p>The Query Service requires the <a href="../data-service/data-service.html" class="xref page">Data Service</a> (always included) and the <a href="../index-service/index-service.html" class="xref page">Index Service</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="requirements"><a class="anchor" href="#requirements"></a>Requirements</h2>
+<h2>Run Queries</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Query Service requires the <a href="../data-service/data-service.html" class="xref page">Data Service</a> (always included) and the <a href="../index-service/index-service.html" class="xref page">Index Service</a>.
-You need to add the Index Service to your database to use the Query Service.</p>
+<p>Use <a href="../../n1ql/n1ql-language-reference/index.html" class="xref page">SQL++</a> to run queries that extract, define, and manipulate data in Couchbase databases.</p>
 </div>
 <div class="paragraph">
-<p>For more information about how these services interact with one another, see <a href="../../../server/current/learn/services-and-indexes/services/query-service.html" class="xref page">Query Service</a>.</p>
+<p>Using a database with the Query Service deployed, you can create SQL++ queries using the Couchbase SDK or the <a href="query-workbench.html" class="xref page">Query Tab</a> in the Capella UI.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../guides/select.html" class="xref page">Selection Queries</a></p>
+</li>
+<li>
+<p><a href="../../guides/manipulate.html" class="xref page">Data Manipulation Queries</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2>Use Indexes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="../../learn/services-and-indexes/indexes/global-secondary-indexes.html" class="xref page">Indexes</a> are a powerful tool used in the background of a database to speed up querying. Indexes power queries by providing a method to quickly lookup the requested data.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2>Optimize Performance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Couchbase provides tools and strategies to help you create efficient workflows, queries, and indexes.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#prep-statements.adoc" class="xref unresolved">Optimize query reuse</a></p>
+</li>
+<li>
+<p><a href="#index-advisor.adoc" class="xref unresolved">Get index recommendations for your queries</a></p>
+</li>
+<li>
+<p><a href="#cbo.adoc" class="xref unresolved">Create efficient queries</a></p>
+</li>
+<li>
+<p><a href="../../n1ql/n1ql-intro/sysinfo.html" class="xref page">Monitor query operations</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2>Tutorials</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Take an <a href="../../get-started/run-first-queries.html#first-query" class="xref page">Query Service</a> or <a href="https://query-tutorial.couchbase.com/tutorial/#1">SQL++ Query Language</a> tutorial to get started.</p>
 </div>
 </div>
 </div>
