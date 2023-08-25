@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Restore a Backup | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/clusters/manage-restore.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/clusters/manage-restore.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="You can restore a backup to the same database where it was created or another database in the same organization.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -174,7 +174,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Your Data</li>
+<li class="crumb">Monitor and Maintain</li>
 <li class="crumb"><a href="backup-restore.html">Backup &amp; Restore</a></li>
 <li class="crumb"><a href="manage-restore.html">Restore a Backup</a></li>
 </ul>
@@ -243,6 +243,15 @@ If you have the <code>Organization Owner</code> role, you already have the <a hr
 </li>
 <li>
 <p>You can only restore data to an existing bucket with the same name and <a href="data-service/manage-buckets.html#add-bucket" class="xref page">conflict resolution methods</a> as the bucket from the backup.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Owing to the way backups are stored in Capella, you can only restore to a bucket in the <em>same</em> Cloud Service Provider (CSP) as the one used to create the backup&#8201;&#8212;&#8201;such as from Azure to Azure.
+Should you need a backup that can be restored across different CSPs, you can use a locally-stored backup&#8201;&#8212;&#8201;see <a href="backup-restore.html#downloading-backups" class="xref page">Downloadable backups</a>,
+or the <a href="cli-backup-restore.html#backup-and-restore-examples" class="xref page">cbbackupmgr</a> command line tool.</p>
 </li>
 </ul>
 </div>
@@ -502,6 +511,24 @@ In the <strong>Status</strong> column, click the Play icon <span class="icon"><i
 </div>
 </dd>
 </dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="view-restore-downloaded-backup"><a class="anchor" href="#view-restore-downloaded-backup"></a>View and Restore a Downloaded Backup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When <a href="backup-restore.html#downloading-backups" class="xref page">downloaded</a>, you can unzip a zip archive file and use the Couchbase Server <a href="../reference/command-line-tools.html#cbbackupmgr" class="xref page">cbbackupmgr</a>  utility to view, examine, or restore the contents of the backup repository.</p>
+</div>
+<div class="paragraph">
+<p>For more information on the download file, see <a href="backup-restore.html#about-zip-archive-file" class="xref page">About the Zip Archive File</a>.</p>
+</div>
+<div class="paragraph">
+<p>For more information about the cbbackupmgr utility, see <a href="../reference/command-line-tools.html#cbbackupmgr" class="xref page">cbbackupmgr</a> in <a href="../reference/command-line-tools.html" class="xref page">Command Line Tools</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you are running cbbackupmgr commands against Couchbase Capella databases with the database access credentials, there are some cbbackupmgr disable options that you must use.
+These restrictions do not apply if you are running cbbackupmgr commands against your self-managed databases, using the downloaded backup archive.</p>
 </div>
 </div>
 </div>

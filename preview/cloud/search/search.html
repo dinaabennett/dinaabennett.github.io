@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Add Search to Your Application | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/search/search.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/search/search.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Use the Search Service to create a customizable search experience for your database and your end-user applications.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/search/pages/search.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/search/pages/search.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,7 +174,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Your Data</li>
+<li class="crumb">Add Search to Your Application - (work in progress)</li>
 <li class="crumb"><a href="search.html">Add Search to Your Application</a></li>
 </ul>
 </nav>
@@ -202,7 +202,30 @@ Use the Search Service to create a customizable search experience for your datab
 </blockquote>
 </div>
 <div class="paragraph">
-<p>The Search Service uses <a href="#indexes">Search indexes</a> and <a href="#queries">Search queries</a> to collect and return content from documents in your database.</p>
+<p>The Search Service offers near real-time search capabilities for a diverse range of data types.
+For example, you can use the Search Service with:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Structured or unstructured text</p>
+</li>
+<li>
+<p>Dates</p>
+</li>
+<li>
+<p>Numbers</p>
+</li>
+<li>
+<p>CIDR notation</p>
+</li>
+<li>
+<p>Geospatial data</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use a <a href="#indexes">Search index</a> to efficiently store your data, and retrieve it with a <a href="#queries">Search query</a>.</p>
 </div>
 </div>
 </div>
@@ -210,8 +233,11 @@ Use the Search Service to create a customizable search experience for your datab
 <h2 id="indexes"><a class="anchor" href="#indexes"></a>Search Indexes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A Search index tells the Search Service what content to use from documents in your database for <a href="#queries">Search queries</a>.
-You can choose to exclude content to improve search performance and improve the relevance of search results.</p>
+<p>A Search index tells the Search Service what content to use from the documents in your database for processing <a href="#queries">Search queries</a>.
+A Search index can use any field across multiple collections in a single scope.</p>
+</div>
+<div class="paragraph">
+<p>You can choose to exclude content to improve search performance and improve the relevance of search results.</p>
 </div>
 <div class="paragraph">
 <p>A Search index can also analyze and modify the content in your Search index or Search query to improve matching and search results.
@@ -245,10 +271,7 @@ The Search Service has default components that you can use to customize a Search
 <p>A Search query tells the Search Service what to search for in the contents of a Search index.</p>
 </div>
 <div class="paragraph">
-<p>Search queries use JSON objects to control how the Search Service returns search results.</p>
-</div>
-<div class="paragraph">
-<p>You can also choose to <a href="search-query-auto-complete.html" class="xref page">add autocomplete</a> to your application to provide a more user-friendly search experience in your application.</p>
+<p>Search queries use a simple string-based query syntax or JSON objects to control how the Search Service retrieves search results.</p>
 </div>
 <div class="paragraph">
 <p>For more information about how you can run a search against a Search index, see <a href="run-searches.html" class="xref page">Run a Search With a Search Index</a>.</p>
@@ -263,6 +286,27 @@ The Search Service has default components that you can use to customize a Search
 </li>
 <li>
 <p><a href="simple-search-rest-api.html" class="xref page">From the REST API</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="create-search-indexes.html" class="xref page">Create a Search Index</a></p>
+</li>
+<li>
+<p><a href="customize-index.html" class="xref page">Customize a Search Index with the Capella UI</a></p>
+</li>
+<li>
+<p><a href="index-aliases.html" class="xref page">Create Search Index Aliases</a></p>
+</li>
+<li>
+<p><a href="run-searches.html" class="xref page">Run a Search With a Search Index</a></p>
 </li>
 </ul>
 </div>

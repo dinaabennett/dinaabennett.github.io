@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Create a Custom Token Filter | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/search/create-custom-token-filter.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/search/create-custom-token-filter.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Create a custom token filter with the Couchbase Capella UI to change how the Search Service creates tokens from Search index content and Search queries.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/search/pages/create-custom-token-filter.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/search/pages/create-custom-token-filter.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,7 +174,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Your Data</li>
+<li class="crumb">Add Search to Your Application - (work in progress)</li>
 <li class="crumb"><a href="search.html">Add Search to Your Application</a></li>
 <li class="crumb"><a href="customize-index.html">Customize a Search Index with the Capella UI</a></li>
 <li class="crumb"><a href="create-custom-token-filter.html">Create a Custom Token Filter</a></li>
@@ -241,7 +241,7 @@ For more information, see <a href="create-search-index-ui.html" class="xref page
 <p>Click the index where you want to create a custom token filter.</p>
 </li>
 <li>
-<p>Expand <span class="menuseq"><b class="menu">Advanced Configuration</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Custom Filters</b></span>.</p>
+<p>Expand <strong>Custom Filters</strong>.</p>
 </li>
 <li>
 <p>Click <b class="button">Add Token Filter</b>.</p>
@@ -254,40 +254,60 @@ For more information, see <a href="create-search-index-ui.html" class="xref page
 <div class="paragraph">
 <p>You can create any of the following custom token filters:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#dict-compound">dict_compound</a>: Use a wordlist to find and create tokens from compound words in existing tokens.</p>
-</li>
-<li>
-<p><a href="#edge-ngram">edge_ngram</a>: Use a set character length to create tokens from the start or end of existing tokens.</p>
-</li>
-<li>
-<p><a href="#elision">elision</a>: Use a wordlist to remove elisions from input tokens.</p>
-</li>
-<li>
-<p><a href="#keyword-marker">keyword_marker</a>: Use a wordlist of keywords to find and create new tokens.</p>
-</li>
-<li>
-<p><a href="#length">length</a>: Use a set character length to filter out tokens that are too long or too short.</p>
-</li>
-<li>
-<p><a href="#ngram">ngram</a>: Use a set character length to create new tokens.</p>
-</li>
-<li>
-<p><a href="#normalize-unicode">normalize_unicode</a>: Use Unicode Normalization to convert tokens.</p>
-</li>
-<li>
-<p><a href="#shingle">shingle</a>: Use a set character length and separator to concatenate and create new tokens.</p>
-</li>
-<li>
-<p><a href="#stop-tokens">stop_tokens</a>: Use a wordlist to find and remove words from tokens.</p>
-</li>
-<li>
-<p><a href="#truncate-token">truncate_token</a>: Use a set character length to truncate existing tokens.</p>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Token Filter Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#dict-compound">dict_compound</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use a wordlist to find and create tokens from compound words in existing tokens.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edge-ngram">edge_ngram</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use a set character length to create tokens from the start or end of existing tokens.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#elision">elision</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use a wordlist to remove elisions from input tokens.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#keyword-marker">keyword_marker</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use a wordlist of keywords to find and create new tokens.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#length">length</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use a set character length to filter out tokens that are too long or too short.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#ngram">ngram</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use a set character length to create new tokens.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#normalize-unicode">normalize_unicode</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use Unicode Normalization to convert tokens.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#shingle">shingle</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use a set character length and separator to concatenate and create new tokens.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#stop-tokens">stop_tokens</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use a wordlist to find and remove words from tokens.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#truncate-token">truncate_token</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use a set character length to truncate existing tokens.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect2">
 <h3 id="dict-compound"><a class="anchor" href="#dict-compound"></a>Create a Custom <code>dict_compound</code> Token Filter</h3>
 <div class="paragraph">

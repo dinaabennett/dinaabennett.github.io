@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Creating and Editing Buckets | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/rest-api/rest-bucket-create.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Buckets can be created, and their configurations subsequently edited, with the REST API.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -246,7 +247,7 @@ See <a href="../learn/security/roles.html" class="xref page">Roles</a>, for info
   -d ramQuota=&lt;integer&gt;
   -d storageBackend=[ couchstore | magma ]
   -d evictionPolicy=[
-          [ valueOnly | full ] |
+          [ valueOnly | fullEviction ] |
           [ noEviction | nruEviction ]
         ]
   -d durabilityMinLevel=[
@@ -1199,7 +1200,7 @@ If it is not defined, an error-notification such as the following is returned: <
 </div>
 <div class="paragraph">
 <p>Auto-compaction settings are unnecessary for <em>memory-optimized</em> indexes.
-For information on index storage, see <a href="../learn/services-and-indexes/indexes/storage-modes.html" class="xref page">Storage Settings</a>.</p>
+For information on index storage, see <a href="#learn:services-and-indexes/indexes/storage-modes.adoc" class="xref unresolved">Storage Settings</a>.</p>
 </div>
 <div class="paragraph">
 <p>For further information on auto-compaction settings, see <a href="../manage/manage-settings/configure-compact-settings.html" class="xref page">Auto-Compaction</a>.</p>
@@ -1520,7 +1521,7 @@ Options for managing buckets with Couchbase Web Console are provided in <a href=
 For information on the Couchbase CLI command <code>bucket-create</code>, see the reference page for <a href="#cli:cbcli/couchbase-cli-bucket-create.adoc" class="xref unresolved">bucket-create</a>.</p>
 </div>
 <div class="paragraph">
-<p>Information on memory-management options for Couchbase Server is provided in For information on index storage, see <a href="../learn/services-and-indexes/indexes/storage-modes.html" class="xref page">Storage Settings</a>.
+<p>Information on memory-management options for Couchbase Server is provided in For information on index storage, see <a href="#learn:services-and-indexes/indexes/storage-modes.adoc" class="xref unresolved">Storage Settings</a>.
 Information on auto-compaction settings is provided in <a href="../manage/manage-settings/configure-compact-settings.html" class="xref page">Auto-Compaction</a>.</p>
 </div>
 <div class="paragraph">

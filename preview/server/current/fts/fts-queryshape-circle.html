@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Circle Query | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/fts/fts-queryshape-circle.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
@@ -31,7 +32,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -53,7 +54,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -166,11 +167,6 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../introduction/intro.html">Couchbase Server</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="fts-introduction.html">Search</a></li>
-<li class="crumb"><a href="fts-supported-queries.html">Supported Queries</a></li>
-<li class="crumb"><a href="fts-supported-queries-geospatial.html">Geo Spatial Queries</a></li>
-<li class="crumb"><a href="fts-supported-queries-geojson-spatial.html">GeoJSON Queries</a></li>
 <li class="crumb"><a href="fts-queryshape-circle.html">Circle Query</a></li>
 </ul>
 </nav>
@@ -195,12 +191,11 @@
 A GeoJSON Circle Query against any GeoJSON type.
 </blockquote>
 </div>
-<div class="paragraph">
-<p><span class="status">Couchbase Server 7.1.2</span></p>
 </div>
 </div>
-</div>
-<h1 id="queryshape-for-a-circle-query" class="sect0"><a class="anchor" href="#queryshape-for-a-circle-query"></a>QueryShape for a Circle Query</h1>
+<div class="sect1">
+<h2 id="queryshape-for-a-circle-query"><a class="anchor" href="#queryshape-for-a-circle-query"></a>QueryShape for a Circle Query</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>A GeoJSON query via a GeoShape of Circle to find GeoJSON types in a Search index using the 3 relations intersects, contains, and within.</p>
 </div>
@@ -210,9 +205,8 @@ A GeoJSON Circle Query against any GeoJSON type.
 <div class="paragraph">
 <p>For full details on formats for the radius refer to <a href="fts-supported-queries-geojson-spatial.html#specifying-distances" class="xref page">Distances</a></p>
 </div>
-<div class="sect1">
-<h2 id="circle-intersects-query"><a class="anchor" href="#circle-intersects-query"></a>Circle <code>Intersects</code> Query</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="circle-intersects-query"><a class="anchor" href="#circle-intersects-query"></a>Circle <code>Intersects</code> Query</h3>
 <div class="paragraph">
 <p>An <code>intersect</code> query for the circle returns all the matched documents with shapes that overlap with the area of the circular shape in the query.</p>
 </div>
@@ -293,10 +287,8 @@ Circle (GeoShape)</p></td>
 </tbody>
 </table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="circle-contains-query"><a class="anchor" href="#circle-contains-query"></a>Circle <code>Contains</code> Query</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="circle-contains-query"><a class="anchor" href="#circle-contains-query"></a>Circle <code>Contains</code> Query</h3>
 <div class="paragraph">
 <p>A <code>contain</code> query for the circle returns all the matched documents with shapes that completely contain the area of the circular shape in the query.</p>
 </div>
@@ -377,10 +369,8 @@ Circle (GeoShape)</p></td>
 </tbody>
 </table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="circle-within-query"><a class="anchor" href="#circle-within-query"></a>Circle <code>WithIn</code> Query</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="circle-within-query"><a class="anchor" href="#circle-within-query"></a>Circle <code>WithIn</code> Query</h3>
 <div class="paragraph">
 <p>The Within query is not supported by line geometries.</p>
 </div>
@@ -463,7 +453,10 @@ Circle (GeoShape)</p></td>
 </table>
 </div>
 </div>
-<h1 id="example-circle-query-against-points" class="sect0"><a class="anchor" href="#example-circle-query-against-points"></a>Example Circle Query (against Points)</h1>
+</div>
+<div class="sect1">
+<h2 id="example-circle-query-against-points"><a class="anchor" href="#example-circle-query-against-points"></a>Example Circle Query (against Points)</h2>
+<div class="sectionbody">
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -608,7 +601,11 @@ It is assumed that you your cluster has 1) a modified <a href="fts-supported-que
 }</code></pre>
 </div>
 </div>
-<h1 id="example-circle-query-against-circles" class="sect0"><a class="anchor" href="#example-circle-query-against-circles"></a>Example Circle Query (against Circles)</h1>
+</div>
+</div>
+<div class="sect1">
+<h2 id="example-circle-query-against-circles"><a class="anchor" href="#example-circle-query-against-circles"></a>Example Circle Query (against Circles)</h2>
+<div class="sectionbody">
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -751,6 +748,8 @@ It is assumed that you your cluster has 1) a modified <a href="fts-supported-que
   "took": 8549509,
   "facets": null
 }</code></pre>
+</div>
+</div>
 </div>
 </div>
 </article>

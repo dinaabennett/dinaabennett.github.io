@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Eventing Service | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/clusters/eventing-service/eventing-service.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/clusters/eventing-service/eventing-service.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
@@ -32,7 +32,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +54,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -173,8 +173,8 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../../index.html">Couchbase Capella</a></li>
-<li class="crumb">Your Data</li>
-<li class="crumb"><a href="eventing-service.html">Eventing Service</a></li>
+<li class="crumb">Run a Function on Data Change</li>
+<li class="crumb"><a href="eventing-service.html">Configure Eventing</a></li>
 </ul>
 </nav>
 </div>
@@ -212,10 +212,30 @@ can also schedule further processing in the future via Timers.</p>
 </div>
 <div class="paragraph">
 <p>The <em>Eventing Service</em> offers a computing paradigm that abstracts away infrastructure concerns allowing developers
-to focus solely on business logic to handle data changes. In the cluster, you can use <em>Eventing Functions</em>
-to handle data-changes according to a real-time event-condition-action model. Typical use cases include:
-enriching documents, cascade deletes, generating threshold-based alerts, propagating data changes inside a cluster,
-or interacting with external REST endpoints.</p>
+to focus solely on business logic to handle data changes. In the database, you can use <em>Eventing Functions</em>
+to handle data-changes according to a real-time event-condition-action model.</p>
+</div>
+<div class="paragraph">
+<p>Typical use cases include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enriching documents</p>
+</li>
+<li>
+<p>Cascade deletes</p>
+</li>
+<li>
+<p>Generating threshold-based alerts</p>
+</li>
+<li>
+<p>Propagating data changes inside a database</p>
+</li>
+<li>
+<p>Interacting with external REST endpoints</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -224,13 +244,13 @@ or interacting with external REST endpoints.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Like the other Couchbase services, the <em>Eventing Service</em> can be deployed when <a href="../create-database.html" class="xref page">creating a Couchbase hosted database</a>, or by
-<a href="../scale-database.html" class="xref page">adding it to an existing Couchbase hosted cluster</a>. The <em>Eventing Service</em> depends on the <a href="../data-service/data-service.html" class="xref page"><em>Data Service</em></a>.
+<a href="../scale-database.html" class="xref page">adding it to an existing Couchbase hosted database</a>. The <em>Eventing Service</em> depends on the <a href="../data-service/data-service.html" class="xref page"><em>Data Service</em></a>.
 This service must also be deployed
-on the cluster in order to use the <em>Eventing Service</em>. (Information about how these services interact with
+on the database in order to use the <em>Eventing Service</em>. (Information about how these services interact with
 one another can be found in the <a href="../../../server/current/learn/services-and-indexes/services/eventing-service.html" class="xref page">Couchbase Server documentation</a>.)</p>
 </div>
 <div class="paragraph">
-<p>If a cluster has the <em>Eventing Service</em> deployed, <em>Eventing Functions</em> can be created and managed using the
+<p>If a database has the <em>Eventing Service</em> deployed, <em>Eventing Functions</em> can be created and managed using the
 Couchbase CLI, the REST API, and the <a href="manage-functions.html" class="xref page">Capella UI</a>.</p>
 </div>
 </div>

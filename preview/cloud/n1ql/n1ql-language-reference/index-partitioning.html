@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Index Partitioning | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/n1ql/n1ql-language-reference/index-partitioning.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/n1ql/n1ql-language-reference/index-partitioning.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Index Partitioning enables you to increase aggregate query performance by dividing and spreading a large index of documents across multiple nodes, horizontally scaling out an index as needed.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/n1ql/pages/n1ql-language-reference/index-partitioning.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/n1ql/pages/n1ql-language-reference/index-partitioning.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,9 +174,9 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../../index.html">Couchbase Capella</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="../query.html">Query</a></li>
-<li class="crumb"><a href="index.html">SQL++ Language Reference</a></li>
+<li class="crumb">Query Your Data</li>
+<li class="crumb"><a href="../query.html">Query Your Database</a></li>
+<li class="crumb"><a href="../../clusters/query-service/query-service.html">Use the Query Service</a></li>
 <li class="crumb">Statements</li>
 <li class="crumb"><a href="createindex.html">CREATE INDEX</a></li>
 <li class="crumb"><a href="index-partitioning.html">Index Partitioning</a></li>
@@ -245,7 +245,7 @@ The distinguishing feature is the use of the PARTITION BY HASH clause to specify
 <h3 id="index-partition"><a class="anchor" href="#index-partition"></a>PARTITION BY HASH Clause</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/ddl.ebnf#L113-L114">index-partition ::= 'PARTITION' 'BY' 'HASH' '(' partition-key-expr
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/ddl.ebnf#L113-L114">index-partition ::= 'PARTITION' 'BY' 'HASH' '(' partition-key-expr
                     ( ',' partition-key-expr )* ')'</code></pre>
 </div>
 </div>
@@ -268,7 +268,7 @@ For details and examples, refer to <a href="#partition-keys">Partition Keys</a>.
 <h3 id="index-with"><a class="anchor" href="#index-with"></a>WITH Clause</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/ddl.ebnf#L61">index-with ::= 'WITH' expr</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/ddl.ebnf#L61">index-with ::= 'WITH' expr</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -385,7 +385,7 @@ For more information, see <a href="../n1ql-intro/queriesandresults.html#query-co
 <td class="tableblock halign-left valign-middle"><p class="tableblock">The document key.</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/partition-idx.n1ql">CREATE INDEX idx ON airline
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/partition-idx.n1ql">CREATE INDEX idx ON airline
 (country, name, id)
  PARTITION BY HASH(META().id);</code></pre>
 </div>

@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Roles | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/learn/security/roles.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="A Couchbase &lt;em&gt;role&lt;/em&gt; permits one or more &lt;em&gt;resources&lt;/em&gt; to be accessed according to defined &lt;em&gt;privileges&lt;/em&gt;.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -711,7 +712,7 @@ The user can access Couchbase Web Console, but cannot read data, other than that
 <p>Note that the <strong>Query Curl Access</strong> role should be assigned with caution, since it entails risk: CURL runs within the local Couchbase Server network; therefore, the assignee of the <strong>Query Curl Access</strong> role is permitted to run GET and POST requests on the internal network, while being themselves externally located.</p>
 </div>
 <div class="paragraph">
-<p>For an account of limitations on CURL, see <a href="../../n1ql/n1ql-language-reference/curl.html" class="xref page">CURL Function</a>.</p>
+<p>For an account of limitations on CURL, see <a href="#n1ql:n1ql-language-reference/curl.adoc" class="xref unresolved">CURL Function</a>.</p>
 </div>
 <div class="paragraph">
 <p>In versions of Couchbase Server prior to 5.5, this role was referred to as <strong>Query External Access</strong>.</p>
@@ -1815,14 +1816,14 @@ The user can, by means of Sync Gateway, read and write data, manage indexes and 
 </div>
 </div>
 <div class="sect1">
-<h2 id="sync-gateway-architect"><a class="anchor" href="#sync-gateway-architect"></a>Sync Gateway Architect</h2>
+<h2 id="sync-gateway-configurator"><a class="anchor" href="#sync-gateway-configurator"></a>Sync Gateway Architect</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <strong>Sync Gateway Architect</strong> role (which is a <em>Mobile</em> role) allows management of Sync Gateway databases; and of Sync Gateway users and roles; and allows access to Sync Gateway&#8217;s <code>/metrics</code> endpoint.
 The role does not allow access to Couchbase Web Console; and does not allow reading of application data.
 For information on Sync Gateway users and roles, see <a href="http://docs.couchbase.com/sync-gateway/3.0/access-control-concepts.html" target="_blank" rel="noopener">Access Control Concepts</a>.</p>
 </div>
-<table id="table_sync_gateway_architect_role" class="tableblock frame-all grid-all stretch">
+<table id="table_sync_gateway_configurator_role" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 31.9148%;">
 <col style="width: 17.0212%;">
@@ -1832,7 +1833,7 @@ For information on Sync Gateway users and roles, see <a href="http://docs.couchb
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top" colspan="5">Role: Sync Gateway Architect (<code>mobile_sync_gateway_architect</code>)</th>
+<th class="tableblock halign-center valign-top" colspan="5">Role: Sync Gateway Architect (<code>sync_gateway_configurator</code>)</th>
 </tr>
 <tr>
 <th class="tableblock halign-center valign-top" rowspan="2">Resources</th>
@@ -1879,64 +1880,7 @@ For information on Sync Gateway users and roles, see <a href="http://docs.couchb
 </div>
 </div>
 <div class="sect1">
-<h2 id="sync-gateway-configurator"><a class="anchor" href="#sync-gateway-configurator"></a>Sync Gateway Configurator</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The <strong>Sync Gateway Configurator</strong> role (which is a <em>Mobile</em> role) allows management of Sync Gateway users and databases; and allows access to Sync Gateway&#8217;s <code>/metrics</code> endpoint.
-The role does not allow reading of application data.
-For information on Sync Gateway users and roles, see <a href="http://docs.couchbase.com/sync-gateway/3.0/access-control-concepts.html" target="_blank" rel="noopener">Access Control Concepts</a>.</p>
-</div>
-<table id="table_sync_gateway_configurator_role" class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 31.9148%;">
-<col style="width: 17.0212%;">
-<col style="width: 17.0212%;">
-<col style="width: 17.0212%;">
-<col style="width: 17.0216%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-top" colspan="5">Role: Sync Gateway Configurator (<code>sync_gateway_configurator</code>)</th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top" rowspan="2">Resources</th>
-<th class="tableblock halign-center valign-top" colspan="4">Privileges</th>
-</tr>
-<tr>
-<th class="tableblock halign-center valign-top"><strong>Read</strong></th>
-<th class="tableblock halign-center valign-top"><strong>Write</strong></th>
-<th class="tableblock halign-center valign-top"><strong>Execute</strong></th>
-<th class="tableblock halign-center valign-top"><strong>Manage</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">UI</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../_images/introduction/no.png" alt="no"></span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../_images/introduction/no.png" alt="no"></span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../_images/introduction/no.png" alt="no"></span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../_images/introduction/no.png" alt="no"></span></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Collection: Sync Gateway Users and Databases</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../_images/introduction/yes.png" alt="yes"></span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../_images/introduction/yes.png" alt="yes"></span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../_images/introduction/yes.png" alt="yes"></span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../_images/introduction/yes.png" alt="yes"></span></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Collection: Sync Gateway Application Data</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../_images/introduction/no.png" alt="no"></span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../_images/introduction/no.png" alt="no"></span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../_images/introduction/no.png" alt="no"></span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../_images/introduction/no.png" alt="no"></span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="sync-gateway-application"><a class="anchor" href="#sync-gateway-application"></a>Sync Gateway Application</h2>
+<h2 id="sync-gateway-app"><a class="anchor" href="#sync-gateway-app"></a>Sync Gateway Application</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <strong>Sync Gateway Application</strong> role (which is a <em>Mobile</em> role) allows management of Sync Gateway users and roles; and allows application data to be read and written through Sync Gateway.
@@ -2000,7 +1944,7 @@ For information on Sync Gateway users and roles, see <a href="http://docs.couchb
 The role does not allow access to Couchbase Web Console.
 For information on Sync Gateway users and roles, see <a href="http://docs.couchbase.com/sync-gateway/3.0/access-control-concepts.html" target="_blank" rel="noopener">Access Control Concepts</a>.</p>
 </div>
-<table id="table_sync_gateway_application_read_only_role" class="tableblock frame-all grid-all stretch">
+<table id="table_sync_gateway_app_ro_role" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 31.9148%;">
 <col style="width: 17.0212%;">

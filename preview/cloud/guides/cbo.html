@@ -6,18 +6,18 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
-<title>Cost-Based Optimizer | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/guides/cbo.html">
+<title>Create Efficient Queries with Cost-Based Optimizer | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/cloud/guides/cbo.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="How to use the Cost-Based Optimizer and manage optimizer statistics.">
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
-        <link rel="prev" href="index-advisor.html">
+        <link rel="prev" href="../n1ql/n1ql-intro/sysinfo.html">
         <link rel="next" href="transactions.html">
 
 
 
-                    <link rel="prev" href="index-advisor.html">
+                    <link rel="prev" href="../n1ql/n1ql-intro/sysinfo.html">
 
         
 
@@ -40,7 +40,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -62,7 +62,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -122,7 +122,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/guides/pages/cbo.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/guides/pages/cbo.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -181,16 +181,16 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Develop</li>
+<li class="crumb">Work in Progress - not for review</li>
 <li class="crumb"><a href="intro.html">Developer Guides</a></li>
-<li class="crumb"><a href="optimize.html">Optimizing Performance</a></li>
-<li class="crumb"><a href="cbo.html">Cost-Based Optimizer</a></li>
+<li class="crumb"><a href="optimize.html">Optimize Performance</a></li>
+<li class="crumb"><a href="cbo.html">Create Efficient Queries with Cost-Based Optimizer</a></li>
 </ul>
 </nav>
 </div>
 <article class="doc">
 <div class="page-heading-title">
-<h1 class="page">Cost-Based Optimizer</h1>
+<h1 class="page">Create Efficient Queries with Cost-Based Optimizer</h1>
 <div class="labels">
 <ul><li class="guide"><span><i class="far fa-check-square"></i> how-to</span></li>
 </ul>
@@ -250,14 +250,14 @@ Read the following for further information about the tools available for editing
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../clusters/query-service/query-workbench.html" class="xref page">Query Workbench</a></p>
+<p><a href="../clusters/query-service/query-workbench.html" class="xref page">Query Tab</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="activating-the-cost-based-optimizer"><a class="anchor" href="#activating-the-cost-based-optimizer"></a>Activating the Cost-Based Optimizer</h2>
+<h2 id="activate-the-cost-based-optimizer"><a class="anchor" href="#activate-the-cost-based-optimizer"></a>Activate the Cost-Based Optimizer</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Cost-Based Optimizer is active by default.
@@ -268,7 +268,7 @@ You can also activate or deactivate the Cost-Based Optimizer for a query node, o
 <div class="ulist tabs">
 <ul>
 <li>
-<p><a id="tabset1_query-workbench"></a>Query Workbench</p>
+<p><a id="tabset1_query-tab"></a>Query Tab</p>
 </li>
 <li>
 <p><a id="tabset1_cbq-shell"></a>CBQ Shell</p>
@@ -276,7 +276,7 @@ You can also activate or deactivate the Cost-Based Optimizer for a query node, o
 </ul>
 </div>
 <div class="content">
-<div class="tab-pane" aria-labelledby="tabset1_query-workbench">
+<div class="tab-pane" aria-labelledby="tabset1_query-tab">
 <div class="paragraph">
 <p>To activate or deactivate the Cost-Based Optimizer for a request, use the Query Run-Time Preferences window.</p>
 </div>
@@ -289,7 +289,7 @@ You can also activate or deactivate the Cost-Based Optimizer for a query node, o
 <p>Check or uncheck the <strong>Use Cost-Based Optimizer</strong> box as required.</p>
 </li>
 <li>
-<p>Choose <b class="button">Save Preferences</b> to save the preferences and return to the Query Workbench.</p>
+<p>Choose <b class="button">Save Preferences</b> to save the preferences and return to the Query Tab.</p>
 </li>
 </ol>
 </div>
@@ -354,7 +354,7 @@ The parameter is set to <code>true</code> by default.
 </div>
 </div>
 <div class="sect1">
-<h2 id="updating-statistics"><a class="anchor" href="#updating-statistics"></a>Updating Statistics</h2>
+<h2 id="update-statistics"><a class="anchor" href="#update-statistics"></a>Update Statistics</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Before you can use the Cost-Based Optimizer with a query, you <em>must</em> first gather the statistics that it needs.</p>
@@ -370,7 +370,7 @@ To use the cost-based optimizer with that query, you must collect statistics on 
 <p>For a query which filters on an array or array of objects, you must collect the statistics using exactly the same expression that you used to create the index.</p>
 </div>
 <div class="sect2">
-<h3 id="updating-statistics-for-expressions"><a class="anchor" href="#updating-statistics-for-expressions"></a>Updating Statistics for Expressions</h3>
+<h3 id="update-statistics-for-expressions"><a class="anchor" href="#update-statistics-for-expressions"></a>Update Statistics for Expressions</h3>
 <div class="paragraph">
 <p>To gather statistics for specified expressions, use the <code>UPDATE STATISTICS</code> command.</p>
 </div>
@@ -382,25 +382,25 @@ To use the cost-based optimizer with that query, you must collect statistics on 
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Create indexes</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr.n1ql#L2-L3">CREATE INDEX idx_country_city ON hotel(country, city);
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr.n1ql#L2-L3">CREATE INDEX idx_country_city ON hotel(country, city);
 CREATE INDEX idx_city_country ON hotel(city, country);</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Update statistics</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr-predicate.n1ql#L10">UPDATE STATISTICS FOR hotel(city, country, free_breakfast);</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr-predicate.n1ql#L10">UPDATE STATISTICS FOR hotel(city, country, free_breakfast);</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr-predicate.n1ql#L16-L17">SELECT COUNT(*) FROM hotel
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr-predicate.n1ql#L16-L17">SELECT COUNT(*) FROM hotel
 WHERE country = 'United States' AND free_breakfast = true;</code></pre>
 </div>
 </div>
@@ -411,7 +411,7 @@ WHERE country = 'United States' AND free_breakfast = true;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="updating-statistics-for-an-index"><a class="anchor" href="#updating-statistics-for-an-index"></a>Updating Statistics for an Index</h3>
+<h3 id="update-statistics-for-an-index"><a class="anchor" href="#update-statistics-for-an-index"></a>Update Statistics for an Index</h3>
 <div class="paragraph">
 <p>To gather statistics for all the index key expressions used by an index, use the <code>UPDATE STATISTICS</code> command with the <code>INDEX</code> clause.</p>
 </div>
@@ -423,12 +423,12 @@ WHERE country = 'United States' AND free_breakfast = true;</code></pre>
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-index.n1ql">UPDATE STATISTICS FOR
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-index.n1ql">UPDATE STATISTICS FOR
 INDEX airport.def_inventory_airport_city;</code></pre>
 </div>
 </div>
@@ -439,7 +439,7 @@ INDEX airport.def_inventory_airport_city;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="updating-statistics-for-multiple-indexes"><a class="anchor" href="#updating-statistics-for-multiple-indexes"></a>Updating Statistics for Multiple Indexes</h3>
+<h3 id="update-statistics-for-multiple-indexes"><a class="anchor" href="#update-statistics-for-multiple-indexes"></a>Update Statistics for Multiple Indexes</h3>
 <div class="paragraph">
 <p>To gather statistics for all the index key expressions used by multiple indexes, use the <code>UPDATE STATISTICS</code> command with the <code>INDEX</code> clause and a list of index names.</p>
 </div>
@@ -451,12 +451,12 @@ INDEX airport.def_inventory_airport_city;</code></pre>
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-indexes.n1ql">UPDATE STATISTICS FOR airport
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-indexes.n1ql">UPDATE STATISTICS FOR airport
 INDEX (def_inventory_airport_faa, def_inventory_airport_city);</code></pre>
 </div>
 </div>
@@ -467,12 +467,12 @@ INDEX (def_inventory_airport_faa, def_inventory_airport_city);</code></pre>
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-indexes-all.n1ql">UPDATE STATISTICS FOR airport INDEX ALL;</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-indexes-all.n1ql">UPDATE STATISTICS FOR airport INDEX ALL;</code></pre>
 </div>
 </div>
 </div>
@@ -482,7 +482,7 @@ For more information, see <a href="select.html#query-context" class="xref page">
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-statistics"><a class="anchor" href="#deleting-statistics"></a>Deleting Statistics</h3>
+<h3 id="delete-statistics"><a class="anchor" href="#delete-statistics"></a>Delete Statistics</h3>
 <div class="paragraph">
 <p>To delete statistics, use the <code>UPDATE STATISTICS</code> command with the <code>DELETE</code> clause.</p>
 </div>
@@ -506,12 +506,12 @@ Deleting statistics for a set of index expressions effectively turns off the Cos
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-delete.n1ql">UPDATE STATISTICS FOR hotel
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-delete.n1ql">UPDATE STATISTICS FOR hotel
 DELETE (city, country, free_breakfast);</code></pre>
 </div>
 </div>
@@ -522,12 +522,12 @@ DELETE (city, country, free_breakfast);</code></pre>
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-delete-all.n1ql">UPDATE STATISTICS FOR airport DELETE ALL;</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-delete-all.n1ql">UPDATE STATISTICS FOR airport DELETE ALL;</code></pre>
 </div>
 </div>
 </div>
@@ -597,7 +597,7 @@ For more information, see <a href="select.html#query-context" class="xref page">
 
         <nav class="pagination">
 
-                    <span class="prev"><a href="index-advisor.html">Index Advisor</a></span>
+                    <span class="prev"><a href="../n1ql/n1ql-intro/sysinfo.html">Monitor Query Operations</a></span>
 
 
                 <span>&nbsp;</span>

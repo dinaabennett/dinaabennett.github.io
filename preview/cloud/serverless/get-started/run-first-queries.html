@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Explore Sample Data with Data Tools | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/get-started/run-first-queries.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/get-started/run-first-queries.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Use Couchbase Capella&#x27;s Data Tools to explore and work with your data.">
@@ -42,7 +42,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -64,7 +64,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -221,7 +221,7 @@ Use Couchbase Capella&#8217;s Data Tools to explore and work with your data.
 <p>View and edit documents through the <a href="#documents-viewer">Documents Viewer</a>.</p>
 </li>
 <li>
-<p>Run a SQL++ query through the <a href="#first-query">Query Workbench</a>.</p>
+<p>Run a SQL++ query through the <a href="#first-query">Query tab</a>.</p>
 </li>
 <li>
 <p>Speed up your queries with an <a href="#index">index</a>.</p>
@@ -284,7 +284,7 @@ You can add scopes and collections to a bucket to group related documents togeth
 </div>
 </div>
 <div class="sect1">
-<h2 id="first-query"><a class="anchor" href="#first-query"></a>Run Your First Query with the Query Workbench</h2>
+<h2 id="first-query"><a class="anchor" href="#first-query"></a>Run Your First Query with the Query Tab</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To run your first query:</p>
@@ -305,7 +305,7 @@ You can add scopes and collections to a bucket to group related documents togeth
 </div>
 </li>
 <li>
-<p>In the <strong>Query Editor</strong>, paste the following query:</p>
+<p>In the query editor, paste the following query:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp">SELECT route.airlineid, airline.name, route.sourceairport, route.destinationairport
@@ -337,11 +337,11 @@ ORDER BY route.sourceairport;</code></pre>
 <p>To view how Capella executed the query in a graphical format, select the <strong>Plan</strong> tab.</p>
 </div>
 <div class="paragraph">
-<p>The Query Workbench shows a data-flow diagram with query operators.
+<p>The Query results show a data-flow diagram with query operators.
 The initial scans display on the right, and the final output of the query displays on the left.</p>
 </div>
 <div class="paragraph">
-<p>The Query Workbench highlights any operators that might use a lot of resources.
+<p>The Query results highlight any operators that might use a lot of resources.
 For example, in this query, the <strong>Fetch</strong> operator takes almost 90% of the total time spent on the query.</p>
 </div>
 </td>
@@ -349,7 +349,7 @@ For example, in this query, the <strong>Fetch</strong> operator takes almost 90%
 </table>
 </div>
 <div class="paragraph">
-<p>For more information about how to use the Query Workbench, see <a href="../../clusters/query-service/query-workbench.html" class="xref page">Query Workbench</a>.</p>
+<p>For more information about how to use the tools on the Query tab, see <a href="../../clusters/query-service/query-workbench.html" class="xref page">Query Tab</a>.</p>
 </div>
 </div>
 </div>
@@ -362,18 +362,18 @@ For example, in this query, the <strong>Fetch</strong> operator takes almost 90%
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>With the same query in the <strong>Query Editor</strong>, click <b class="button">Advise</b>.</p>
+<p>With the same query in the query editor, click <b class="button">Advise</b>.</p>
 </li>
 <li>
 <p>In the query results, copy the recommended <code>CREATE INDEX</code> command from the <code>index_statement</code> attribute without the quotation marks:</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/run-first-queries/get-started-advise-index-statement.png" alt="The Couchbase Capella Query Workbench. The Advise results are shown for the previous sample query. The " width="index_statement" attribute is highlighted with a red box."">
+<img src="_images/run-first-queries/get-started-advise-index-statement.png" alt="The Couchbase Capella Query tab. The Advise results are shown for the previous sample query. The " width="index_statement" attribute is highlighted with a red box."">
 </div>
 </div>
 </li>
 <li>
-<p>Replace the query in the <strong>Query Editor</strong> with the <code>CREATE INDEX</code> command.</p>
+<p>Replace the query in the query editor with the <code>CREATE INDEX</code> command.</p>
 </li>
 <li>
 <p>To create the index, click <b class="button">Execute</b>.</p>

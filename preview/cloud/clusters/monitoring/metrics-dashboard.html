@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>View Database Metrics | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/clusters/monitoring/metrics-dashboard.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/clusters/monitoring/metrics-dashboard.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Couchbase Capella provides metrics for each database so you can discover and trend database performance.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -280,7 +280,43 @@ A tile includes a title, a graph with labeled X and Y axis, and data lines.</p><
 <div class="sect2">
 <h3 id="use-metrics"><a class="anchor" href="#use-metrics"></a>Using Metrics</h3>
 <div class="paragraph">
-<p>Each metric tile on the Monitoring dashboard shows you a chart representing data from the chosen time frame.</p>
+<p>Each metric tile on the Monitoring dashboard shows you a chart representing data from the chosen timeframe.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Chart resolution</div>
+<div class="paragraph">
+<p>Capella draws metrics charts down to 60-second (1-minute) resolution.
+This resolution is available for graphs using the <strong>30m</strong>, <strong>1h</strong>, and <strong>2h</strong> timeframes.</p>
+</div>
+<div class="paragraph">
+<p>When you select a longer timeframe, Capella automatically adjusts the chart data resolution.
+These chart data resolutions are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>1d</strong> - 360 seconds (6 minutes)</p>
+</li>
+<li>
+<p><strong>2d</strong> - 720 seconds (12 minutes)</p>
+</li>
+<li>
+<p><strong>7d</strong> - 2520 seconds (42 minutes)</p>
+</li>
+<li>
+<p><strong>30d</strong> - 10800 seconds (3 hours)</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Moving your mouse pointer over a metric chart provides date, time, and resource information for the part of the chart you are pointing at.

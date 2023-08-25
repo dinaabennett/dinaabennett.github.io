@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Microsoft Azure | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/reference/azure.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/reference/azure.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Couchbase Capella supports deploying databases onto Microsoft Azure.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -252,14 +252,32 @@ This page describes the various regions and configurations available to you when
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>✔</strong></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>eastus2</code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">East US 2 (Virginia)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>✔</strong></p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>canadacentral</code></strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Canada Central (Toronto)</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>✔</strong></p></td>
 <td class="tableblock halign-center valign-top"></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>westus2</code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">West US 2 (Washington)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>✔</strong></p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>westus3</code></strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">West US 3 (Arizona)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>✔</strong></p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>southcentralus</code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">South Central US (Texas)</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><strong>✔</strong></p></td>
 <td class="tableblock halign-center valign-top"></td>
 </tr>
@@ -348,6 +366,12 @@ This page describes the various regions and configurations available to you when
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>centralindia</code></strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Central India (Pune)</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>eastasia</code></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">East Asia (Hong Kong)</p></td>
 <td class="tableblock halign-center valign-top"></td>
 <td class="tableblock halign-center valign-top"></td>
 </tr>
@@ -669,25 +693,13 @@ See <a href="https://learn.microsoft.com/en-us/azure/virtual-machines/disks-type
 <div class="sect3">
 <h4 id="ultra-disk"><a class="anchor" href="#ultra-disk"></a>Ultra Disk</h4>
 <div class="paragraph">
-<p>Azure ultra disks are best for intensive and transaction-heavy workloads.
-They offer the lowest latency and consistent IOPS/throughput while providing scalability.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The ultra disk option is available to databases hosted in Azure regions that support it.
-To see what regions support this option, see the <a href="#supported-regions">regions list</a>.
-</td>
-</tr>
-</table>
+<p>Azure Ultra Disks are best for intensive and transaction-heavy workloads.
+They offer the lowest latency and consistent IOPS/throughput while providing scalability.
+Ultra Disks are available to databases hosted in Azure regions that support it.
+To see what regions support this option, see the <a href="#supported-regions">regions list</a>.</p>
 </div>
 <div class="paragraph">
-<p>The ultra disk option allows you to choose a storage size and IOPS.
-Changes to these options affect performance and cost.
+<p>The Ultra Disk option allows you to choose a storage size and IOPS.
 By default, this is 64 Gib, but you choose from the following:</p>
 </div>
 <table id="ultra-disk" class="tableblock frame-all grid-all stretch">
@@ -724,6 +736,23 @@ By default, this is 64 Gib, but you choose from the following:</p>
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Adjusting the IOPS rate affects performance and cost.
+When creating or modifying a database with the Azure Ultra Disk storage option, Capella uses recommended defaults for the IOPS field.
+You can replace a default IOPS value with one higher than the default but not lower.
+For the recommended IOPS values for databases using Azure Ultra Disks with typical enterprise workloads, see <a href="../clusters/scale-database.html#IOPS-Defaults" class="xref page">IOPS Defaults</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>

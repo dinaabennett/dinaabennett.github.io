@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>BUILD INDEX | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/n1ql/n1ql-language-reference/build-index.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/n1ql/n1ql-language-reference/build-index.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="The BUILD INDEX statement enables you to build one or more GSI indexes that are marked for deferred building all at once.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/n1ql/pages/n1ql-language-reference/build-index.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/n1ql/pages/n1ql-language-reference/build-index.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,9 +174,9 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../../index.html">Couchbase Capella</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="../query.html">Query</a></li>
-<li class="crumb"><a href="index.html">SQL++ Language Reference</a></li>
+<li class="crumb">Query Your Data</li>
+<li class="crumb"><a href="../query.html">Query Your Database</a></li>
+<li class="crumb"><a href="../../clusters/query-service/query-service.html">Use the Query Service</a></li>
 <li class="crumb">Statements</li>
 <li class="crumb"><a href="build-index.html">BUILD INDEX</a></li>
 </ul>
@@ -234,7 +234,7 @@ You can also monitor the index state using the Couchbase Web Console.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/build-idx-error.jsonc">[
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/build-idx-error.jsonc">[
   {
     "code": 5000,
     "msg": "GSI CreateIndex() - cause: Encountered transient error.  Index creation will be retried in background.  Error: Index ... will retry building in the background for reason: Build Already In Progress. Keyspace ...",
@@ -276,7 +276,7 @@ For more details about user roles, see
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/ddl.ebnf#L127-L128">build-index ::= 'BUILD' 'INDEX' 'ON' keyspace-ref '(' index-term (',' index-term)* ')'
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/ddl.ebnf#L127-L128">build-index ::= 'BUILD' 'INDEX' 'ON' keyspace-ref '(' index-term (',' index-term)* ')'
                 index-using?</code></pre>
 </div>
 </div>
@@ -308,7 +308,7 @@ Refer to <a href="#index-using">USING Clause</a> below.</p>
 <h3 id="keyspace-ref"><a class="anchor" href="#keyspace-ref"></a>Keyspace Reference</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L86">keyspace-ref ::= keyspace-path | keyspace-partial</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L86">keyspace-ref ::= keyspace-path | keyspace-partial</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -318,7 +318,7 @@ Refer to <a href="#index-using">USING Clause</a> below.</p>
 </div>
 <div id="keyspace-path" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L90">keyspace-path ::= ( namespace ':' )? bucket ( '.' scope '.' collection )?</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L90">keyspace-path ::= ( namespace ':' )? bucket ( '.' scope '.' collection )?</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -328,7 +328,7 @@ Refer to <a href="#index-using">USING Clause</a> below.</p>
 </div>
 <div id="keyspace-partial" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L94">keyspace-partial ::= collection</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L94">keyspace-partial ::= collection</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -345,7 +345,7 @@ Refer to the <a href="createindex.html#keyspace-ref" class="xref page">CREATE IN
 <h3 id="index-term"><a class="anchor" href="#index-term"></a>Index Term</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/ddl.ebnf#L132">index-term ::= index-name | index-expr | subquery-expr</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/ddl.ebnf#L132">index-term ::= index-name | index-expr | subquery-expr</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -365,7 +365,7 @@ The BUILD INDEX clause may contain a mixture of the different types of index ter
 <h4 id="index-name"><a class="anchor" href="#index-name"></a>Index Name</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L344">index-name ::= identifier</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L344">index-name ::= identifier</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -390,7 +390,7 @@ The BUILD INDEX clause may contain a mixture of the different types of index ter
 <h4 id="index-expr"><a class="anchor" href="#index-expr"></a>Index Expression</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/ddl.ebnf#L136">index-expr ::= string | array</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/ddl.ebnf#L136">index-expr ::= string | array</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -437,7 +437,7 @@ BUILD INDEX ON keyspace([ix1], [ix2, ix3]);</code></pre>
 <h4 id="subquery-expr"><a class="anchor" href="#subquery-expr"></a>Subquery Expression</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L118">subquery-expr ::= '(' select ')'</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L118">subquery-expr ::= '(' select ')'</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -461,7 +461,7 @@ See <a href="#ex-build-idx-all">Example 4</a> for details.</p>
 <h3 id="index-using"><a class="anchor" href="#index-using"></a>USING Clause</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/ddl.ebnf#L57">index-using ::= 'USING' 'GSI'</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/ddl.ebnf#L57">index-using ::= 'USING' 'GSI'</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -491,7 +491,7 @@ For more information, see <a href="../n1ql-intro/queriesandresults.html#query-co
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/create-idx-defer-1.n1ql">CREATE INDEX idx_landmark_country
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/create-idx-defer-1.n1ql">CREATE INDEX idx_landmark_country
   ON landmark(country)
   USING GSI
   WITH {"defer_build":true};</code></pre>
@@ -499,7 +499,7 @@ For more information, see <a href="../n1ql-intro/queriesandresults.html#query-co
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/create-idx-defer-2.n1ql">CREATE INDEX idx_landmark_name 
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/create-idx-defer-2.n1ql">CREATE INDEX idx_landmark_name 
   ON landmark(name)
   USING GSI
   WITH {"defer_build":true};</code></pre>
@@ -507,7 +507,7 @@ For more information, see <a href="../n1ql-intro/queriesandresults.html#query-co
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/create-idx-defer-3.n1ql">CREATE PRIMARY INDEX idx_landmark_primary
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/create-idx-defer-3.n1ql">CREATE PRIMARY INDEX idx_landmark_primary
   ON landmark
   USING GSI
   WITH {"defer_build":true};</code></pre>
@@ -523,13 +523,13 @@ For more information, see <a href="../n1ql-intro/queriesandresults.html#query-co
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/check-idx-defer.n1ql">SELECT * FROM system:indexes WHERE name="idx_landmark_country";</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/check-idx-defer.n1ql">SELECT * FROM system:indexes WHERE name="idx_landmark_country";</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Results</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/check-idx-defer.jsonc">[
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/check-idx-defer.jsonc">[
   {
     "indexes": {
       "bucket_id": "travel-sample",
@@ -567,7 +567,7 @@ For more information, see <a href="../n1ql-intro/queriesandresults.html#query-co
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/build-idx-single.n1ql">BUILD INDEX ON landmark(idx_landmark_country) USING GSI;</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/build-idx-single.n1ql">BUILD INDEX ON landmark(idx_landmark_country) USING GSI;</code></pre>
 </div>
 </div>
 </div>
@@ -580,7 +580,7 @@ For more information, see <a href="../n1ql-intro/queriesandresults.html#query-co
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/build-idx-all.n1ql">BUILD INDEX ON landmark (( <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/build-idx-all.n1ql">BUILD INDEX ON landmark (( <i class="conum" data-value="1"></i><b>(1)</b>
   SELECT RAW name <i class="conum" data-value="2"></i><b>(2)</b>
   FROM system:indexes
   WHERE keyspace_id = 'landmark'
@@ -615,13 +615,13 @@ In this case there is a double set of parentheses, as the subquery is the only i
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/check-idx-online.n1ql">SELECT * FROM system:indexes WHERE name="idx_landmark_country";</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/check-idx-online.n1ql">SELECT * FROM system:indexes WHERE name="idx_landmark_country";</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Results</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/check-idx-online.jsonc">[
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/check-idx-online.jsonc">[
   {
     "indexes": {
       "bucket_id": "travel-sample",

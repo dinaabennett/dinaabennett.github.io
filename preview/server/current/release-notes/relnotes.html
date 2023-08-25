@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Release Notes for Couchbase Server 7.2 | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/release-notes/relnotes.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
@@ -31,7 +32,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -53,7 +54,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -200,10 +201,13 @@
 <p>Oracle Linux 9</p>
 </li>
 <li>
-<p>Ubuntu 22 LTS</p>
+<p>Ubuntu 20 LTS (ARM64)</p>
 </li>
 <li>
-<p>Amazon Linux 2023 (x86 &amp; ARM)</p>
+<p>Ubuntu 22 LTS (x86, ARM64)</p>
+</li>
+<li>
+<p>Amazon Linux 2023 (x86, ARM64)</p>
 </li>
 <li>
 <p>macOS 12 Apple Silicon</p>
@@ -215,28 +219,32 @@
 </div>
 </li>
 <li>
-<p><em>Cost Based Optimizer in Analytics</em> [<em>CBO</em>].
-[Simon Dew to add a couple of sentences].</p>
+<p><em>Cost Based Optimizer for Analytics</em> (<em>CBO</em>).
+The cost-based optimizer for Analytics chooses the optimal plan to execute an Analytics query.
+The cost-based optimizer gathers and utilizes samples from Analytics collections, and then queries the samples at query planning time to estimate the cost of each operation.</p>
 <div class="paragraph">
-<p>See [add link here].</p>
+<p>The Analytics Service introduces new syntax for managing samples, and provides parameters and hints to help specify the behavior of the cost-based optimizer.
+See <a href="#analytics:5b_cbo.adoc" class="xref unresolved">Cost-Based Optimizer for Analytics</a>.</p>
 </div>
 </li>
 <li>
 <p><em>Time Series Queries</em>.
-[Simon Dew to add a couple of sentences].</p>
+Time series data is any data which changes over time.
+It is usually collected frequently, in regular or irregular intervals, from a device or a process.</p>
 <div class="paragraph">
-<p>See [add link here].</p>
+<p>The Query Service provides a standard format for time series data, which promotes compact storage and quick processing, and introduces a _TIMESERIES function to query time series data.
+See <a href="#n1ql:n1ql-language-reference/time-series.adoc" class="xref unresolved">Time Series Data</a> and the <a href="#n1ql:n1ql-language-reference/timeseries.adoc" class="xref unresolved">_TIMESERIES Function</a>.</p>
 </div>
 </li>
 <li>
-<p><em>Per Collection Change-History</em>.
-Maintain a <em>change history</em> for all collections in a bucket.
-Changes to documents in collections are included in the change history for the bucket.
+<p><em>Change History</em>.
+A change history can be maintained for collections in a bucket.
+Changes to documents within the collections are included in the change history.
 A maximum size for the change history can be specified in bytes or seconds.
 See <a href="../learn/data/change-history.html" class="xref page">Change History</a>.</p>
 <div class="paragraph">
 <p>For information on establishing change-history default settings, at bucket-creation time, see <a href="../rest-api/rest-bucket-create.html" class="xref page">Creating and Editing Buckets</a>.
-For information on switching change-history <em>deduplication</em> on or off for a specific collection, see <a href="../rest-api/creating-a-collection.html" class="xref page">Creating and Editing a Collection</a>.
+For information on switching the change history on or off for a specific collection, see <a href="../rest-api/creating-a-collection.html" class="xref page">Creating and Editing a Collection</a>.
 To examine the change-history status for each collection in a bucket, see the <a href="../cli/cbstats/cbstats-collections.html" class="xref page">collections</a> option for <code>cbstats</code>.
 To read the change history, use the <a href="#4.1@kafka-connector::index.adoc" class="xref unresolved">Kafka 4.1 Connector</a>.</p>
 </div>
@@ -272,8 +280,7 @@ This enables developers or testers to use the tools from machines on which Couch
 See <a href="../cli/cli-intro.html#server-tools-packages" class="xref page">Server Tools Packages</a>.</p>
 </li>
 <li>
-<p><em>Capella</em> databases use Certificate Authorities (CAs), to establish secure connections.
-These CAs are automatically trusted when you use Couchbase Web Console or the REST API to establish <em>fully secure</em> XDCR connections between Capella databases and Couchbase Enterprise Server 7.2+.
+<p><em>Capella</em> databases use Certificate Authorities (CAs), to establish secure connections: these CAs are now automatically trusted when you use Couchbase Web Console or the REST API to establish <em>fully secure</em> XDCR connections between Capella databases and Couchbase Enterprise Server 7.2+.
 See <a href="../manage/manage-xdcr/secure-xdcr-replication.html#capella-trusted-cas" class="xref page">Capella Trusted CAs</a>.</p>
 </li>
 </ul>
@@ -306,11 +313,17 @@ See <a href="../manage/manage-xdcr/secure-xdcr-replication.html#capella-trusted-
 </li>
 <li>
 <p>Ubuntu 18 LTS</p>
-<div class="paragraph">
-<p>See <a href="../install/install-platforms.html" class="xref page">Supported Platforms</a> for the complete list of supported platforms, and notes on deprecated platforms.</p>
-</div>
 </li>
 </ul>
+</div>
+</li>
+<li>
+<p>MacOS 11 Big Sur is deprecated.</p>
+</li>
+<li>
+<p>Debian 10 is deprecated.</p>
+<div class="paragraph">
+<p>See <a href="../install/install-platforms.html" class="xref page">Supported Platforms</a> for the complete list of supported platforms.</p>
 </div>
 </li>
 <li>
@@ -430,6 +443,10 @@ See <a href="../learn/security/on-the-wire-security.html#min-tls-version" class=
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.couchbase.com/browse/MB-55864" target="_blank" rel="noopener">MB-55864</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Memory exceeded quota error with ARRAY_AGG.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.couchbase.com/browse/MB-57215" target="_blank" rel="noopener">MB-57215</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OBJECT_ functions may return incorrect results.</p></td>
 </tr>
 </tbody>
 </table>
@@ -554,6 +571,21 @@ See <a href="../learn/security/on-the-wire-security.html#min-tls-version" class=
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.couchbase.com/browse/MB-55193" target="_blank" rel="noopener">MB-55193</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FunctionOverload parser results in false positives when it incorrectly flags function names with reserved function names as their prefix.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.couchbase.com/browse/MB-56748" target="_blank" rel="noopener">MB-56748</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eventing Bucket Backed Cache in the Advanced Accessor couchbase.get() not efficient for very large documents.
+The final implementation returns small documents with a speed up is 20-25X while large documents are returned with a speed up of 400-500X when using {"cache": true}.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.couchbase.com/browse/MB-56749" target="_blank" rel="noopener">MB-56749</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eventing writes to the wrong keyspace (_default._default) if the collection name is long (over 30 characters).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.couchbase.com/browse/MB-56750" target="_blank" rel="noopener">MB-56750</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As of 7.2, the curl() call no longer performs URL encoding.
+Older functions with a language compatibility of 6.6.2 still work.
+In some cases, an eventing function created in 7.1 might require a parameter added to the curl() call  "url_encode_version": "7.1.0" as the 7.1 release changed the 6.6.2 URL encoding method.</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -661,6 +693,31 @@ This happens when attempting to access invalid addresses or out-of-bounds data.
 For example, when term dictionary might be an empty byte slice.</p>
 <p class="tableblock"><strong>Workaround:</strong> For the errors, a retry logic on the application layer might help.
 However, there is no workaround for the intermittent crashes which Couchbase are investigating.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="analytics-service"><a class="anchor" href="#analytics-service"></a>Analytics Service</h3>
+<table id="table-known-issues-720-analyticsservice" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 27.4725%;">
+<col style="width: 72.5275%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Issue</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.couchbase.com/browse/MB-56058" target="_blank" rel="noopener">MB-56058</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Summary:</strong> The first version of the cost-based optimizer (CBO) focuses on optimizing SPJ (select-project-join) queries, or multi-inner-join subgraphs of such queries.
+For more complex queries, e.g. queries involving outer joins or complex correlated subqueries, some parts of the query will be handled by CBO and other parts will not be.
+As a result, query plans currently displayed for such queries will be missing CBO-provided cost and cardinality estimates, instead showing those values as <code>0</code>.
+Such queries will still have valid plans and will execute correctly, but their plans may not be as optimal as desired.</p>
+<p class="tableblock"><strong>Workaround:</strong> There is no workaround for this display issue.</p></td>
 </tr>
 </tbody>
 </table>

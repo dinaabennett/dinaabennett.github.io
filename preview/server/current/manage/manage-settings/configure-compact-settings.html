@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Auto-Compaction | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/manage/manage-settings/configure-compact-settings.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Auto-Compaction settings determine the &lt;em&gt;compaction process&lt;/em&gt;; whereby databases and their respective view-indexes are compacted.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -211,7 +212,7 @@ However, settings can be overridden on a per bucket basis.</p>
 <div class="paragraph">
 <p>Note that in Couchbase Server Enterprise Edition, auto-compaction does not apply to memory-optimized index storage, and there are no settings necessary for configuring the auto-compaction of Global Secondary Indexes using standard index storage.
 However, for installations of Couchbase Server Enterprise Edition running on Linux, note that hole punching is required to enable auto-compaction of Global Secondary Indexes using standard index storage.
-See <a href="../../learn/services-and-indexes/indexes/storage-modes.html#standard-index-storage" class="xref page">Standard Index Storage</a>, for information.</p>
+See <a href="#learn:services-and-indexes/indexes/storage-modes.adoc#standard-index-storage" class="xref unresolved">Standard Index Storage</a>, for information.</p>
 </div>
 </div>
 </div>
@@ -429,7 +430,7 @@ To specify when compaction is permitted to run, select appropriate <em>days of t
 <p>Note that whenever you change the compaction settings for the index, the system starts the global secondary index process on all the nodes.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="../../learn/services-and-indexes/indexes/storage-modes.html#standard-index-storage" class="xref page">Standard Index Storage</a> for information on append-only and circular write modes.</p>
+<p>See <a href="#learn:services-and-indexes/indexes/storage-modes.adoc#standard-index-storage" class="xref unresolved">Standard Index Storage</a> for information on append-only and circular write modes.</p>
 </div>
 </div>
 <div class="sect2">
@@ -495,7 +496,7 @@ Note that although the default interval for Ephemeral buckets is, as with Couchb
 </ul>
 </div>
 <div class="paragraph">
-<p>For more information, see <a href="../../learn/buckets-memory-and-storage/storage-settings.html" class="xref page">Storage Settings</a>.</p>
+<p>For more information, see <a href="../../learn/buckets-memory-and-storage/storage-settings.html" class="xref page">Storage Properties</a>.</p>
 </div>
 </div>
 </div>

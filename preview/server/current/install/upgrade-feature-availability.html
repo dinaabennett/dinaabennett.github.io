@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Feature Availability During Upgrade | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/install/upgrade-feature-availability.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="During the cluster-upgrade procedure, some features may not be available.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -236,10 +237,13 @@ When all nodes have been upgraded, usable for entire cluster.</p>
 <p class="tableblock">Note that pre-7.0 statistics are deleted from each node when the node is upgraded.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Magma</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../learn/buckets-memory-and-storage/storage-engines.html#storage-engine-magma" class="xref page">Magma</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not usable in mixed mode.
-Magma is a Developer Preview feature that is switched on per bucket.
 Magma should not be switched on until all nodes have been upgraded.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../learn/data/change-history.html" class="xref page">Change History</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Usable only with Magma, and therefore not usable in mixed mode.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../learn/data/durability.html#specifying-levels" class="xref page">Bucket-Assigned Durability Levels</a></p></td>
@@ -267,8 +271,17 @@ All nodes in the cluster must be upgraded, before new Analytics-Service features
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Query Service</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="../tools/query-workbench.html#index-advisor" class="xref page">Index Advisor</a> and <a href="../settings/query-settings.html" class="xref page">Memory-Usage Quota Setting</a> are usable in mixed mode.</p>
-<p class="tableblock"><a href="../n1ql/n1ql-language-reference/flex-indexes.html" class="xref page">Flex Indexes</a>, though not a new feature, are usable in mixed mode only if the cluster being upgraded is at least version 6.5.</p>
-<p class="tableblock">The <a href="../n1ql/n1ql-language-reference/cost-based-optimizer.html" class="xref page">Cost-Based Optimizer</a>, <a href="../n1ql/n1ql-language-reference/transactions.html" class="xref page">SQL++ Support for Couchbase Transactions</a>, and <a href="../n1ql/n1ql-language-reference/userfun.html" class="xref page">User-Defined Functions</a> are not usable in mixed mode.</p></td>
+<p class="tableblock"><a href="#n1ql:n1ql-language-reference/flex-indexes.adoc" class="xref unresolved">Flex Indexes</a>, though not a new feature, are usable in mixed mode only if the cluster being upgraded is at least version 6.5.</p>
+<p class="tableblock">The <a href="#n1ql:n1ql-language-reference/cost-based-optimizer.adoc" class="xref unresolved">n1ql:n1ql-language-reference/cost-based-optimizer.adoc</a>, <a href="#n1ql:n1ql-language-reference/transactions.adoc" class="xref unresolved">n1ql:n1ql-language-reference/transactions.adoc</a>, and <a href="#n1ql:n1ql-language-reference/userfun.adoc" class="xref unresolved">n1ql:n1ql-language-reference/userfun.adoc</a> are not usable in mixed mode.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../learn/clusters-and-availability/system-events.html" class="xref page">System Events</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">System Events can only be used when every node in the cluster is running a version of Couchbase Server that is 7.1 or later.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>network=external</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>network=external</code> option, used to specify an alternate address when using <code>cbbackupmgr</code>, <code>cbimport</code>, and <code>cbexport</code>, can be used in mixed mode.
+See <strong>Host Formats</strong> information in <a href="#backup-restore:cbbackupmgr.adoc" class="xref unresolved">cbbackupmgr</a>, <a href="#tools:cbimport.adoc" class="xref unresolved">cbimport</a>, and <a href="#tools:cbexport.adoc" class="xref unresolved">cbexport</a>.</p></td>
 </tr>
 </tbody>
 </table>

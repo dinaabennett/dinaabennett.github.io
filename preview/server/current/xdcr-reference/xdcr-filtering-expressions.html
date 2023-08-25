@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>XDCR Filtering Expressions | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/xdcr-reference/xdcr-filtering-expressions.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="XDCR filtering expressions allow a document to be included in or excluded from a filtered replication, based on the document&#x27;s fields and values.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -393,13 +394,13 @@ For example, the following expression uses <em>positive</em> lookahead to specif
 Note, however, that SQL++ does not support forward lookahead.</p>
 </div>
 <div class="paragraph">
-<p>SQL++ supports a number of pattern-matching functions in addition to <code>REGEXP_CONTAINS</code>: see <a href="../n1ql/n1ql-language-reference/patternmatchingfun.html" class="xref page">Pattern-matching Functions</a>.</p>
+<p>SQL++ supports a number of pattern-matching functions in addition to <code>REGEXP_CONTAINS</code>: see <a href="#n1ql:n1ql-language-reference/patternmatchingfun.adoc" class="xref unresolved">Pattern-matching Functions</a>.</p>
 </div>
 <div class="paragraph">
 <p><code>META</code> is one of a group of <em>reserved words</em> used by XDCR Advanced Filtering.
 For details, <a href="#reserved-words">Reserved Words</a>, below.
 <code>META</code> is also one of a larger group of reserved words used by SQL++.
-For details, see the page for SQL++ <a href="../n1ql/n1ql-language-reference/reservedwords.html" class="xref page">Reserved Words</a>.
+For details, see the page for SQL++ <a href="#n1ql:n1ql-language-reference/reservedwords.adoc" class="xref unresolved">Reserved Words</a>.
 Note that in SQL++, <code>META</code> provides access to a wider range of extended attributes.</p>
 </div>
 </div>
@@ -447,7 +448,7 @@ This would therefore include <code>airline_10</code>:</p>
 <div class="paragraph">
 <p>XDCR Advanced Filtering provides the single Collection Operator, <code>EXISTS</code>; which determines whether or not a specified field exists in the body of a document.
 SQL++ uses <code>EXISTS</code> on subclauses; and provides a variety of additional Collection Operators.
-For details, see the SQL++ page for <a href="../n1ql/n1ql-language-reference/collectionops.html" class="xref page">Collection Operators</a>.</p>
+For details, see the SQL++ page for <a href="#n1ql:n1ql-language-reference/collectionops.adoc" class="xref unresolved">Collection Operators</a>.</p>
 </div>
 </div>
 </div>
@@ -523,7 +524,7 @@ For details, see <a href="#reserved-words">Reserved Words</a>, below.</p>
 <h3 id="xdcr-logical-operators-comparison-with-sql"><a class="anchor" href="#xdcr-logical-operators-comparison-with-sql"></a>XDCR Logical Operators: Comparison with SQL++</h3>
 <div class="paragraph">
 <p>SQL++ provides the same Logical Operators as does XDCR Advanced Filtering.
-For details, see the SQL++ page for <a href="../n1ql/n1ql-language-reference/logicalops.html" class="xref page">Logical Operators</a>.</p>
+For details, see the SQL++ page for <a href="#n1ql:n1ql-language-reference/logicalops.adoc" class="xref unresolved">Logical Operators</a>.</p>
 </div>
 </div>
 </div>
@@ -663,7 +664,7 @@ For details, see <a href="#reserved-words">Reserved Words</a>, below.</p>
 <h3 id="xdcr-comparison-operators-comparison-with-sql"><a class="anchor" href="#xdcr-comparison-operators-comparison-with-sql"></a>XDCR Comparison Operators: Comparison with SQL++</h3>
 <div class="paragraph">
 <p>The Comparison Operators provided by XDCR Advanced Filtering are a subset of those provided by SQL++.
-For details, see the SQL++ page for <a href="../n1ql/n1ql-language-reference/comparisonops.html" class="xref page">Comparison Operators</a>.</p>
+For details, see the SQL++ page for <a href="#n1ql:n1ql-language-reference/comparisonops.adoc" class="xref unresolved">Comparison Operators</a>.</p>
 </div>
 </div>
 </div>
@@ -771,7 +772,7 @@ Note that the Field Selection Operator was used to specify the metadata <code>id
 <p>The Field Selection Operator is used in SQL++ with additional functionality: <em>nested expressions</em> support is provided.
 The Element Selection Operator is also used in SQL++ with additional functionality: negative indexing of arrays and the <code>*</code> operator are supported.
 SQL++ also provides <em>array slicing</em> that allows the building of sub-slices of arrays.
-For information, see the SQL++ page for <a href="../n1ql/n1ql-language-reference/nestedops.html" class="xref page">Nested Operators and Expressions</a>.</p>
+For information, see the SQL++ page for <a href="#n1ql:n1ql-language-reference/nestedops.adoc" class="xref unresolved">Nested Operators and Expressions</a>.</p>
 </div>
 </div>
 </div>
@@ -823,7 +824,7 @@ Divide left value by right value and return the remainder.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>For additional details on syntax and return values, see the SQL++ page for <a href="../n1ql/n1ql-language-reference/arithmetic.html" class="xref page">Arithmetic Operators</a>.</p>
+<p>For additional details on syntax and return values, see the SQL++ page for <a href="#n1ql:n1ql-language-reference/arithmetic.adoc" class="xref unresolved">Arithmetic Operators</a>.</p>
 </div>
 <div class="paragraph">
 <p>For example, the following filtering expression provides a successful match on documents whose <code>country</code> value is <code>United States</code> and whose <code>id</code> is an integer value that returns a value of less than or equal to <code>3</code>, when modulo <code>7</code> is applied:</p>
@@ -837,7 +838,7 @@ Divide left value by right value and return the remainder.</p>
 <h3 id="xdcr-arithmetic-operators-comparison-with-sql"><a class="anchor" href="#xdcr-arithmetic-operators-comparison-with-sql"></a>XDCR Arithmetic Operators: Comparison with SQL++</h3>
 <div class="paragraph">
 <p>SQL++ provides the same arithmetic operators, with the same semantics and return values.
-See the SQL++ page for <a href="../n1ql/n1ql-language-reference/arithmetic.html" class="xref page">Arithmetic Operators</a>.</p>
+See the SQL++ page for <a href="#n1ql:n1ql-language-reference/arithmetic.adoc" class="xref unresolved">Arithmetic Operators</a>.</p>
 </div>
 </div>
 </div>
@@ -864,7 +865,7 @@ However, the following SQL++ Number Functions do <em>not</em> apply to XDCR Adva
 </ul>
 </div>
 <div class="paragraph">
-<p>For information on all other functions, see the SQL++ page for <a href="../n1ql/n1ql-language-reference/numericfun.html" class="xref page">Number Functions</a>.</p>
+<p>For information on all other functions, see the SQL++ page for <a href="#n1ql:n1ql-language-reference/numericfun.adoc" class="xref unresolved">Number Functions</a>.</p>
 </div>
 </div>
 </div>
@@ -936,7 +937,7 @@ If created, the following hypothetical document provides a successful match:</p>
 <h3 id="xdcr-date-operators-comparison-with-sql"><a class="anchor" href="#xdcr-date-operators-comparison-with-sql"></a>XDCR Date Operators: Comparison with SQL++</h3>
 <div class="paragraph">
 <p>SQL++ date functions are <em>not</em> supported by XDCR Advanced Filtering.
-For information on SQL++ date functions, see the SQL++ page for <a href="../n1ql/n1ql-language-reference/datefun.html" class="xref page">Date Functions</a>.</p>
+For information on SQL++ date functions, see the SQL++ page for <a href="#n1ql:n1ql-language-reference/datefun.adoc" class="xref unresolved">Date Functions</a>.</p>
 </div>
 </div>
 </div>

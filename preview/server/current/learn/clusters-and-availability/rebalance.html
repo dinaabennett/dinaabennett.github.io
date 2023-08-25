@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Rebalance | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/learn/clusters-and-availability/rebalance.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="&lt;em&gt;Rebalance&lt;/em&gt; redistributes data, indexes, event processing, and query processing among available nodes.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -372,28 +373,29 @@ The effects on services other than the Data Service are described below.</p>
 Note that rebalance does not <em>move</em> indexes or replicas: instead, it <em>rebuilds</em> them in their new locations, using the latest data from the Data Service.</p>
 </div>
 <div class="paragraph">
-<p>In Couchbase Server 7.0 and later, the <em class="def">index redistribution</em> setting enables you to specify how Couchbase Server redistributes indexes on rebalance.
+<p>The <em class="def">index redistribution</em> setting enables you to specify how Couchbase Server redistributes indexes on rebalance.
 The setting may be established by means of the <a href="../../manage/manage-settings/general-settings.html#index-storage-mode" class="xref page">Couchbase Web Console</a> or the <a href="../../manage/manage-settings/general-settings.html#index-settings-via-rest" class="xref page">REST API</a>.</p>
 </div>
 <div class="paragraph">
-<p>The setting affects how indexes are redistributed in the following scenarios:</p>
+<p>The setting affects how indexes are redistributed in the following scenarios.
+Note that in Couchbase Server 7.2 and later, the setting affects partitioned and non-partitioned indexes equally.</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Rebalance after an index node is added</dt>
 <dd>
-<p>If the setting is enabled, existing partitioned and non-partitioned indexes are placed optimally across <em>all</em> index nodes in the cluster, including any new index nodes being added.
-If the setting is disabled, only partitioned indexes are redistributed.</p>
+<p>If the setting is enabled, existing indexes are placed optimally across <em>all</em> index nodes in the cluster, including any new index nodes being added.
+If the setting is disabled, no indexes are redistributed.</p>
 </dd>
 <dt class="hdlist1">Rebalance after a non-index node is added or removed</dt>
 <dd>
-<p>If the setting is enabled, partitioned and non-partitioned indexes are moved from heavily loaded nodes to nodes with free resources to achieve balanced distribution.
-If the setting is disabled, only partitioned indexes are redistributed.</p>
+<p>If the setting is enabled, indexes are moved from heavily loaded nodes to nodes with free resources to achieve balanced distribution.
+If the setting is disabled, no indexes are redistributed.</p>
 </dd>
 <dt class="hdlist1">Rebalance during index server group repair</dt>
 <dd>
-<p>With multiple server groups, when a group failure leads to all replicas being placed in a single server group, if the setting is enabled, partitioned and non-partitioned indexes are redistributed to ensure high availability across the server groups after repair.
-If the setting is disabled, only partitioned indexes are redistributed.</p>
+<p>With multiple server groups, when a group failure leads to all replicas being placed in a single server group, if the setting is enabled, indexes are redistributed to ensure high availability across the server groups after repair.
+If the setting is disabled, no indexes are redistributed.</p>
 </dd>
 </dl>
 </div>
@@ -404,7 +406,7 @@ If the setting is disabled, only partitioned indexes are redistributed.</p>
 <dl>
 <dt class="hdlist1">Rebalance when an index node is removed</dt>
 <dd>
-<p>Partitioned and non-partitioned indexes are moved on rebalance from removed nodes to nodes that continue as part of the cluster.
+<p>Indexes are moved on rebalance from removed nodes to nodes that continue as part of the cluster.
 Indexes that reside on non-removed nodes are unaffected by rebalance.</p>
 </dd>
 <dt class="hdlist1">Rebalance when index nodes are added and removed</dt>

@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Run a Simple Search with the REST API and curl/HTTP | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/search/simple-search-rest-api.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/search/simple-search-rest-api.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="You can use the REST API and a curl command to run a search against a Search index.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/search/pages/simple-search-rest-api.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/search/pages/simple-search-rest-api.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,7 +174,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Your Data</li>
+<li class="crumb">Add Search to Your Application - (work in progress)</li>
 <li class="crumb"><a href="search.html">Add Search to Your Application</a></li>
 <li class="crumb"><a href="run-searches.html">Run a Search With a Search Index</a></li>
 <li class="crumb"><a href="simple-search-rest-api.html">Run a Simple Search with the REST API and curl/HTTP</a></li>
@@ -210,10 +210,7 @@ You can use the REST API and a curl command to run a search against a Search ind
 <div class="ulist">
 <ul>
 <li>
-<p>You have the Search Service enabled on a node in your database.</p>
-</li>
-<li>
-<p>Your user account has the <code>Search Admin</code> or <code>Search Reader</code> role.</p>
+<p>You&#8217;ve deployed the Search Service on a node in your database.</p>
 </li>
 <li>
 <p>You installed the Couchbase command-line tool (CLI).</p>
@@ -249,7 +246,7 @@ You can use the REST API and a curl command to run a search against a Search ind
 <p>Enter your username, password, and the Search Service endpoint on port <code>8094</code> with the name of the index you want to query:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/search/examples/run-search-header.sh">curl -s -XPUT -H "Content-Type: application/json" \
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console" data-source-url="file:///C:/Docs/docs-devex/modules/search/examples/run-search-header.sh">curl -s -XPUT -H "Content-Type: application/json" \
     -u $CB_USERNAME:$CB_PASSWORD http://$CB_HOSTNAME:8094/api/index/$INDEX-NAME/query -d \</code></pre>
 </div>
 </div>
@@ -263,19 +260,19 @@ You can use the REST API and a curl command to run a search against a Search ind
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-You can copy the JSON for Query Request from the Couchbase Server or Couchbase Capella UI to use in your REST API call.
+You can copy the JSON for a Query Request from the Couchbase Server or Couchbase Capella UI to use in your REST API call.
 For more information about how to perform a search with the UI, see <a href="simple-search-ui.html" class="xref page">Run A Simple Search with the Capella UI</a>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>In the following example, the JSON payload queries an index named <code>landmark-content-index</code> on the <code>travel-sample</code> bucket for the strings <code>view</code>, <code>food</code>, and <code>beach</code>:</p>
+<p>In the following example, the JSON payload queries an index named <code>landmark-content-index</code> for the strings <code>view</code>, <code>food</code>, and <code>beach</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/search/examples/run-search-payload.sh">curl -XPOST -H "Content-Type: application/json" \
-  -u $CB_USERNAME:$CB_PASSWORD http://$CB_HOSTNAME:8094/api/index/travel-sample.inventory.landmark-content-index/query \
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console" data-source-url="file:///C:/Docs/docs-devex/modules/search/examples/run-search-payload.sh">curl -XPOST -H "Content-Type: application/json" \
+  -u $CB_USERNAME:$CB_PASSWORD http://$CB_HOSTNAME:8094/api/index/landmark-content-index/query \
   -d '{
     "explain": true,
     "fields": [
@@ -302,10 +299,10 @@ For more information about how to perform a search with the UI, see <a href="sim
 <h2 id="next-steps"><a class="anchor" href="#next-steps"></a>Next Steps</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you don&#8217;t get the search results you were expecting, you can change the <a href="search-request-params.html" class="xref page">JSON payload for your Search query</a>.</p>
+<p>If you don&#8217;t get the search results you were expecting, you can change the JSON payload <a href="search-index-params.html" class="xref page">for your Search index</a> or <a href="search-request-params.html" class="xref page">for your Search query</a>.</p>
 </div>
 <div class="paragraph">
-<p>You can also <a href="customize-index.html" class="xref page">Customize a Search Index with the Capella UI</a> or modify the <a href="search-index-params.html" class="xref page">JSON payload for your Search index</a>.</p>
+<p>You can also <a href="customize-index.html" class="xref page">Customize a Search Index with the Capella UI</a>.</p>
 </div>
 </div>
 </div>

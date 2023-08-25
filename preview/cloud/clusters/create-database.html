@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Create a Database | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/clusters/create-database.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/clusters/create-database.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Create a database to store and access data in Couchbase Capella.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -174,7 +174,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Configure Database</li>
+<li class="crumb">Manage Your Database</li>
 <li class="crumb">Manage Databases</li>
 <li class="crumb"><a href="create-database.html">Create a Database</a></li>
 </ul>
@@ -347,6 +347,9 @@ In most cases, you can accept the default CIDR block.</p>
 <div class="paragraph">
 <p>Using service groups, you can create custom configurations with granular control over sizing and service functionality.</p>
 </div>
+<div class="paragraph">
+<p>For more information about the node configuration options available for each cloud provider, see the Couchbase <a href="../reference/aws.html#configuration-options" class="xref page">AWS</a>, <a href="../reference/gcp.html#configuration-options" class="xref page">GCP</a>, and <a href="../reference/azure.html#configuration-options" class="xref page">Microsoft Azure</a> reference pages.</p>
+</div>
 <div class="openblock">
 <div class="content">
 <div class="olist loweralpha">
@@ -412,6 +415,23 @@ If you&#8217;re using the Ultra disk type, you can choose between fixed storage 
 </li>
 <li>
 <p>Select the <strong>IOPS</strong>.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Adjusting the IOPS rate affects performance and cost.
+When creating or modifying a database with AWS gp3, AWS io2, or Azure Ultra Disk and choosing a storage option, Capella uses recommended defaults for the IOPS field.
+You can replace the default IOPS value with one higher than the default but not lower.
+For the recommended IOPS values for databases using AWS gp3, AWS io2, or Azure Ultra Disk, see <a href="scale-database.html#IOPS-Defaults" class="xref page">IOPS Defaults</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -432,18 +452,6 @@ The IOPS for the Ultra disk type can be set, but the possible range depends on t
 </ol>
 </div>
 </div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-For more detailed information about the node configuration options available for each cloud provider, see the Capella <a href="../reference/aws.html#configuration-options" class="xref page">AWS</a>, <a href="../reference/gcp.html#configuration-options" class="xref page">GCP</a>, and <a href="../reference/azure.html#configuration-options" class="xref page">Microsoft Azure</a> reference documentation.
-</td>
-</tr>
-</table>
 </div>
 </li>
 <li>

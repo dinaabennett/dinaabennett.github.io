@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
-<title>Deferring Indexes | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/guides/defer-index.html">
+<title>Defer Indexes | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/cloud/guides/defer-index.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="How to create deferred indexes and build them later.">
@@ -42,7 +42,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -64,7 +64,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -124,7 +124,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/guides/pages/defer-index.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/guides/pages/defer-index.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -183,16 +183,18 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="intro.html">Developer Guides</a></li>
-<li class="crumb"><a href="indexes.html">Indexes</a></li>
-<li class="crumb"><a href="defer-index.html">Deferring Indexes</a></li>
+<li class="crumb">Query Your Data</li>
+<li class="crumb"><a href="../n1ql/query.html">Query Your Database</a></li>
+<li class="crumb"><a href="../clusters/query-service/query-service.html">Use the Query Service</a></li>
+<li class="crumb"><a href="../learn/services-and-indexes/indexes/global-secondary-indexes.html">Using Indexes</a></li>
+<li class="crumb"><a href="indexes.html">Create and Modify Indexes</a></li>
+<li class="crumb"><a href="defer-index.html">Defer Indexes</a></li>
 </ul>
 </nav>
 </div>
 <article class="doc">
 <div class="page-heading-title">
-<h1 class="page">Deferring Indexes</h1>
+<h1 class="page">Defer Indexes</h1>
 <div class="labels">
 <ul><li class="guide"><span><i class="far fa-check-square"></i> how-to</span></li>
 </ul>
@@ -233,7 +235,7 @@ Read the following for further information about the tools available for editing
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../clusters/query-service/query-workbench.html" class="xref page">Query Workbench</a></p>
+<p><a href="../clusters/query-service/query-workbench.html" class="xref page">Query Tab</a></p>
 </li>
 </ul>
 </div>
@@ -297,7 +299,7 @@ A N1QL statement enables you to create indexes in <em>any</em> collection and sc
 <div class="paragraph">
 <div class="title">Context</div>
 <p>For this example, set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="paragraph">
 <div class="title">Queries</div>
@@ -305,7 +307,7 @@ For more information, see <a href="select.html#query-context" class="xref page">
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/create-idx-defer-1.n1ql">CREATE INDEX idx_landmark_country
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/create-idx-defer-1.n1ql">CREATE INDEX idx_landmark_country
   ON landmark(country)
   USING GSI
   WITH {"defer_build":true};</code></pre>
@@ -313,7 +315,7 @@ For more information, see <a href="select.html#query-context" class="xref page">
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/create-idx-defer-2.n1ql">CREATE INDEX idx_landmark_name 
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/create-idx-defer-2.n1ql">CREATE INDEX idx_landmark_name 
   ON landmark(name)
   USING GSI
   WITH {"defer_build":true};</code></pre>
@@ -321,7 +323,7 @@ For more information, see <a href="select.html#query-context" class="xref page">
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/create-idx-defer-3.n1ql">CREATE PRIMARY INDEX idx_landmark_primary
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/create-idx-defer-3.n1ql">CREATE PRIMARY INDEX idx_landmark_primary
   ON landmark
   USING GSI
   WITH {"defer_build":true};</code></pre>
@@ -476,7 +478,7 @@ For more information, see <a href="select.html#query-context" class="xref page">
 </div>
 </div>
 <div class="sect1">
-<h2 id="building-a-deferred-index"><a class="anchor" href="#building-a-deferred-index"></a>Building a Deferred Index</h2>
+<h2 id="build-a-deferred-index"><a class="anchor" href="#build-a-deferred-index"></a>Build a Deferred Index</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can build one or more deferred primary or secondary indexes using a SQL++ statement.
@@ -534,7 +536,7 @@ A N1QL statement enables you to build indexes in <em>any</em> collection and sco
 <div class="paragraph">
 <div class="title">Context</div>
 <p>For this example, set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="paragraph">
 <div class="title">Queries</div>
@@ -542,7 +544,7 @@ For more information, see <a href="select.html#query-context" class="xref page">
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/build-idx-single.n1ql">BUILD INDEX ON landmark(idx_landmark_country) USING GSI;</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/build-idx-single.n1ql">BUILD INDEX ON landmark(idx_landmark_country) USING GSI;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -550,7 +552,7 @@ For more information, see <a href="select.html#query-context" class="xref page">
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/build-idx-multiple.n1ql">BUILD INDEX ON hotel(idx_landmark_name, idx_landmark_primary);</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/build-idx-multiple.n1ql">BUILD INDEX ON hotel(idx_landmark_name, idx_landmark_primary);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -650,7 +652,7 @@ For more information, see <a href="select.html#query-context" class="xref page">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../../server/current/learn/services-and-indexes/indexes/global-secondary-indexes.html" class="xref page">Using Indexes</a></p>
+<p><a href="#server:learn:services-and-indexes/indexes/global-secondary-indexes.adoc" class="xref unresolved">Using Indexes</a></p>
 </li>
 </ul>
 </div>
@@ -693,7 +695,7 @@ For more information, see <a href="select.html#query-context" class="xref page">
                     <span class="prev"><a href="place-index.html">Index Placement</a></span>
 
 
-                    <span class="next"><a href="select-index.html">Selecting Indexes</a></span>
+                    <span class="next"><a href="select-index.html">Select Indexes</a></span>
 
 </article>
 </main>

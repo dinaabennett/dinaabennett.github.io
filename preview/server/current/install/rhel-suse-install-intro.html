@@ -6,10 +6,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
-<title>Install Couchbase Server on Red Hat Enterprise and CentOS | Couchbase Docs</title>
+<title>Install Couchbase Server on Red Hat Enterprise | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/install/rhel-suse-install-intro.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
-<meta name="description" content="Couchbase Server can be installed on Red Hat Enterprise Linux and CentOS Linux for production and development use-cases.">
+<meta name="description" content="Couchbase Server can be installed on Red Hat Enterprise Linux for production and development use-cases.">
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
 
 
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -170,13 +171,13 @@
 <li class="crumb">Install &amp; Upgrade</li>
 <li class="crumb"><a href="install-intro.html">Installation</a></li>
 <li class="crumb"><a href="install-linux.html">Install on Linux</a></li>
-<li class="crumb"><a href="rhel-suse-install-intro.html">Red Hat &amp; CentOS</a></li>
+<li class="crumb"><a href="rhel-suse-install-intro.html">Red Hat</a></li>
 </ul>
 </nav>
 </div>
 <article class="doc">
 <div class="page-heading-title">
-<h1 class="page">Install Couchbase Server on Red Hat Enterprise and CentOS</h1>
+<h1 class="page">Install Couchbase Server on Red Hat Enterprise</h1>
 <div class="labels">
 <ul></ul>
 </div>
@@ -191,12 +192,12 @@
 <div class="sectionbody">
 <div class="quoteblock abstract">
 <blockquote>
-Couchbase Server can be installed on Red Hat Enterprise Linux and CentOS Linux for production and development use-cases.
+Couchbase Server can be installed on Red Hat Enterprise Linux for production and development use-cases.
 Root and non-root installations are supported.
 </blockquote>
 </div>
 <div class="paragraph">
-<p>Use the instructions on this page to install Couchbase Server on Red Hat Enterprise Linux and CentOS platforms using Couchbase-provided RPM packages.
+<p>Use the instructions on this page to install Couchbase Server on Red Hat Enterprise Linux using Couchbase-provided RPM packages.
 The instructions support both Enterprise and Community <a href="https://www.couchbase.com/products/editions" target="_blank" rel="noopener">editions</a>.</p>
 </div>
 <div class="paragraph">
@@ -238,7 +239,7 @@ However, the procedures on this page assume the following:</p>
 <div class="sect2">
 <h3 id="install-using-yum"><a class="anchor" href="#install-using-yum"></a>Install Using Yum</h3>
 <div class="paragraph">
-<p>The Red Hat package manager (<code>yum</code>) provides the simplest and most comprehensive way to install Couchbase Server on Red Hat Enterprise and CentOS platforms.
+<p>The Red Hat package manager (<code>yum</code>) provides the simplest and most comprehensive way to install Couchbase Server on Red Hat Enterprise.
 This method involves downloading and installing a small meta package from Couchbase, which <code>yum</code> can then use to automatically download and install Couchbase Server and all of its dependencies.</p>
 </div>
 <div class="olist arabic">
@@ -399,7 +400,7 @@ Refer to <a href="startup-shutdown.html" class="xref page">Couchbase Server Star
 <div class="sect2">
 <h3 id="install-using-rpm-package"><a class="anchor" href="#install-using-rpm-package"></a>Install Using RPM Package</h3>
 <div class="paragraph">
-<p>Install Couchbase Server on Red Hat Enterprise and CentOS using a full RPM package provided by Couchbase.</p>
+<p>Install Couchbase Server on Red Hat Enterprise using a full RPM package provided by Couchbase.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -434,7 +435,7 @@ Refer to <a href="startup-shutdown.html" class="xref page">Couchbase Server Star
 <h2 id="rh-nonroot-nonsudo-"><a class="anchor" href="#rh-nonroot-nonsudo-"></a>Installing as Non-Root</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Non-root installation is performed identically for all supported Linux distributions, including Red Hat Enterprise and CentOS.
+<p>Non-root installation is performed identically for all supported Linux distributions, including Red Hat Enterprise.
 For instructions, see <a href="non-root.html" class="xref page">Non-Root Install and Upgrade</a>.</p>
 </div>
 </div>
@@ -443,7 +444,7 @@ For instructions, see <a href="non-root.html" class="xref page">Non-Root Install
 <h2 id="setting-max-process-limits"><a class="anchor" href="#setting-max-process-limits"></a>Setting Max Process Limits</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>On Red Hat Enterprise and CentOS, it&#8217;s recommended that you increase the maximum process limits for Couchbase.</p>
+<p>On Red Hat Enterprise, it&#8217;s recommended that you increase the maximum process limits for Couchbase.</p>
 </div>
 <div class="paragraph">
 <p>To set the process limits, create a <code>.conf</code> file in the <code>/etc/security/limits.d</code> directory (such as <code>91-couchbase.conf</code>), and add the following values:</p>
@@ -453,6 +454,9 @@ For instructions, see <a href="non-root.html" class="xref page">Non-Root Install
 <pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">couchbase soft nproc 4096
 couchbase hard nproc 16384</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>For more information (provided in the context of <em>non-root</em> install and upgrade), see <a href="non-root.html#establish-limits-for-user-processes-and-file-descriptors" class="xref page">Establish Limits for User Processes and File Descriptors</a>.</p>
 </div>
 </div>
 </div>

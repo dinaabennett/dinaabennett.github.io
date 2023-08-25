@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Couchbase Capella Release Notes | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/release-notes/release-notes.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/release-notes/release-notes.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
@@ -32,7 +32,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +54,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -192,6 +192,185 @@
 <ul id="contributorList"></ul>
 <span  id="otherContributor"> + </span>
 </div><div class="sect1">
+<h2 id="august-2023-changelog"><a class="anchor" href="#august-2023-changelog"></a>August 2023 Changelog</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>On-demand and Scheduled Hibernation of Provisioned Databases (On/Off)</p>
+<div class="paragraph">
+<p>You can now turn off your non-production provisioned databases when you are not using them, allowing you to save on costs. Turning off your database turns off the compute for your cluster but the storage remains&#8201;&#8212;&#8201;this means that all of your data, schema (buckets, scopes, collections), and indexes remain, as well as your cluster configuration, including users and allow lists.  You can turn on and off your cluster <a href="../clusters/off-on-database.html" class="xref page">on-demand</a> or using a <a href="../clusters/off-on-schedule.html" class="xref page">schedule</a>.  For example, you can set a schedule for your development cluster to be on from 9 am to 5 pm on week days and off at all other times.  Any linked App Service will also be turned off when the linked database is turned off.</p>
+</div>
+</li>
+<li>
+<p>Capella integration on Vercel marketplace</p>
+<div class="paragraph">
+<p>Couchbase Capella is now available on <a href="https://vercel.com/integrations">Vercel’s Integration Marketplace</a>.
+This seamless integration will allow developers to fully leverage the strengths of both technologies, enabling them to create web applications that are scalable, resilient, and performant.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="july-2023-changelog"><a class="anchor" href="#july-2023-changelog"></a>July 2023 Changelog</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Expanded Google Cloud region availability</p>
+<div class="paragraph">
+<p>Couchbase Capella now supports the GCP Tel Aviv (<code>me-west1</code>) region.</p>
+</div>
+</li>
+<li>
+<p>Couchbase Capella has a refreshed Data Tools tab. Highlights include:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../clusters/data-service/import-data-documents.html" class="xref page">Simplified Data Import</a></p>
+</li>
+<li>
+<p><a href="../clusters/data-service/manage-documents.html" class="xref page">Streamlined Document Management</a></p>
+</li>
+<li>
+<p><a href="../clusters/query-service/query-workbench.html#query-editor" class="xref page">Integrated visual interface for query development and testing</a></p>
+</li>
+<li>
+<p><a href="../clusters/query-service/query-workbench.html#insights-sidebar" class="xref page">Schema browser</a></p>
+</li>
+<li>
+<p><a href="../clusters/query-service/query-workbench.html#index-advice" class="xref page">Performance Optimization</a></p>
+</li>
+<li>
+<p><a href="../clusters/query-service/query-workbench.html#index-advice" class="xref page">Index Advisor window</a></p>
+</li>
+<li>
+<p><a href="../clusters/query-service/query-workbench.html#query-chart" class="xref page">View Charts</a></p>
+</li>
+<li>
+<p>Improved creation of Search Index</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Changes to IOPS and Storage Auto-Expansion</p>
+<div class="paragraph">
+<p>To further enhance database performance, reliability, and availability, IOPS and Storage Auto-Expansion have the following changes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../clusters/scale-database.html#Storage-Auto-Expansion" class="xref page">Storage Auto-Expansion</a> is now mandatory for new databases in Capella. With Storage Auto-Expansion turned on, Couchbase bills you only for the additional storage capacity when the limit increase triggers.</p>
+</li>
+<li>
+<p>Capella now automatically adjusts the IOPS to match the <a href="../clusters/scale-database.html#IOPS-Defaults" class="xref page">recommended settings</a> for the storage capacity of your database. You can replace the default IOPS value in the UI with a value that&#8217;s higher than the default but not lower.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Expanded Microsoft Azure region availability</p>
+<div class="paragraph">
+<p>Couchbase Capella supports four new Azure regions, including:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>East US 2 (Virginia)</p>
+</li>
+<li>
+<p>West US 2 (Washington)</p>
+</li>
+<li>
+<p>South Central US (Texas)</p>
+</li>
+<li>
+<p>East Asia (Hong Kong)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>For a list of all 15 Azure regions that Capella now supports, see <a href="../reference/azure.html#supported-regions" class="xref page">Microsoft Azure Supported Regions</a>.</p>
+</div>
+</li>
+<li>
+<p>Single Sign-On (SSO) enhancements</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Support for Google Workspaces and OneLogin.</p>
+<div class="paragraph">
+<p>The list of supported identity providers is now:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Microsoft Azure AD</p>
+</li>
+<li>
+<p>Okta</p>
+</li>
+<li>
+<p>Ping</p>
+</li>
+<li>
+<p>CyberArk</p>
+</li>
+<li>
+<p>Google Workspaces</p>
+</li>
+<li>
+<p>OneLogin</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>To configure Capella with any of these supported identity providers, see <a href="../organizations/ui-auth/add-sso-auth.html" class="xref page">Add Federated and SSO Authentication</a>.</p>
+</div>
+</li>
+<li>
+<p>A generic SAML integration feature that allows integration with your SAML 2.0 provider, even if it&#8217;s not in the supported identity provider list.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+While you can configure Capella with other SAML identity providers, Couchbase provides instructions and support for only those identity providers on the supported identity provider list.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Backups can now be downloaded from Capella</p>
+<div class="paragraph">
+<p>You can now <a href="../clusters/backup-restore.html#downloading-backups" class="xref page">download backups</a> and store or use them outside Capella.
+Downloads are zip archive files of on-demand bucket backups or completed backup cycles of scheduled bucket backups.
+When downloaded onto your machine, you can store backups for retention or availability requirements.
+Use <a href="../reference/command-line-tools.html#cbbackupmgr" class="xref page">cbbackupmgr</a> to restore data to another Couchbase database.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="june-2023-changelog"><a class="anchor" href="#june-2023-changelog"></a>June 2023 Changelog</h2>
 <div class="sectionbody">
 <div class="ulist">
@@ -499,7 +678,7 @@ When selected, the cost optimized retention policy applies to your bucket backup
 </div>
 </div>
 <div class="paragraph">
-<p>To configure Capella with any of these supported identity providers, see <a href="../organizations/ui-auth/add-sso-auth.html" class="xref page">Add Federated &amp; SSO Authentication</a>.</p>
+<p>To configure Capella with any of these supported identity providers, see <a href="../organizations/ui-auth/add-sso-auth.html" class="xref page">Add Federated and SSO Authentication</a>.</p>
 </div>
 </li>
 <li>
@@ -655,7 +834,7 @@ Apache Parquet is an open source data file format designed for efficient data st
 </div>
 <div class="paragraph">
 <p>For more information about SSO for Capella, see <a href="../organizations/ui-auth/capella-ui-auth.html#federated-sso-authentication" class="xref page">Capella UI Authentication | Federated &amp; SSO Authentication</a>.
-To configure your identity provider with Capella, see <a href="../organizations/ui-auth/add-sso-auth.html" class="xref page">Add Federated &amp; SSO Authentication</a>.</p>
+To configure your identity provider with Capella, see <a href="../organizations/ui-auth/add-sso-auth.html" class="xref page">Add Federated and SSO Authentication</a>.</p>
 </div>
 </li>
 <li>

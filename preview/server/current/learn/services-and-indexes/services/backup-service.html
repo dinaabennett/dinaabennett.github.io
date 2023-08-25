@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Backup Service | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/learn/services-and-indexes/services/backup-service.html">
 <link rel="stylesheet" href="../../../../../_/css/site.css">
 <script src="../../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="The Backup Service allows full and incremental data-backups to be scheduled, and also allows the scheduling of &lt;em&gt;merges&lt;/em&gt; of previously made data-backups.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -263,6 +264,10 @@ A plan contains the following information:</p>
 <p>The data of which services is to be backed up.</p>
 </li>
 <li>
+<p>The storage location of the backup. This can be either <code>filesystem</code> or <code>cloud</code> storage.<br>
+Selecting <code>cloud</code> storage for the backup location will require additional parameters such as the name of the bucket for storing the backup, and the access credentials.</p>
+</li>
+<li>
 <p>The <em>schedule</em> on which backups (or backups and merges) will be performed.</p>
 </li>
 <li>
@@ -279,7 +284,7 @@ Backups can be <em>full</em> or <em>incremental</em>.</p>
 <div class="paragraph">
 <p>A <em>repository</em> is a location that contains backed up data.
 The location must be accessible to all nodes in the cluster, and must be assigned a name that is unique across the cluster.
-A repository is defined with reference either to <em>a specific bucket</em>, or to <em>all buckets on the cluster</em>.
+A repository is defined with reference either to <em>a specific bucket</em>, or to <em>all buckets</em> in the cluster_.
 Data from each specified bucket will be backed up in the specified repository.</p>
 </div>
 <div class="paragraph">

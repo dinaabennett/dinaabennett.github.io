@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Manage Users, Groups, and Roles | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/manage/manage-security/manage-users-and-roles.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Couchbase Server allows defined &lt;em&gt;users&lt;/em&gt; to be assigned roles, which permit access to resources.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -1156,8 +1157,43 @@ http://10.143.192.101:8091/settings/rbac/users/local/dgreen \
 <div class="paragraph">
 <p>This specifies that the user <code>dgreen</code> should be locally established, with the given password and the <code>ro_admin</code> role.</p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="retrieve-a-local-user-with-the-rest-api"><a class="anchor" href="#retrieve-a-local-user-with-the-rest-api"></a>Retrieve a Local User, with the REST API</h4>
 <div class="paragraph">
-<p>If required, the <code>GET /settings/rbac/users</code> method and URI (described above) can now be used to verify that the specified user has been added.</p>
+<p>The <code>GET /settings/rbac/users</code> method and URI can be used to list current users:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>curl -v -X GET -u Administrator:password http://10.143.192.101:8091/settings/rbac/users | jq '.'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If successful, the call returns the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[
+  {
+    "id": "dgreen",
+    "domain": "local",
+    "roles": [
+      {
+        "role": "ro_admin",
+        "origins": [
+          {
+            "type": "user"
+          }
+        ]
+      }
+    ],
+    "groups": [],
+    "external_groups": [],
+    "uuid": "aad6c6df-bf03-428b-8850-2e4171ec88f2",
+    "password_change_date": "2023-07-24T07:39:09.000Z"
+  }
+]</pre>
+</div>
 </div>
 </div>
 <div class="sect3">

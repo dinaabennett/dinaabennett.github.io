@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Server Group Awareness | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/learn/clusters-and-availability/groups.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Individual server-nodes can be assigned to specific &lt;em&gt;groups&lt;/em&gt;, within a Couchbase Cluster.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -369,7 +370,7 @@ Note, however, that if Group 2 were now to go offline, the data originally activ
 <p>Indexes and index replicas can only be located on nodes that run the Index Service.</p>
 </div>
 <div class="paragraph">
-<p>As described in <a href="../services-and-indexes/indexes/index-replication.html#index-replication" class="xref page">Index Replication</a>, the Index Service allows index replicas to be defined in either of two ways:</p>
+<p>As described in <a href="#learn:services-and-indexes/indexes/index-replication.adoc#index-replication" class="xref unresolved">Index Replication</a>, the Index Service allows index replicas to be defined in either of two ways:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -394,7 +395,7 @@ This is accomplished by providing, as the argument to the <code>WITH</code> clau
 </ul>
 </div>
 <div class="paragraph">
-<p>Examples of these different forms of replica-definition are provided in <a href="../services-and-indexes/indexes/index-replication.html#index-replication" class="xref page">Index Replication</a>.</p>
+<p>Examples of these different forms of replica-definition are provided in <a href="#learn:services-and-indexes/indexes/index-replication.adoc#index-replication" class="xref unresolved">Index Replication</a>.</p>
 </div>
 <div class="paragraph">
 <p>If the node-locations for index and replicas <em>are</em> specified, by means of the <code>WITH</code> clause and node-array, this user-defined topology is duly followed in the locating of index and replicas across the cluster, and any server groups that may have been defined.
@@ -408,7 +409,7 @@ Such distributions are exemplified as follows.</p>
 <h3 id="optimal-distribution"><a class="anchor" href="#optimal-distribution"></a>Optimal Distribution</h3>
 <div class="paragraph">
 <p>When the number of index replicas created for a given index is at least one less than the total number of groups for the cluster, and each group contains sufficient nodes running the Index Server, automatic distribution ensures that each index and index replica resides on its own group.
-(Indexes and index replicas always exist each on their own Index Server node, with index-creation failing if there is an insufficiency of such nodes to accommodate the specified number of index replicas &#8212; see <a href="../services-and-indexes/indexes/index-replication.html#index-replication" class="xref page">Index Replication</a>.)</p>
+(Indexes and index replicas always exist each on their own Index Server node, with index-creation failing if there is an insufficiency of such nodes to accommodate the specified number of index replicas &#8212; see <a href="#learn:services-and-indexes/indexes/index-replication.adoc#index-replication" class="xref unresolved">Index Replication</a>.)</p>
 </div>
 <div class="paragraph">
 <p>For example:</p>

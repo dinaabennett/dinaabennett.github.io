@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Change History | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/learn/data/change-history.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="When Magma storage is used for a bucket, the changes made to documents within the bucket&#x27;s collections can be recorded, in a &lt;em&gt;change history&lt;/em&gt;.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -202,7 +203,8 @@ When Magma storage is used for a bucket, the changes made to documents within th
 <p>When <a href="../buckets-memory-and-storage/storage-engines.html#storage-engine-magma" class="xref page">Magma</a> storage is used for a bucket, the changes made to documents within the bucket&#8217;s collections can be recorded, in a <em>change history</em>.
 The change history resides on disk.
 Its capacity is administrator-specified.
-When the change history is full, old records are automatically removed (by means of compaction), to allow space for new records.</p>
+When the change history is full, old records are automatically removed (by means of compaction), to allow space for new records.
+(This feature is sometimes referred to as <em>Change Data Capture</em>, or <em>CDC</em>.)</p>
 </div>
 <div class="paragraph">
 <p>Change history can be either <em>on</em> or <em>off</em>.
@@ -318,7 +320,8 @@ Output indicates a status of <code>true</code> (change history is <em>on</em>) o
 See the <a href="../../cli/cbstats/cbstats-collections.html" class="xref page">collections</a> and <a href="../../cli/cbstats/cbstats-collections-details.html" class="xref page">collections-details</a> reference pages for <a href="../../cli/cbstats-intro.html" class="xref page">cbstats</a>.</p>
 </div>
 <div class="paragraph">
-<p>To access the change history and examine its contents, use the <a href="#4.1@kafka-connector::index.adoc" class="xref unresolved">Kafka 4.1 Connector</a>.</p>
+<p>To access the change history and examine its contents, use the <a href="#4.1@kafka-connector::index.adoc" class="xref unresolved">Kafka 4.1 Connector</a>.
+Note that this provides the <em>only</em> way in which the change history can be accessed.</p>
 </div>
 </div>
 <div class="sect2">

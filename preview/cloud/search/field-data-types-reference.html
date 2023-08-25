@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Field Data Types | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/search/field-data-types-reference.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/search/field-data-types-reference.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="You can assign a data type to a field to tell the Search Service how to analyze its data.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/search/pages/field-data-types-reference.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/search/pages/field-data-types-reference.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,7 +174,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Your Data</li>
+<li class="crumb">Add Search to Your Application - (work in progress)</li>
 <li class="crumb"><a href="search.html">Add Search to Your Application</a></li>
 <li class="crumb"><a href="customize-index.html">Customize a Search Index with the Capella UI</a></li>
 <li class="crumb"><a href="field-data-types-reference.html">Field Data Types</a></li>
@@ -204,6 +204,9 @@ You can assign a data type to a field to tell the Search Service how to analyze 
 <p>When you <a href="create-child-field.html" class="xref page">create a child field</a> on a <a href="customize-index.html#type-mappings" class="xref page">type mapping</a>, you need to set a field&#8217;s data type.</p>
 </div>
 <div class="paragraph">
+<p>When you create a Search index and don&#8217;t set a data type for a field, the Search Service automatically assigns a field data type.</p>
+</div>
+<div class="paragraph">
 <p>The following field data types are available:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -228,7 +231,7 @@ You can assign a data type to a field to tell the Search Service how to analyze 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">datetime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The field contains a date/time value that matches the format of a xref:[Date/Time Parser] in the index.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The field contains a date/time value that matches the format of a <a href="customize-index.html#date-time" class="xref page">Date/Time Parser</a> in the index.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>

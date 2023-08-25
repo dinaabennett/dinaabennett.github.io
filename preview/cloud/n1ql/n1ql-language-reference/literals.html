@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Literals | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/n1ql/n1ql-language-reference/literals.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/n1ql/n1ql-language-reference/literals.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Literal values include strings, numbers, TRUE, FALSE, NULL, and MISSING.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/n1ql/pages/n1ql-language-reference/literals.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/n1ql/pages/n1ql-language-reference/literals.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,8 +174,9 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../../index.html">Couchbase Capella</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="../query.html">Query</a></li>
+<li class="crumb">Query Your Data</li>
+<li class="crumb"><a href="../query.html">Query Your Database</a></li>
+<li class="crumb"><a href="../../clusters/query-service/query-service.html">Use the Query Service</a></li>
 <li class="crumb"><a href="index.html">SQL++ Language Reference</a></li>
 <li class="crumb"><a href="literals.html">Literals</a></li>
 </ul>
@@ -232,7 +233,7 @@ Every value also has a "truth" value; these truth value conversions are explaine
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/n1ql.ebnf#L78">boolean ::= 'TRUE' | 'FALSE'</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/n1ql.ebnf#L83">boolean ::= 'TRUE' | 'FALSE'</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -251,7 +252,7 @@ These values are case-insensitive.</p>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/n1ql.ebnf#L62">number ::= '-'? integer fraction? exponent?</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/n1ql.ebnf#L67">number ::= '-'? integer fraction? exponent?</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -261,7 +262,7 @@ These values are case-insensitive.</p>
 </div>
 <div id="int" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/n1ql.ebnf#L66">integer ::= [0-9] | [1-9] [0-9]+</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/n1ql.ebnf#L71">integer ::= [0-9] | [1-9] [0-9]+</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -271,7 +272,7 @@ These values are case-insensitive.</p>
 </div>
 <div id="frac" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/n1ql.ebnf#L70">fraction ::= '.' [0-9]+</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/n1ql.ebnf#L75">fraction ::= '.' [0-9]+</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -281,7 +282,7 @@ These values are case-insensitive.</p>
 </div>
 <div id="exp" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/n1ql.ebnf#L74">exponent ::= ('e' | 'E') ('-' | '+')? [0-9]+</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/n1ql.ebnf#L79">exponent ::= ('e' | 'E') ('-' | '+')? [0-9]+</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -300,7 +301,7 @@ If the integer component has more than one digit, the number should not start wi
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/n1ql.ebnf#L49">string ::= '"' char* '"' | "'" char* "'"</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/n1ql.ebnf#L49">string ::= '"' char* '"' | "'" char* "'"</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -310,8 +311,8 @@ If the integer component has more than one digit, the number should not start wi
 </div>
 <div id="char" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/n1ql.ebnf#L53-L54">char ::= unicode-character |
-         '\' ('\' | '/' | 'b' | 'f' | 'n' | 'r' | 't' | 'u' hex hex hex hex )</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/n1ql.ebnf#L56-L57">char ::= unicode-character |
+         '\' ( '\' | '"' | "'" | 'b' | 'f' | 'n' | 'r' | 't' | 'u' hex hex hex hex )</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -321,7 +322,7 @@ If the integer component has more than one digit, the number should not start wi
 </div>
 <div id="hex" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/n1ql.ebnf#L58">hex ::= [0-9a-fA-F]</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/n1ql.ebnf#L63">hex ::= [0-9a-fA-F]</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -339,7 +340,7 @@ If the integer component has more than one digit, the number should not start wi
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/n1ql.ebnf#L82">null ::= 'NULL'</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/n1ql.ebnf#L87">null ::= 'NULL'</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -358,7 +359,7 @@ This value is case-insensitive.</p>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/n1ql.ebnf#L86">missing ::= 'MISSING'</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/n1ql.ebnf#L91">missing ::= 'MISSING'</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">

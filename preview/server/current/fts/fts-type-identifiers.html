@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Specifying Type Identifiers | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/fts/fts-type-identifiers.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
@@ -31,7 +32,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -53,7 +54,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -166,11 +167,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../introduction/intro.html">Couchbase Server</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="fts-introduction.html">Search</a></li>
-<li class="crumb"><a href="fts-creating-indexes.html">Create Search Indexes</a></li>
-<li class="crumb"><a href="fts-configure-index-options.html">Configure Index Options</a></li>
-<li class="crumb"><a href="fts-type-identifiers.html">Type Indentifiers</a></li>
+<li class="crumb"><a href="fts-type-identifiers.html">Specifying Type Identifiers</a></li>
 </ul>
 </nav>
 </div>
@@ -190,7 +187,7 @@
 </div><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <em>type identifier</em> allows the documents in a bucket to be identified by the index according to their <em>type</em>. When the <strong>Add Index, Edit Index</strong>, or <strong>Clone Index</strong> screen is accessed, a <strong>Type Identifier</strong> panel is displayed:</p>
+<p>A <em>type identifier</em> allows the documents in a bucket to be identified filtered for inclusion into the index according to their <em>type</em>. When the <strong>Add Index, Edit Index</strong>, or <strong>Clone Index</strong> screen is accessed, a <strong>Type Identifier</strong> panel is displayed:</p>
 </div>
 <div id="type_identifier_image" class="imageblock">
 <div class="content">
@@ -198,7 +195,8 @@
 </div>
 </div>
 <div class="paragraph">
-<p>There are three options, each of which gives the index a particular way of determining the type of each document in the bucket.</p>
+<p>There are three options, each of which gives the index a particular way of determining the type of each document in the bucket.
+This document filtering via the <strong>Type Identifier</strong> is only active is you append a <code>.</code> and then a <code>substring</code> to the end of the <code>scope.collection</code> in the Type Mapping.</p>
 </div>
 </div>
 </div>
@@ -254,7 +252,7 @@ The value of the field should be of text type and cannot be an array or JSON obj
 <h2 id="doc-id-with-regex"><a class="anchor" href="#doc-id-with-regex"></a>Doc ID with regex</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A regular expression that is applied by the index to the ID of each document. The resulting value is determined to be the type of the  document. (This option may be used when the targeted document-subset contains neither a suitable <strong>JSON type field</strong> nor an ID that follows a naming convention suitable for <strong>Doc ID up to separator</strong>.) The value entered into the field should be the regular expression to be used.</p>
+<p>A  <strong><a href="https://github.com/google/re2/wiki/Syntax">RE2</a></strong> regular expression that is applied by the index to the ID of each document. The resulting value is determined to be the type of the  document. (This option may be used when the targeted document-subset contains neither a suitable <strong>JSON type field</strong> nor an ID that follows a naming convention suitable for <strong>Doc ID up to separator</strong>.) The value entered into the field should be the regular expression to be used.</p>
 </div>
 </div>
 </div>

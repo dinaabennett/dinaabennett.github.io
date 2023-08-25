@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Terminology | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/eventing/eventing-Terminologies.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="While using Eventing Service, the following terminologies are used.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -167,8 +168,6 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../introduction/intro.html">Couchbase Server</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="eventing-overview.html">Eventing</a></li>
 <li class="crumb"><a href="eventing-Terminologies.html">Terminology</a></li>
 </ul>
 </nav>
@@ -401,8 +400,8 @@ You can have multiple Eventing Functions running different code listening to the
 <p>When a source collection is deleted, all deployed (or paused) Eventing Functions associated with this source collection are undeployed.</p>
 </div>
 <div class="paragraph">
-<p>As of 7.1.1, the <code>Listen To</code> can listen to multiple collections via a wildcard of <code>*</code> for the scope and/or the collection.
-For these functions, if the bucket binding used by the JavaScript code also contains a wildcard of <code>*</code> for the scope and/or the collection only the Advanced Keyspace Accessors will be able to read or write the Data Service (or KV). <span class="status">Couchbase Server 7.1.1</span></p>
+<p>The <code>Listen To</code> can listen to multiple collections via a wildcard of <code>*</code> for the scope and/or the collection.
+For these functions, if the bucket binding used by the JavaScript code also contains a wildcard of <code>*</code> for the scope and/or the collection only the Advanced Keyspace Accessors will be able to read or write the Data Service (or KV).</p>
 </div>
 <div class="paragraph">
 <p>In the course of processing the JavaScript code of an Eventing Function, documents can be mutated in different collections. For understanding purposes, these keyspaces can be termed as destination collections which are bound to the Function via Bucket aliases.</p>
@@ -525,10 +524,9 @@ The minimum value is 1 (the default) and the recommended maximum is 64.  In most
 <p>Bucket aliases allow the JavaScript in an Eventing Function to access Couchbase KV collections from the Data Service or KV. The keyspaces (bucket.scope.collection) are then accessible by the bound name as a JavaScript map in the global space of the Eventing Function.</p>
 </div>
 <div class="paragraph">
-<p>Prior to 7.1.1, all bucket aliases had to reference a single keyspace.
-As of 7.1.1 an Eventing Function can listen to multiple collections via a wildcard of <code>*</code> for the scope and/or the collection.
+<p>An Eventing Function can listen to multiple collections via a wildcard of <code>*</code> for the scope and/or the collection.
 For these functions, the bucket alias (or binding) used by the JavaScript code can also contain a wildcard of <code>*</code> for the scope and/or the collection.
-If bucket alias contains a wildcard of <code>*</code> only the Advanced Keyspace Accessors will be able to read or write the Data Service (or KV). <span class="status">Couchbase Server 7.1.1</span></p>
+If bucket alias contains a wildcard of <code>*</code> only the Advanced Keyspace Accessors will be able to read or write the Data Service (or KV).</p>
 </div>
 <div class="paragraph">
 <p>You can add bucket aliases via the 'Bucket alias' choice then entering a tuple of: alias-name, keyspace, and an access level. Where the alias-name that you can use to refer to the keyspace or collection from your Eventing Function code; the keyspace is the full path to a collection in the cluster; and the access level to the keyspace is either 'read only' or 'read and write'.</p>

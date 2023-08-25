@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
-<title>Deleting Data with SQL++ | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/guides/delete.html">
+<title>Delete Data with SQL++ | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/cloud/guides/delete.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="How to delete documents using SQL++.">
@@ -40,7 +40,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -62,7 +62,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -122,7 +122,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/guides/pages/delete.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/guides/pages/delete.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -181,16 +181,17 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="intro.html">Developer Guides</a></li>
+<li class="crumb">Query Your Data</li>
+<li class="crumb"><a href="../n1ql/query.html">Query Your Database</a></li>
+<li class="crumb"><a href="../clusters/query-service/query-service.html">Use the Query Service</a></li>
 <li class="crumb"><a href="manipulate.html">Data Manipulation Queries</a></li>
-<li class="crumb"><a href="delete.html">Deleting Data with SQL++</a></li>
+<li class="crumb"><a href="delete.html">Delete Data with SQL++</a></li>
 </ul>
 </nav>
 </div>
 <article class="doc">
 <div class="page-heading-title">
-<h1 class="page">Deleting Data with SQL++</h1>
+<h1 class="page">Delete Data with SQL++</h1>
 <div class="labels">
 <ul><li class="guide"><span><i class="far fa-check-square"></i> how-to</span></li>
 </ul>
@@ -229,7 +230,7 @@ Read the following for further information about the tools available for editing
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../clusters/query-service/query-workbench.html" class="xref page">Query Workbench</a></p>
+<p><a href="../clusters/query-service/query-workbench.html" class="xref page">Query Tab</a></p>
 </li>
 </ul>
 </div>
@@ -250,7 +251,7 @@ Refer to <a href="../clusters/data-service/import-data-documents.html" class="xr
 </div>
 </div>
 <div class="sect1">
-<h2 id="deleting-documents-by-key"><a class="anchor" href="#deleting-documents-by-key"></a>Deleting Documents by Key</h2>
+<h2 id="delete-documents-by-key"><a class="anchor" href="#delete-documents-by-key"></a>Delete Documents by Key</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To delete one or more documents by key, use the DELETE statement with the USE KEYS hint:</p>
@@ -279,12 +280,12 @@ Refer to <a href="../clusters/data-service/import-data-documents.html" class="xr
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/dml/delete-key.n1ql">DELETE FROM airline k
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/dml/delete-key.n1ql">DELETE FROM airline k
 USE KEYS "airline_4444"
 RETURNING k</code></pre>
 </div>
@@ -292,7 +293,7 @@ RETURNING k</code></pre>
 <div class="listingblock">
 <div class="title">Results</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/dml/delete-key.jsonc">[
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/dml/delete-key.jsonc">[
   {
     "k": {
       "callsign": "MY-AIR",
@@ -315,7 +316,7 @@ RETURNING k</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="deleting-documents-by-filter"><a class="anchor" href="#deleting-documents-by-filter"></a>Deleting Documents by Filter</h2>
+<h2 id="delete-documents-by-filter"><a class="anchor" href="#delete-documents-by-filter"></a>Delete Documents by Filter</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To delete documents by filter, use the DELETE statement with the WHERE clause:</p>
@@ -347,12 +348,12 @@ RETURNING k</code></pre>
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/dml/delete-filter.n1ql">DELETE FROM airline f
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/dml/delete-filter.n1ql">DELETE FROM airline f
 WHERE f.callsign = "AIR-X"
 RETURNING f.id</code></pre>
 </div>
@@ -360,7 +361,7 @@ RETURNING f.id</code></pre>
 <div class="listingblock">
 <div class="title">Results</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/dml/delete-filter.jsonc">[
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/dml/delete-filter.jsonc">[
   {
     "id": "4445"
   }
@@ -372,7 +373,7 @@ RETURNING f.id</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="deleting-documents-by-subquery"><a class="anchor" href="#deleting-documents-by-subquery"></a>Deleting Documents by Subquery</h2>
+<h2 id="delete-documents-by-subquery"><a class="anchor" href="#delete-documents-by-subquery"></a>Delete Documents by Subquery</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To delete documents based on the results returned by a SELECT query, use a subquery in the filter.</p>
@@ -385,12 +386,12 @@ RETURNING f.id</code></pre>
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/dml/delete-sub-same.n1ql">DELETE FROM airport
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/dml/delete-sub-same.n1ql">DELETE FROM airport
 WHERE city IN (SELECT RAW MAX(t.city) FROM airport AS t)
 RETURNING airportname;</code></pre>
 </div>
@@ -398,7 +399,7 @@ RETURNING airportname;</code></pre>
 <div class="listingblock">
 <div class="title">Results</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/dml/delete-sub-same.jsonc">[
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/dml/delete-sub-same.jsonc">[
   {
     "airportname": "√éle d'Yeu Airport"
   }
@@ -410,7 +411,7 @@ RETURNING airportname;</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="merging-and-deleting-documents"><a class="anchor" href="#merging-and-deleting-documents"></a>Merging and Deleting Documents</h2>
+<h2 id="merge-and-delete-documents"><a class="anchor" href="#merge-and-delete-documents"></a>Merge and Delete Documents</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can also delete documents by merging: that is, by joining one keyspace to another, and deleting any documents that match.</p>
@@ -456,12 +457,12 @@ If any flights are using equipment 757, they are deleted.</p>
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/dml/ansi-merge-keyspace.n1ql">MERGE INTO route
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/dml/ansi-merge-keyspace.n1ql">MERGE INTO route
 USING airport
 ON route.sourceairport = airport.faa
 WHEN MATCHED THEN UPDATE
@@ -481,7 +482,7 @@ RETURNING route.old_equipment, route.equipment, airport.faa;</code></pre>
 <div class="listingblock">
 <div class="title">Results</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/dml/ansi-merge-keyspace.jsonc">[
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/dml/ansi-merge-keyspace.jsonc">[
   {
     "equipment": "763 757",
     "sourceairport": "CDG"
@@ -575,7 +576,7 @@ RETURNING route.old_equipment, route.equipment, airport.faa;</code></pre>
 
         <nav class="pagination">
 
-                    <span class="prev"><a href="update.html">Modifying Data with SQL++</a></span>
+                    <span class="prev"><a href="update.html">Modify Data with SQL++</a></span>
 
 
                 <span>&nbsp;</span>

@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>General | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/manage/manage-settings/general-settings.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="&lt;em&gt;General&lt;/em&gt; settings allow configuration of &lt;em&gt;cluster name&lt;/em&gt;, &lt;em&gt;memory quotas&lt;/em&gt;, &lt;em&gt;storage modes&lt;/em&gt;, and &lt;em&gt;node availability&lt;/em&gt; for the cluster; and of &lt;em&gt;advanced settings&lt;/em&gt; for the Index and Query Services.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -336,7 +337,7 @@ For detailed information on policy and constraints, see <a href="../../learn/clu
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Auto-failover after <em>x</em> seconds for up to <em>y</em> node</strong>: After the timeout period set here as <em>x</em> seconds has elapsed, an unresponsive or malfunctioning node is failed over, provided that the limit on actionable events set here as <em>y</em> has not yet been reached.
+<p><strong>Auto-failover after <em>x</em> seconds for up to <em>y</em> node</strong>: After the timeout period set here as <em>x</em> seconds has elapsed, an unresponsive or malfunctioning node is failed over, provided that the limit on actionable events set here as <em>y</em> (with the default value of 1) has not yet been reached.
 Data replicas are promoted to active on other nodes, as appropriate.
 This feature can only be used when three or more nodes are present in the cluster.
 The number of seconds to elapse is configurable: the default is 120; the minimum permitted is 5; the maximum 3600.
@@ -345,7 +346,13 @@ This option is selected by default.</p>
 <li>
 <p><strong>Auto-failover for sustained data disk read/write failures after <em>z</em> seconds</strong>: After the timeout period set here as <em>z</em> seconds has elapsed, a node is failed over if it has experienced sustained data disk read/write failures.
 The timeout period is configurable: the default length is 120 seconds; the minimum permitted is 5; the maximum 3600.
-This checkbox can only be checked if <strong>Auto-failover after <em>x</em> seconds for up to <em>y</em> node</strong> has also been checked.</p>
+This checkbox can only be checked if <strong>Auto-failover after <em>x</em> seconds for up to <em>y</em> node</strong> has also been checked.
+This option is unchecked by default.</p>
+</li>
+<li>
+<p><strong>Preserve durable writes</strong>: If this checkbox is checked, a node is <em>not</em> failed over if this might result in the loss of durably written data.
+The default is that the checkbox is unchecked.
+For information, see <a href="../../learn/data/durability.html#preserving-durable-writes" class="xref page">Preserving Durable Writes</a>.</p>
 </li>
 </ul>
 </div>
@@ -549,7 +556,7 @@ The panel appears as follows:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The options are <a href="../../learn/services-and-indexes/indexes/storage-modes.html#memory-optimized-index-storage" class="xref page">Memory Optimized Index Storage</a>, and <a href="../../learn/services-and-indexes/indexes/storage-modes.html#standard-index-storage" class="xref page">Standard Index Storage</a>.</p>
+<p>The options are <a href="#learn:services-and-indexes/indexes/storage-modes.adoc#memory-optimized-index-storage" class="xref unresolved">Memory Optimized Index Storage</a>, and <a href="#learn:services-and-indexes/indexes/storage-modes.adoc#standard-index-storage" class="xref unresolved">Standard Index Storage</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Advanced Settings</strong> for indexes are also provided:</p>
@@ -565,7 +572,7 @@ The default is 0.</p>
 <li>
 <p><strong>Num Replica</strong>.
 The default number of index replicas to be created by the Index Service whenever <code>CREATE INDEX</code> is invoked.
-For further details, refer to <a href="../../learn/services-and-indexes/indexes/index-replication.html#index-replication" class="xref page">Index Replication</a>.</p>
+For further details, refer to <a href="#learn:services-and-indexes/indexes/index-replication.adoc#index-replication" class="xref unresolved">Index Replication</a>.</p>
 </li>
 <li>
 <p><strong>Indexer Rebalance Settings</strong>.
@@ -583,7 +590,7 @@ The default is <code>Info</code>.</p>
 <p><strong>Bloom Filter</strong>.
 Whether Bloom filters are enabled for memory management.
 When the <strong>Enable Bloom Filter</strong> checkbox is checked, Bloom filters are enabled; otherwise, they are disabled (which is the default).
-See <a href="../../learn/services-and-indexes/indexes/storage-modes.html#per-page-bloom-filters" class="xref page">Per Page Bloom Filters</a>.</p>
+See <a href="#learn:services-and-indexes/indexes/storage-modes.adoc#per-page-bloom-filters" class="xref unresolved">Per Page Bloom Filters</a>.</p>
 </li>
 </ul>
 </div>
@@ -647,7 +654,7 @@ Thus, if a cluster contains three Analytics Nodes, the practical maximum number 
 <p>To configure <em>name and memory</em>, <em>index storage</em>, and <em>auto-failover</em> via CLI, use the appropriate CLI command; as described below.
 Note that no CLI support is provided for configuring <em>query settings</em>.
 As an alternative, see <a href="#configure-general-settings-with-the-rest-api">Configure General Settings with the REST API</a>, below.
-Additionally, for information on URL access lists via the SQL++ <code>CURL()</code> function, see <a href="../../n1ql/n1ql-language-reference/curl.html" class="xref page">CURL Function</a>.</p>
+Additionally, for information on URL access lists via the SQL++ <code>CURL()</code> function, see <a href="#n1ql:n1ql-language-reference/curl.adoc" class="xref unresolved">CURL Function</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="name-and-memory-settings-via-cli"><a class="anchor" href="#name-and-memory-settings-via-cli"></a>Name and Memory Settings via CLI</h3>
@@ -1013,12 +1020,14 @@ http://10.143.192.101:8091/settings/autoFailover \
 -d timeout=120 \
 -d failoverOnDataDiskIssues[enabled]=false \
 -d failoverOnDataDiskIssues[timePeriod]=120 \
--d maxCount=2</code></pre>
+-d maxCount=2 \
+-d failoverPreserveDurabilityMajority=true</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>This enables auto-failover, with a timeout of 120 seconds, and a maximum failover-count of 2.
-Additionally, failover is enabled in the event of suboptimal disk responsiveness, with a time-period of 120 seconds specified.</p>
+Auto-failover is enabled in the event of suboptimal disk responsiveness, with a time-period of 120 seconds specified.
+Auto-failover is prohibited in cases where this might result in the loss of durably written data.</p>
 </div>
 <div class="paragraph">
 <p>For more information on these options, see the descriptions provided above, for the <a href="#node-availability">UI</a>.</p>

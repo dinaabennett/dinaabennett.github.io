@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Recovery | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/learn/clusters-and-availability/recovery.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="After a node has been failed over, it can be &lt;em&gt;recovered&lt;/em&gt;: that is, added back into the cluster from which it was failed over, by means of the &lt;em&gt;rebalance&lt;/em&gt; operation.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -331,7 +332,7 @@ This indicates that one or more of the following conditions exist:</p>
 <p>However, in cases where the node’s memory-footprint is extremely large, and data exceeds bucket memory-quotas, the memory-management overhead potentially entailed by Delta recovery might imply Full recovery’s taking less time overall.</p>
 </div>
 <div class="paragraph">
-<p>Note that in Couchbase Server 6.5 and later, a <a href="../services-and-indexes/indexes/index-scans.html" class="xref page">scan</a> can be requested from each index, as soon as the index has warmed up &#8212; the recovery does not need to be fully complete.
+<p>Note that in Couchbase Server 6.5 and later, a <a href="#learn:services-and-indexes/indexes/index-scans.adoc" class="xref unresolved">scan</a> can be requested from each index, as soon as the index has warmed up &#8212; the recovery does not need to be fully complete.
 This can reduce the downtime during recovery.</p>
 </div>
 <div class="paragraph">

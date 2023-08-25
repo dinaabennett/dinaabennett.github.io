@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Manage Auditing | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/manage/manage-security/manage-auditing.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Actions performed on Couchbase Server can be &lt;em&gt;audited&lt;/em&gt;. This allows administrators to ensure that system-management tasks are being appropriately performed.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -199,12 +200,13 @@ Actions performed on Couchbase Server can be <em>audited</em>. This allows admin
 <h2 id="audit-records-and-their-content"><a class="anchor" href="#audit-records-and-their-content"></a>Audit Records and Their Content</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The records created by the Couchbase Auditing facililty capture information on <em>who</em> has performed <em>what</em> action, <em>when</em>, and <em>how</em> successfully.
+<p>The records created by the Couchbase Auditing facility capture information on <em>who</em> has performed <em>what</em> action, <em>when</em>, and <em>how</em> successfully.
 The records are created by Couchbase Server-processes, which run asynchronously.
 Each record is stored as a JSON document, which can be retrieved and inspected.</p>
 </div>
 <div class="paragraph">
-<p>Auditing can be configured by the <strong>Full Admin</strong>, the <strong>Local User Security Admin</strong>, the <strong>External User Security Admin</strong>, and the <strong>Read-Only Admin</strong> roles.</p>
+<p>Auditing can be configured by the <strong>Full Admin</strong> and the <strong>Local User Security Admin</strong> roles.
+The auditing configuration can be read by the <strong>Full Admin</strong>, the <strong>Local User Security Admin</strong>, and the <strong>Read-Only Admin</strong> roles.</p>
 </div>
 <div class="paragraph">
 <p>A conceptual overview of event auditing can be found in <a href="../../learn/security/auditing.html" class="xref page">Auditing</a>.

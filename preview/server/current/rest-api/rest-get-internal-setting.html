@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Managing Internal Settings | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/rest-api/rest-get-internal-setting.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Couchbase-Server internal settings can be retrieved and modified..">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -219,6 +220,22 @@ POST /settings/maxParallelIndexers</pre>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Couchbase-Server internal settings can be inspected and modified, in order to control cluster-performance.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+The settings detailed on this page are meant for performance tuning.
+Rigorous and careful testing of any changes to these settings should be made in a non-production environment that is representative, in load and scale, of production data before implementing in production.
+Incorrect settings can cause severe impacts to cluster performance or operation due to resource consumption.
+Couchbase makes no recommendations for tuning beyond the default settings.
+Any changes to these settings not explicitly recommended by Couchbase Employees are not supported by Couchbase.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

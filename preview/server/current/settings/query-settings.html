@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Settings and Parameters | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/settings/query-settings.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="You can configure the Query service using cluster-level query settings, node-level query settings, and request-level query parameters.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -167,8 +168,6 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../introduction/intro.html">Couchbase Server</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="../n1ql/query.html">Query</a></li>
 <li class="crumb"><a href="query-settings.html">Settings and Parameters</a></li>
 </ul>
 </nav>
@@ -920,7 +919,7 @@ To enable queries to run in parallel, you must specify the cluster-level <code>q
 </table>
 </div>
 <div class="paragraph">
-<p>Refer to <a href="../n1ql/n1ql-language-reference/index-partitioning.html#max-parallelism" class="xref page">Max Parallelism</a> for more information.<br>
+<p>Refer to <a href="#n1ql:n1ql-language-reference/index-partitioning.adoc#max-parallelism" class="xref unresolved">Max Parallelism</a> for more information.<br>
 <strong>Default</strong> : <code>1</code><br>
 <strong>Example</strong> : <code>0</code></p>
 </div></div></td>
@@ -1451,7 +1450,7 @@ If a request does not include this parameter, the node-level <code>atrcollection
 <p>Specifies whether the query engine should create a prepared statement every time a N1QL request is submitted, whether the PREPARE statement is included or not.</p>
 </div>
 <div class="paragraph">
-<p>Refer to <a href="../n1ql/n1ql-language-reference/prepare.html#auto-prepare" class="xref page">Auto-Prepare</a> for more information.<br>
+<p>Refer to <a href="#n1ql:n1ql-language-reference/prepare.adoc#auto-prepare" class="xref unresolved">Auto-Prepare</a> for more information.<br>
 <strong>Default</strong> : <code>false</code><br>
 <strong>Example</strong> : <code>true</code></p>
 </div></div></td>
@@ -1838,7 +1837,7 @@ To enable queries to run in parallel, you must specify the cluster-level <code>q
 </table>
 </div>
 <div class="paragraph">
-<p>Refer to <a href="../n1ql/n1ql-language-reference/index-partitioning.html#max-parallelism" class="xref page">Max Parallelism</a> for more information.<br>
+<p>Refer to <a href="#n1ql:n1ql-language-reference/index-partitioning.adoc#max-parallelism" class="xref unresolved">Max Parallelism</a> for more information.<br>
 <strong>Default</strong> : <code>1</code><br>
 <strong>Example</strong> : <code>0</code></p>
 </div></div></td>
@@ -2499,7 +2498,7 @@ The request-level parameter overrides the node-level setting.<br>
 This saves you from having to make two separate requests in cases where you want to prepare a statement and execute it immediately.</p>
 </div>
 <div class="paragraph">
-<p>Refer to <a href="../n1ql/n1ql-language-reference/prepare.html#auto-execute" class="xref page">Auto-Execute</a> for more information.<br>
+<p>Refer to <a href="#n1ql:n1ql-language-reference/prepare.adoc#auto-execute" class="xref unresolved">Auto-Execute</a> for more information.<br>
 <strong>Default</strong> : <code>false</code><br>
 <strong>Example</strong> : <code>true</code></p>
 </div></div></td>
@@ -2876,7 +2875,7 @@ When you change the cluster-level setting, the node-level setting is overwritten
 </div>
 <div class="paragraph">
 <p>The name of the prepared SQL++ statement to be executed.
-Refer to <a href="../n1ql/n1ql-language-reference/execute.html" class="xref page">EXECUTE</a> for examples.</p>
+Refer to <a href="#n1ql:n1ql-language-reference/execute.adoc" class="xref unresolved">EXECUTE</a> for examples.</p>
 </div>
 <div class="paragraph">
 <p>If both <code>prepared</code> and <code>statement</code> are present and non-empty, an error is returned.<br>
@@ -3504,7 +3503,7 @@ If a qualified full-text index is available, it is selected for the query.
 If none of the available full-text indexes are qualified, the available GSI indexes are considered instead.</p>
 </div>
 <div class="paragraph">
-<p>Refer to <a href="../n1ql/n1ql-language-reference/flex-indexes.html" class="xref page">Flex Indexes</a> for more information.<br>
+<p>Refer to <a href="#n1ql:n1ql-language-reference/flex-indexes.adoc" class="xref unresolved">Flex Indexes</a> for more information.<br>
 <strong>Default</strong> : <code>false</code><br>
 <strong>Example</strong> : <code>true</code></p>
 </div></div></td>
@@ -3676,8 +3675,7 @@ If any statement within the transaction uses a full-text index, by means of the 
 Requests which use named parameters and positional parameters should contain the appropriate placeholders, as summarized in the table below.</p>
 </div>
 <div class="paragraph">
-<p>To try the examples in this section, set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="../n1ql/n1ql-intro/queriesandresults.html#query-context" class="xref page">Query Context</a>.</p>
+<p>Unresolved include directive in modules/settings/pages/query-settings.adoc - include::ROOT:partial$query-context.adoc[]</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 11. Named Parameters and Positional Parameters</caption>

@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Manage Backups | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/clusters/manage-backup.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/clusters/manage-backup.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
@@ -32,7 +32,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +54,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -173,7 +173,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Your Data</li>
+<li class="crumb">Monitor and Maintain</li>
 <li class="crumb"><a href="backup-restore.html">Backup &amp; Restore</a></li>
 <li class="crumb"><a href="manage-backup.html">Manage Backups</a></li>
 </ul>
@@ -719,6 +719,139 @@ You can&#8217;t undo a backup deletion.</p>
 </dl>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="download-backup"><a class="anchor" href="#download-backup"></a>Download a Backup in the Capella UI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can <a href="backup-restore.html#downloading-backups" class="xref page">download backups</a> from the Capella UI or using wget.</p>
+</div>
+<div class="sect2">
+<h3 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>You must be a <a href="../projects/project-roles.html#project-owner-role" class="xref page"><code>Project Owner</code></a>.</p>
+</li>
+<li>
+<p><a href="monitoring/alerts.html#manage-email-notifications" class="xref page">Enable email notifications</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="procedure"><a class="anchor" href="#procedure"></a>Procedure</h3>
+<div class="paragraph">
+<p>To download a backup in the Capella UI:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>From the <strong>Backup</strong> tab for your database, select a bucket.</p>
+</li>
+<li>
+<p>Navigate to one of the following pages:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Bucket Backup</p>
+<div class="paragraph">
+<p>Contains the latest and partially completed backups for a selected bucket.
+You cannot download a backup series (backup cycle) where all incremental backups are not complete.</p>
+</div>
+</li>
+<li>
+<p>Completed Backups</p>
+<div class="paragraph">
+<p>Contains all completed backups for a selected bucket.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>[Optional] Filter by backups, a date range, or a type. For example, Scheduled or On-Demand backup types.</p>
+</li>
+<li>
+<p>[Optional] Expand a backup card to view its details.</p>
+</li>
+<li>
+<p>Click <strong>Download</strong> on a backup.</p>
+<div class="paragraph">
+<p>A dialog box is displayed.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Proceed</strong> to start the download file creation.</p>
+</li>
+<li>
+<p>An email is sent to you when the downloadable backup file is ready.</p>
+</li>
+<li>
+<p>After receiving an email, from the Backup tab for your database, select a bucket, and click <strong>Downloadable Backups</strong>.</p>
+<div class="paragraph">
+<p>A list of ready-to-download backups is displayed.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Copy URL</strong> on the appropriate downloadable backup.</p>
+<div class="paragraph">
+<p>You have up to 12 hours after the download file has been created to copy the Download URL.
+Each copy generates a unique URL. After you copy the download URL, it expires in 1 hour.
+You must start the download before the URL expires.
+After starting the download, you have at least 12 hours before the download file is removed.</p>
+</div>
+</li>
+<li>
+<p>To download the file using a browser, paste the download URL into a browser window and <strong>Enter</strong>.</p>
+<div class="paragraph">
+<p>The .zip file containing the backup is downloaded.
+The downloaded file is a zip of a cbbackupmgr archive.</p>
+</div>
+</li>
+<li>
+<p>Unzip the downloaded backup zip archive file in an appropriate location.</p>
+</li>
+<li>
+<p>Use the Couchbase <a href="../reference/command-line-tools.html#cbbackupmgr" class="xref page">cbbackupmgr</a> cbbackupmgr utility to view, examine, or restore the backup.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="download-backup-wget"><a class="anchor" href="#download-backup-wget"></a>Download Using wget with the Download URL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can download the backup zip archive file using an utility like wget or curl.</p>
+</div>
+<div class="paragraph">
+<p>To download using wget:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To use the filename set in the response-content-disposition/content-disposition option of the download URL.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">wget --content-disposition "&lt;download_url&gt;"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To rename the file when downloading using the download URL.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">wget -O capella_cluster_testbucket1_backup_0219.zip "&lt;download_url&gt;"</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </article>

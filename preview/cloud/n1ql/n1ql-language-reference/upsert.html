@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>UPSERT | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/n1ql/n1ql-language-reference/upsert.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/n1ql/n1ql-language-reference/upsert.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="UPSERT is used to insert a new record or update an existing one.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/n1ql/pages/n1ql-language-reference/upsert.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/n1ql/pages/n1ql-language-reference/upsert.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,9 +174,9 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../../index.html">Couchbase Capella</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="../query.html">Query</a></li>
-<li class="crumb"><a href="index.html">SQL++ Language Reference</a></li>
+<li class="crumb">Query Your Data</li>
+<li class="crumb"><a href="../query.html">Query Your Database</a></li>
+<li class="crumb"><a href="../../clusters/query-service/query-service.html">Use the Query Service</a></li>
 <li class="crumb">Statements</li>
 <li class="crumb"><a href="upsert.html">UPSERT</a></li>
 </ul>
@@ -312,7 +312,7 @@ For more information, see <a href="../n1ql-intro/queriesandresults.html#query-co
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/dml/upsert-rbac.n1ql">UPSERT INTO hotel (KEY, VALUE)
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/dml/upsert-rbac.n1ql">UPSERT INTO hotel (KEY, VALUE)
 VALUES ("key1", { "type" : "hotel", "name" : "new hotel" });</code></pre>
 </div>
 </div>
@@ -321,7 +321,7 @@ VALUES ("key1", { "type" : "hotel", "name" : "new hotel" });</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/dml/upsert-rbac-return.n1ql">UPSERT INTO hotel (KEY, VALUE)
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/dml/upsert-rbac-return.n1ql">UPSERT INTO hotel (KEY, VALUE)
 VALUES ("key1", { "type" : "hotel", "name" : "new hotel" })
 RETURNING *;</code></pre>
 </div>
@@ -329,7 +329,7 @@ RETURNING *;</code></pre>
 <div class="listingblock">
 <div class="title">Result</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/dml/upsert-rbac-return.jsonc">[
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/dml/upsert-rbac-return.jsonc">[
   {
     "hotel": {
       "name": "new hotel",
@@ -344,7 +344,7 @@ RETURNING *;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/dml/upsert-rbac-select.n1ql">UPSERT INTO landmark (KEY foo, VALUE bar)
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/dml/upsert-rbac-select.n1ql">UPSERT INTO landmark (KEY foo, VALUE bar)
 SELECT META(doc).id AS foo, doc AS bar FROM `beer-sample` AS doc WHERE type = "brewery";</code></pre>
 </div>
 </div>
@@ -360,7 +360,7 @@ SELECT META(doc).id AS foo, doc AS bar FROM `beer-sample` AS doc WHERE type = "b
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dml.ebnf#L129-L130">upsert ::= 'UPSERT' 'INTO' target-keyspace ( insert-values | insert-select )
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dml.ebnf#L129-L130">upsert ::= 'UPSERT' 'INTO' target-keyspace ( insert-values | insert-select )
             returning-clause?</code></pre>
 </div>
 </div>
@@ -409,7 +409,7 @@ returning-clause
 <h3 id="insert-target"><a class="anchor" href="#insert-target"></a>Insert Target</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dml.ebnf#L138">target-keyspace ::= keyspace-ref ( 'AS'? alias )?</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dml.ebnf#L138">target-keyspace ::= keyspace-ref ( 'AS'? alias )?</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -444,7 +444,7 @@ alias
 <h4 id="insert-target-ref"><a class="anchor" href="#insert-target-ref"></a>Keyspace Reference</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L86">keyspace-ref ::= keyspace-path | keyspace-partial</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L86">keyspace-ref ::= keyspace-path | keyspace-partial</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -454,7 +454,7 @@ alias
 </div>
 <div id="keyspace-path" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L90">keyspace-path ::= ( namespace ':' )? bucket ( '.' scope '.' collection )?</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L90">keyspace-path ::= ( namespace ':' )? bucket ( '.' scope '.' collection )?</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -464,7 +464,7 @@ alias
 </div>
 <div id="keyspace-partial" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L94">keyspace-partial ::= collection</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L94">keyspace-partial ::= collection</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -493,7 +493,7 @@ If you assign an alias to the keyspace reference, the <code>AS</code> keyword ma
 <h3 id="insert-values"><a class="anchor" href="#insert-values"></a>Insert Values</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dml.ebnf#L28">insert-values ::= ( '(' 'PRIMARY'? 'KEY' ',' 'VALUE' ( ',' 'OPTIONS' )? ')' )? values-clause</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dml.ebnf#L28">insert-values ::= ( '(' 'PRIMARY'? 'KEY' ',' 'VALUE' ( ',' 'OPTIONS' )? ')' )? values-clause</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -521,7 +521,7 @@ values-clause
 <h4 id="values-clause"><a class="anchor" href="#values-clause"></a>VALUES Clause</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dml.ebnf#L32-L33">values-clause ::= 'VALUES'  '(' key ',' value ( ',' options )? ')'
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dml.ebnf#L32-L33">values-clause ::= 'VALUES'  '(' key ',' value ( ',' options )? ')'
             ( ',' 'VALUES'? '(' key ',' value ( ',' options )? ')' )*</code></pre>
 </div>
 </div>
@@ -554,7 +554,7 @@ If this is <code>true</code>, the existing document expiration is preserved; if 
 <h3 id="insert-select"><a class="anchor" href="#insert-select"></a>Insert Select</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dml.ebnf#L37-L38">insert-select ::= '(' 'PRIMARY'? 'KEY' key ( ',' 'VALUE' value )?
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dml.ebnf#L37-L38">insert-select ::= '(' 'PRIMARY'? 'KEY' key ( ',' 'VALUE' value )?
                    ( ',' 'OPTIONS' options )? ')' select</code></pre>
 </div>
 </div>
@@ -586,7 +586,7 @@ If this is <code>true</code>, the existing document expiration is preserved; if 
 <h3 id="returning-clause"><a class="anchor" href="#returning-clause"></a>RETURNING Clause</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dml.ebnf#L142-L143">returning-clause ::= 'RETURNING' (result-expr (',' result-expr)* |
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dml.ebnf#L142-L143">returning-clause ::= 'RETURNING' (result-expr (',' result-expr)* |
                     ('RAW' | 'ELEMENT' | 'VALUE') expr)</code></pre>
 </div>
 </div>
@@ -614,7 +614,7 @@ result-expr
 <h4 id="result-expr"><a class="anchor" href="#result-expr"></a>Result Expression</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L62">result-expr ::= ( path '.' )? '*' | expr ( 'AS'? alias )?</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L62">result-expr ::= ( path '.' )? '*' | expr ( 'AS'? alias )?</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -645,7 +645,7 @@ For more information, see <a href="../n1ql-intro/queriesandresults.html#query-co
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/dml/upsert-batch.n1ql">UPSERT INTO landmark (KEY, VALUE)
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/dml/upsert-batch.n1ql">UPSERT INTO landmark (KEY, VALUE)
 VALUES ("upsert-1", { "name": "The Minster Inn", "type": "landmark-pub"}),
 ("upsert-2", {"name": "The Black Swan", "type": "landmark-pub"})
 RETURNING VALUE name;</code></pre>
@@ -654,7 +654,7 @@ RETURNING VALUE name;</code></pre>
 <div class="listingblock">
 <div class="title">Result</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/dml/upsert-batch.jsonc">[
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/dml/upsert-batch.jsonc">[
   "The Minster Inn",
   "The Black Swan"
 ]</code></pre>

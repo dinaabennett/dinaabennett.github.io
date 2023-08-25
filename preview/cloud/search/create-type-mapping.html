@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Create a Type Mapping | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/search/create-type-mapping.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/search/create-type-mapping.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Create a type mapping with the Couchbase Capella UI to control what documents are included or excluded from a Search index.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/search/pages/create-type-mapping.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/search/pages/create-type-mapping.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,7 +174,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Your Data</li>
+<li class="crumb">Add Search to Your Application - (work in progress)</li>
 <li class="crumb"><a href="search.html">Add Search to Your Application</a></li>
 <li class="crumb"><a href="customize-index.html">Customize a Search Index with the Capella UI</a></li>
 <li class="crumb"><a href="create-type-mapping.html">Create a Type Mapping</a></li>
@@ -241,19 +241,19 @@ For more information, see <a href="create-search-index-ui.html" class="xref page
 <p>Click the index where you want to create a type mapping.</p>
 </li>
 <li>
-<p>In the Data Insights area, expand the scope where you want to create a type mapping.</p>
+<p>Under <strong>Type Mappings</strong>, in the <strong>Bucket</strong> list, select the bucket where you want to create a type mapping.</p>
 </li>
 <li>
-<p>Next to the collection where you want to create the type mapping, go to <span class="menuseq"><b class="menu">More Options (&vellip;)</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Map Collection to Index</b></span>.</p>
+<p>In the <strong>Scope</strong> list, select the scope where you want to create a type mapping.</p>
 </li>
 <li>
-<p>Expand <strong>Advanced Configuration</strong>.</p>
+<p>Click <b class="button">Add Mapping</b>.</p>
 </li>
 <li>
-<p>Under <strong>Type Mappings</strong>, next to the new type mapping, go to <span class="menuseq"><b class="menu">More Options (&vellip;)</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Edit</b></span>.</p>
+<p>In the <strong>Collection</strong> list, select the collection for the type mapping.</p>
 </li>
 <li>
-<p>Do any of the following:</p>
+<p>(Optional) Do any of the following:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -264,7 +264,7 @@ For more information about analyzers, see <a href="customize-index.html#analyzer
 </div>
 </li>
 <li>
-<p>To switch from a <a href="customize-index.html#type-mappings" class="xref page">dynamic type mapping to a static type mapping</a>, clear <strong>Index all contained fields</strong>.</p>
+<p>To switch from a <a href="customize-index.html#type-mappings" class="xref page">dynamic type mapping to a static type mapping</a>, select <strong>Only index specified fields</strong>.</p>
 </li>
 </ol>
 </div>
@@ -273,6 +273,33 @@ For more information about analyzers, see <a href="customize-index.html#analyzer
 <p>Click <b class="button">Submit</b>.</p>
 </li>
 </ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can also create type mappings with the Data Insights area:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Expand the scope where you want to create a type mapping.</p>
+</li>
+<li>
+<p>Next to the collection where you want to create the type mapping, go to <span class="menuseq"><b class="menu">More Options (&vellip;)</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Map Collection to Index</b></span>.</p>
+</li>
+<li>
+<p>(Optional) To edit the analyzer or switch to a static type mapping, next to the type mapping, go to <span class="menuseq"><b class="menu">More Options (&vellip;)</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Edit</b></span>.</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -283,7 +310,10 @@ For more information about analyzers, see <a href="customize-index.html#analyzer
 <p>After you create a static type mapping, you can <a href="create-child-field.html" class="xref page">Create a Child Field</a> to add or remove specific document fields from your Search index.</p>
 </div>
 <div class="paragraph">
-<p>You can also <a href="create-child-mapping.html" class="xref page">Create a Child Mapping</a> if a document field contains a JSON object.</p>
+<p>To add an extra filter to the documents selected by your type mapping, you can also <a href="set-type-identifier.html" class="xref page">Set a Search Index Type Identifier</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you have a document field that contains a JSON object, <a href="create-child-mapping.html" class="xref page">Create a Child Mapping</a> for that field.</p>
 </div>
 <div class="paragraph">
 <p>To continue customizing your Search index, you can:</p>

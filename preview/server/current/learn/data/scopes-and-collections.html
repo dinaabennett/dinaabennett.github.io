@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Scopes and Collections | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/learn/data/scopes-and-collections.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Couchbase Server provides &lt;em&gt;scopes&lt;/em&gt; and &lt;em&gt;collections&lt;/em&gt;; allowing documents to be categorized and organized, within a bucket.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -195,7 +196,7 @@ Couchbase Server provides <em>scopes</em> and <em>collections</em>; allowing doc
 </div>
 <div class="paragraph">
 <p>This page contains an in-depth look at scopes and collections in Couchbase.
-If you are looking for an introduction to logically partitioning your data with scopes and collections, you may like to start with the <a href="../../tutorials/buckets-scopes-and-collections.html#scopes-and-collections" class="xref page">introduction to the topic</a> in our developer tutorial.</p>
+If you are looking for an introduction to logically partitioning your data with scopes and collections, you may like to start with the <a href="#tutorials:buckets-scopes-and-collections.adoc#scopes-and-collections" class="xref unresolved">introduction to the topic</a> in our developer tutorial.</p>
 </div>
 </div>
 </div>
@@ -214,7 +215,8 @@ Applications can be assigned per-collection access-rights; allowing each applica
 <p>A collection can be created and managed by means of the Couchbase Web Console UI, the Couchbase CLI, the Couchbase REST API, and SQL++.
 It can also be created and managed by means of the SDK: see <a href="#3.3@java-sdk:howtos:provisioning-cluster-resources.adoc#collection-management" class="xref unresolved">Collection Management</a>.
 A collection can be indexed; and it can be dropped.
-The data in a collection can be replicated, by means of <em>Cross Data Center Replication</em> (XDCR), to another collection in the same or in a different bucket.</p>
+The data in a collection can be replicated, by means of <em>Cross Data Center Replication</em> (XDCR), to another collection in the same or in a different bucket.
+A collection is named by the administrator when created: it cannot subsequently be renamed.</p>
 </div>
 <div class="paragraph">
 <p>A <em>scope</em> is a mechanism for the grouping of multiple collections.
@@ -228,7 +230,8 @@ Applications can be assigned per-scope access-rights; allowing each application 
 It can also be created and managed by means of the SDK: see <a href="#3.3@java-sdk:howtos:provisioning-cluster-resources.adoc#collection-management" class="xref unresolved">Collection Management</a>.
 A scope can be dropped.
 A scope cannot be indexed.
-The contents of a scope can be replicated, by means of <em>Cross Data Center Replication</em> (XDCR), to another scope in the same or in a different bucket.</p>
+The contents of a scope can be replicated, by means of <em>Cross Data Center Replication</em> (XDCR), to another scope in the same or in a different bucket.
+A scope is named by the administrator when created: it cannot subsequently be renamed.</p>
 </div>
 <div class="sect2">
 <h3 id="benefits-of-scopes-and-collections"><a class="anchor" href="#benefits-of-scopes-and-collections"></a>Benefits of Scopes and Collections</h3>
@@ -319,7 +322,7 @@ For examples of how to assign roles to scopes and collections, see <a href="../.
 <div class="paragraph">
 <p>A query may refer to a collection using an absolute <em>keyspace path</em>; or a relative <em>partial keyspace reference</em>, which must be resolved by means of the <em>query context</em>.
 The use of partial keyspace references and query context supports the separation of tenant data in a multi-tenancy environment.
-For details, refer to <a href="../../n1ql/n1ql-intro/queriesandresults.html#query-context" class="xref page">Query Context</a>.</p>
+For details, refer to <a href="#n1ql:n1ql-intro/queriesandresults.adoc#query-context" class="xref unresolved">Query Context</a>.</p>
 </div>
 </div>
 </div>
@@ -369,7 +372,7 @@ When the change history is full, old records are automatically removed (by means
 </div>
 <div class="paragraph">
 <p>As indicated above, it is possible to create, maintain, and delete scopes and collections using {sql++}.
-See the <a href="../../n1ql/n1ql-language-reference/index.html" class="xref page">SQL++ Language Reference</a> for further details.</p>
+See the <a href="#n1ql:n1ql-language-reference/index.adoc" class="xref unresolved">SQL++ Language Reference</a> for further details.</p>
 </div>
 </div>
 </div>

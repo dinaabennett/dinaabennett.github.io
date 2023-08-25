@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Installing Multiple Instances on Linux Platforms | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/install/rhel-multiple-instances.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Multiple instances of Couchbase Server can be installed on one physical machine for the Linux operating system.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -218,162 +219,16 @@ This installation method is intended for development purposes only and not suppo
 <p>Make sure that a minimum of 4Gb RAM and 8 Core CPUs are available for each Couchbase Server instance.
 When installing multiple instances on a physical machine, install as one of these two users:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>sudo user</p>
-</li>
-<li>
-<p>non-root, non-sudo user</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Refer to the lists of the reserved Couchbase Server network ports and user-defined ports before creating any new user-defined ports.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The number of Couchbase Servers that can be installed on a physical machine depends on the available RAM and CPU capacities.
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="setting-up-multiple-instances"><a class="anchor" href="#setting-up-multiple-instances"></a>Setting up Multiple Instances</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To set up multiple instances running on a physical machine:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Install Couchbase Server as a sudo user or as a non-root, non-sudo user.
-See <a href="non-root.html" class="xref page">Non-Root Install and Upgrade</a>, for instructions on non-root install.</p>
-</li>
-<li>
-<p>Create user-defined ports in the file <em class="path">/opt/couchbase/etc/couchbase/static_config</em>.</p>
-</li>
-<li>
-<p>In the <em class="path">/etc/security/limits.conf</em> file, make sure that the hard and soft limits for the <code>nofile</code> parameter are set to a value greater than 10240.</p>
-</li>
-<li>
-<p>Change the <code>short_name</code> parameter that identifies the instance (default: ns_1), to a different <code>short_name</code> in the <em class="path">/opt/couchbase/etc/couchbase/static_config</em> file.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>The <code>short_name</code> value must be different for each instance that resides on the same physical server.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Change the two occurrences of <code>short_name</code> in the <em class="path">/opt/couchbase/bin/couchbase-server</em> file.
-For example, use the <code>sed</code> utility.</p>
-<div class="ulist">
-<ul>
-<li>
-<p></p>
-<div class="listingblock">
-<div class="content">
-<pre>sed -i ‘s/ns_1/ns_inst1/g’ bin/couchbase-server</pre>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Start the Couchbase Server instance.</p>
-</li>
-<li>
-<p>Repeat the steps to install other instances.</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-While creating a cluster,  make sure that the <code>perServer</code> RAM quota is calculated looking at the number of instances to be installed on that machine.
-When configuring a cluster instance, Couchbase Server provides a default value for the perServer RAM quota.
-This default value is based on the total RAM quota available on the physical machine.
-Modify this value as needed.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="troubleshooting"><a class="anchor" href="#troubleshooting"></a>Troubleshooting</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If any bucket created on the nodes appear to be in a pending state, or if rebalance fails with an error</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>not_all_nodes_are_ready_yet</pre>
-</div>
+<p>Use Docker to set up multiple cluster instances running on a physical machine.</p>
 </div>
 <div class="paragraph">
-<p>there could be a mismatch of the <code>short_name</code> value in the following files:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>/opt/couchbase/bin/couchbase-server
-/opt/couchbase/etc/couchbase/static_config</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="limitations"><a class="anchor" href="#limitations"></a>Limitations</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Following are some of the limitations for running multiple instance of Couchbase Server on a single machine:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Some of the Couchbase Server tools will be unavailable to run on the customized ports for multiple Couchbase instances:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code class="cmd">cbrecovery</code></p>
-</li>
-<li>
-<p><code class="cmd">cbworkloadgen</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Offline upgrade for multiple instances is unavailable.</p>
-</li>
-<li>
-<p>If a bucket is created on a dedicated port, some of the operations can result in the error <code>could not listen on port xxx</code>, even though the operation still succeeds.
-This error is logged regardless of the port that is used.</p>
-</li>
-</ul>
+<p>The steps to carry out the Docker installation are given here: <a href="getting-started-docker.html#section_deploy_multiple_clusters" class="xref page">getting-started-docker.adoc#section_deploy_multiple_clusters</a></p>
 </div>
 </div>
 </div>

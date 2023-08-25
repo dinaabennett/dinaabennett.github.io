@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Understanding Analyzers | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/fts/fts-index-analyzers.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
@@ -31,7 +32,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -53,7 +54,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -166,11 +167,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../introduction/intro.html">Couchbase Server</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="fts-introduction.html">Search</a></li>
-<li class="crumb"><a href="fts-creating-indexes.html">Create Search Indexes</a></li>
-<li class="crumb"><a href="fts-configure-index-options.html">Configure Index Options</a></li>
-<li class="crumb"><a href="fts-index-analyzers.html">Index Analyzers</a></li>
+<li class="crumb"><a href="fts-index-analyzers.html">Understanding Analyzers</a></li>
 </ul>
 </nav>
 </div>
@@ -301,7 +298,7 @@ If you have configured an analyzer for your field, you cannot specify any other 
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Hebrew</strong>: Creates tokens by breaking input-text into subsets that consist of hebrew letters only: characters such as punctuation-marks and numbers are omitted. <span class="status">Couchbase Server 7.1.2</span></p>
+<p><strong>Hebrew</strong>: Creates tokens by breaking input-text into subsets that consist of hebrew letters only: characters such as punctuation-marks and numbers are omitted.</p>
 <div class="paragraph">
 <p>This does a restricted set of operations on the punctuations for example, it can’t combine the two geresh into a single gershayim (both of which are used as punctuations)</p>
 </div>
@@ -385,13 +382,13 @@ This may be useful for handling URLs or email addresses, which can thus be preve
 </div>
 </li>
 <li>
-<p><strong>mark_he</strong>: Marks the hebrew, non-hebrew and numeric tokens in the tokenstream. <span class="status">Couchbase Server 7.1.2</span></p>
+<p><strong>mark_he</strong>: Marks the hebrew, non-hebrew and numeric tokens in the tokenstream.</p>
 </li>
 <li>
-<p><strong>niqqud_he</strong>: Ensures that niqqudless spelling for the further hebrew analysis. <span class="status">Couchbase Server 7.1.2</span></p>
+<p><strong>niqqud_he</strong>: Ensures that niqqudless spelling for the further hebrew analysis.</p>
 </li>
 <li>
-<p><strong>lemmatizer_he</strong>: Lemmatizes/gets similar forms of the hebrew words, and if necessary handles spelling mistakes to a certain extent using yud and vav as part of tolerance process. <span class="status">Couchbase Server 7.1.2</span></p>
+<p><strong>lemmatizer_he</strong>: Lemmatizes/gets similar forms of the hebrew words, and if necessary handles spelling mistakes to a certain extent using yud and vav as part of tolerance process.</p>
 </li>
 <li>
 <p><strong>keyword_marker</strong>: Identifies keywords and marks them as such. These keywords are then ignored by any downstream stemmer.</p>
@@ -532,7 +529,7 @@ Couchbase Full Text Search provides multiple language-specific versions of the <
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">he</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Hebrew <span class="status">Couchbase Server 7.1.2</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hebrew</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">hi</p></td>
@@ -827,7 +824,7 @@ The ‘standard’ analyzer removes stop words defined by the English language a
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">he</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Hebrew <span class="status">Couchbase Server 7.1.2</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hebrew</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">hi</p></td>
@@ -882,7 +879,7 @@ The ‘standard’ analyzer removes stop words defined by the English language a
 <h2 id="analyzers-search-functions"><a class="anchor" href="#analyzers-search-functions"></a>Analyzers - Search Functions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="../n1ql/n1ql-language-reference/searchfun.html" class="xref page">Search functions</a> allow users to execute full text search requests within a SQL++ query.</p>
+<p><a href="#n1ql:n1ql-language-reference/searchfun.adoc" class="xref unresolved">Search functions</a> allow users to execute full text search requests within a SQL++ query.</p>
 </div>
 <div class="paragraph">
 <p>In the context of SQL++ queries, a full text search index can be described as one of the following :</p>
@@ -890,7 +887,7 @@ The ‘standard’ analyzer removes stop words defined by the English language a
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../n1ql/n1ql-language-reference/covering-indexes.html" class="xref page">Covering index</a></p>
+<p><a href="#n1ql:n1ql-language-reference/covering-indexes.adoc" class="xref unresolved">Covering index</a></p>
 </li>
 <li>
 <p>Non-covering index</p>

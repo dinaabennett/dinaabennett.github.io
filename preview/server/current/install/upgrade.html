@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Upgrade | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/install/upgrade.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="To upgrade a Couchbase-Server cluster means to revise upwards the version of Couchbase Server that is running on every node.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -311,6 +312,10 @@ For example, if you are upgrading three enterprise nodes (<code><strong>Node&#16
 <td class="tableblock halign-left valign-top"><p class="tableblock">6.x</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">6.0 &#8594; 6.5 &#8594; 7.2x</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.x</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.0 &#8594; 7.1 &#8594; 7.2x</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -335,6 +340,10 @@ For example, if you are upgrading three enterprise nodes (<code><strong>Node&#16
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">6.x</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">6.0 &#8594; 6.5 &#8594; 7.2x</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.x</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.0 &#8594; 7.1 &#8594; 7.2x</p></td>
 </tr>
 </tbody>
 </table>
@@ -459,8 +468,14 @@ For information, see <a href="../learn/security/certificates.html#node-certifica
 <h2 id="downgrade"><a class="anchor" href="#downgrade"></a>Downgrade</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Once an upgrade of a Couchbase-Server cluster has started, <em>downgrade</em> to the earlier version of Couchbase Server can be performed, provided that one node continues to run the earlier version.
-However, once all nodes are running the later version, downgrade can no longer be performed: therefore, once all nodes are running the later version, should application-support require the earlier version, an entirely new cluster must be created, running the earlier version.</p>
+<p>Once an upgrade of a Couchbase-Server cluster has started,
+<em>downgrade</em> to the earlier version of Couchbase Server can be performed,
+as long as one node continues to run the earlier version.
+To downgrade an existing node, you must first remove the existing Linux package installer, then install an earlier version.
+However, once all nodes are running the later version, downgrade can no longer be performed: therefore,
+once all nodes are running the later version,
+should application-support require the earlier version, an entirely new cluster must be created,
+running the earlier version.</p>
 </div>
 </div>
 </div>

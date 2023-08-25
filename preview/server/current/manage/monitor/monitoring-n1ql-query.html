@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Monitor Queries | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/manage/monitor/monitoring-n1ql-query.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Monitoring and profiling SQL++ queries, query service engines, and corresponding system resources is very important for smoother operational performance and efficiency of the system.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -261,25 +262,25 @@ All the power of the SQL++ query language can be applied on the keyspaces to obt
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><a href="../../n1ql/n1ql-intro/sysinfo.html#querying-datastores" class="xref page">system:datastores</a></p>
+<p><a href="#n1ql:n1ql-intro/sysinfo.adoc#querying-datastores" class="xref unresolved">system:datastores</a></p>
 </li>
 <li>
-<p><a href="../../n1ql/n1ql-intro/sysinfo.html#querying-namespaces" class="xref page">system:namespaces</a></p>
+<p><a href="#n1ql:n1ql-intro/sysinfo.adoc#querying-namespaces" class="xref unresolved">system:namespaces</a></p>
 </li>
 <li>
-<p><a href="../../n1ql/n1ql-intro/sysinfo.html#querying-buckets" class="xref page">system:buckets</a></p>
+<p><a href="#n1ql:n1ql-intro/sysinfo.adoc#querying-buckets" class="xref unresolved">system:buckets</a></p>
 </li>
 <li>
-<p><a href="../../n1ql/n1ql-intro/sysinfo.html#querying-scopes" class="xref page">system:scopes</a></p>
+<p><a href="#n1ql:n1ql-intro/sysinfo.adoc#querying-scopes" class="xref unresolved">system:scopes</a></p>
 </li>
 <li>
-<p><a href="../../n1ql/n1ql-intro/sysinfo.html#querying-keyspaces" class="xref page">system:keyspaces</a></p>
+<p><a href="#n1ql:n1ql-intro/sysinfo.adoc#querying-keyspaces" class="xref unresolved">system:keyspaces</a></p>
 </li>
 <li>
-<p><a href="../../n1ql/n1ql-intro/sysinfo.html#querying-indexes" class="xref page">system:indexes</a></p>
+<p><a href="#n1ql:n1ql-intro/sysinfo.adoc#querying-indexes" class="xref unresolved">system:indexes</a></p>
 </li>
 <li>
-<p><a href="../../n1ql/n1ql-intro/sysinfo.html#querying-dual" class="xref page">system:dual</a></p>
+<p><a href="#n1ql:n1ql-intro/sysinfo.adoc#querying-dual" class="xref unresolved">system:dual</a></p>
 </li>
 </ul>
 </div></div></td>
@@ -376,7 +377,7 @@ These are only available using REST APIs.
 </li>
 <li>
 <p>Other non-Administrator users must have explicitly granted privilege called <strong>Query System Catalog</strong> to access the restricted system keyspaces.
-For querying details of system keyspaces, see <a href="../../n1ql/n1ql-intro/sysinfo.html" class="xref page">Getting System Information</a>.</p>
+For querying details of system keyspaces, see <a href="#n1ql:n1ql-intro/sysinfo.adoc" class="xref unresolved">Getting System Information</a>.</p>
 </li>
 <li>
 <p>The following system keyspaces are considered <em>open</em>, that is, all users can access them without any special privileges:</p>
@@ -1496,7 +1497,7 @@ Currently, only the <code>default</code> namespace is available.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>A prepared statement is created and stored relative to the current <a href="../../n1ql/n1ql-intro/queriesandresults.html#query-context" class="xref page">query context</a>.
+<p>A prepared statement is created and stored relative to the current <a href="#n1ql:n1ql-intro/queriesandresults.adoc#query-context" class="xref unresolved">query context</a>.
 You can create multiple prepared statements with the same name, each stored relative to a different query context.
 This enables you to run multiple instances of the same application against different datasets.</p>
 </div>
@@ -1871,7 +1872,14 @@ This information provides a general insight into the health and performance of t
 </div>
 <div class="paragraph">
 <p>For field names and meanings, refer to <a href="../../n1ql/n1ql-rest-api/admin.html#_requests" class="xref page">Requests</a>.
-Note that most field names and meanings match exactly those of <code>system:active_requests</code>.</p>
+Most field names and meanings match exactly those of <code>system:active_requests</code>.</p>
+</div>
+<div class="paragraph">
+<p>Note that the <code>completed</code> state means that the request was started and completed by the Query service, but it does not mean that it was necessarily successful.
+The request could have been successful, or completed with errors.</p>
+</div>
+<div class="paragraph">
+<p>To find requests that completed successfully, search for completed requests whose <code>state</code> is <code>completed</code> and whose <code>errorCount</code> field has the value <code>0</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1920,6 +1928,15 @@ Running only one of them continuously has no noticeable affect on performance.</
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp">SELECT *, meta().plan FROM system:completed_requests;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To get a list of all logged completed requests using SQL++, including only successful requests:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp">SELECT * FROM system:completed_requests
+WHERE state = "completed" AND errorCount = 0;</code></pre>
 </div>
 </div>
 </div>
@@ -2761,7 +2778,7 @@ Each dictionary gives the following information:</p>
 </table>
 </div>
 <div class="paragraph">
-<p>For further details, refer to <a href="../../n1ql/n1ql-language-reference/updatestatistics.html" class="xref page">UPDATE STATISTICS</a>.</p>
+<p>For further details, refer to <a href="#n1ql:n1ql-language-reference/updatestatistics.adoc" class="xref unresolved">UPDATE STATISTICS</a>.</p>
 </div>
 </div>
 </div>
@@ -2855,7 +2872,7 @@ Each dictionary cache gives the following information:</p>
 </table>
 </div>
 <div class="paragraph">
-<p>For further details, refer to <a href="../../n1ql/n1ql-language-reference/updatestatistics.html" class="xref page">UPDATE STATISTICS</a>.</p>
+<p>For further details, refer to <a href="#n1ql:n1ql-language-reference/updatestatistics.adoc" class="xref unresolved">UPDATE STATISTICS</a>.</p>
 </div>
 </div>
 </div>
@@ -3234,7 +3251,7 @@ To see the list of recently-used scheduled tasks, use:</p>
 </table>
 </div>
 <div class="paragraph">
-<p>Refer to <a href="../../n1ql/n1ql-language-reference/advisor.html" class="xref page">ADVISOR Function</a> for more information on index advisor sessions.</p>
+<p>Refer to <a href="#n1ql:n1ql-language-reference/advisor.adoc" class="xref unresolved">ADVISOR Function</a> for more information on index advisor sessions.</p>
 </div>
 </div>
 </div>
@@ -3317,7 +3334,7 @@ To see the list of active transactions, use:</p>
 </table>
 </div>
 <div class="paragraph">
-<p>Refer to <a href="../../n1ql/n1ql-language-reference/transactions.html" class="xref page">SQL++ Support for Couchbase Transactions</a> for more information.</p>
+<p>Refer to <a href="#n1ql:n1ql-language-reference/transactions.adoc" class="xref unresolved">SQL++ Support for Couchbase Transactions</a> for more information.</p>
 </div>
 </div>
 </div>
@@ -3327,7 +3344,7 @@ To see the list of active transactions, use:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Refer to <a href="../../n1ql/n1ql-intro/sysinfo.html" class="xref page">Getting System Information</a> for more information on the system namespace.</p>
+<p>Refer to <a href="#n1ql:n1ql-intro/sysinfo.adoc" class="xref unresolved">Getting System Information</a> for more information on the system namespace.</p>
 </li>
 </ul>
 </div>

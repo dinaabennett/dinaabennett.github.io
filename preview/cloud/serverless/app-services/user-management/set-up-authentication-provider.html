@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Setting up an Authentication Provider | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/app-services/user-management/set-up-authentication-provider.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/app-services/user-management/set-up-authentication-provider.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Capella supports a number of authentication providers, which can be configured from the UI.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -313,25 +313,11 @@ The prefix itself is derived from the name of the OIDC provider, or optionally, 
 </div>
 <div class="sect2">
 <h3 id="oidc-authorization-step-by-step"><a class="anchor" href="#oidc-authorization-step-by-step"></a>OIDC Authorization: step by step</h3>
-<div class="literalblock kroki-error">
-<div class="title">OIDC Authorization Sequence</div>
+<div class="imageblock kroki">
 <div class="content">
-<pre>sequenceDiagram
-  autonumber
-  actor User
-  participant mobile as Mobile App
-  participant appService as App Service
-  participant oidc as OIDC Provider
-
-  User ->> mobile: logs in
-  mobile ->> appService: initiates OIDC authentication
-  appService ->> oidc: GET call via Issuer URL
-  oidc ->> mobile: Instruction to redirect to App Service with authorization code
-  mobile ->> appService: Instruction to initiate handshake with authorization code
-  appService ->> oidc: exchange authorization code and retrieve token
-  oidc ->> appService: returns access token, id token, refresh token
-  appService ->> mobile: returns access token, refresh token and session identifier</pre>
+<img src="../_images/diag-93c8f46b47989d51114b30f0f11facad81fdc113.svg" alt="OIDC Authorization Sequence">
 </div>
+<div class="title">Figure 3. OIDC Authorization Sequence</div>
 </div>
 </div>
 </div>

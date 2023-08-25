@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Add an AWS PrivateLink Connection | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/security/add-aws-private-link.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/security/add-aws-private-link.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Add an AWS PrivateLink connection that peers your Amazon Web Service (AWS) network with a Capella database using AWS as its cloud provider. This connection can reduce latency and egress costs for applications hosted in the same region.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -174,7 +174,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Organizations &amp; Access</li>
+<li class="crumb">Secure Your Database</li>
 <li class="crumb">Add Private Endpoints</li>
 <li class="crumb"><a href="add-aws-private-link.html">Add an AWS PrivateLink Connection</a></li>
 </ul>
@@ -499,31 +499,7 @@ This link is to your default VPC security group.</p>
 <p>18091–18096</p>
 </li>
 <li>
-<p>11207–(11207 + Number of data nodes)</p>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>For example, if your database has three data nodes, then open the following ports:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>18091–18096</p>
-</li>
-<li>
-<p>11207–11210</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
+<p>11207, 11208–11258</p>
 </li>
 </ul>
 </div>

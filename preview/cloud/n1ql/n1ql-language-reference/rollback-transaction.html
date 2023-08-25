@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>ROLLBACK TRANSACTION | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/n1ql/n1ql-language-reference/rollback-transaction.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/n1ql/n1ql-language-reference/rollback-transaction.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="The ROLLBACK TRANSACTION statement enables you to rollback a transaction.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/n1ql/pages/n1ql-language-reference/rollback-transaction.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/n1ql/pages/n1ql-language-reference/rollback-transaction.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,9 +174,9 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../../index.html">Couchbase Capella</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="../query.html">Query</a></li>
-<li class="crumb"><a href="index.html">SQL++ Language Reference</a></li>
+<li class="crumb">Query Your Data</li>
+<li class="crumb"><a href="../query.html">Query Your Database</a></li>
+<li class="crumb"><a href="../../clusters/query-service/query-service.html">Use the Query Service</a></li>
 <li class="crumb">Statements</li>
 <li class="crumb"><a href="rollback-transaction.html">ROLLBACK TRANSACTION</a></li>
 </ul>
@@ -250,7 +250,7 @@ If you are using the cbq shell, and a transaction fails for any reason, you must
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/tcl.ebnf#L23-L24">rollback-transaction ::= 'ROLLBACK' ( 'WORK' | 'TRAN' | 'TRANSACTION' )?
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/tcl.ebnf#L23-L24">rollback-transaction ::= 'ROLLBACK' ( 'WORK' | 'TRAN' | 'TRANSACTION' )?
                        ( 'TO' 'SAVEPOINT' savepointname )?</code></pre>
 </div>
 </div>
@@ -301,7 +301,7 @@ SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
 
 -- Create a booking document
 UPSERT INTO `travel-sample`.tenant_agent_00.bookings
-VALUES("bf7ad6fa-bdb9-4099-a840-196e47179f03", {
+VALUES("42641d7a-cde3-4a4d-bfd5-fec321510f70", {
   "date": "07/24/2021",
   "flight": "WN533",
   "flighttime": 7713,
@@ -315,14 +315,14 @@ SAVEPOINT s1;
 -- Update the booking document to include a user
 UPDATE `travel-sample`.tenant_agent_00.bookings AS b
 SET b.`user` = "0"
-WHERE META(b).id = "bf7ad6fa-bdb9-4099-a840-196e47179f03";
+WHERE META(b).id = "42641d7a-cde3-4a4d-bfd5-fec321510f70";
 
 -- Check the content of the booking and user
 SELECT b.*, u.name
 FROM `travel-sample`.tenant_agent_00.bookings b
 JOIN `travel-sample`.tenant_agent_00.users u
 ON b.`user` = META(u).id
-WHERE META(b).id = "bf7ad6fa-bdb9-4099-a840-196e47179f03";
+WHERE META(b).id = "42641d7a-cde3-4a4d-bfd5-fec321510f70";
 
 -- Set a second savepoint
 SAVEPOINT s2;
@@ -330,14 +330,14 @@ SAVEPOINT s2;
 -- Update the booking documents to change the user
 UPDATE `travel-sample`.tenant_agent_00.bookings AS b
 SET b.`user` = "1"
-WHERE META(b).id = "bf7ad6fa-bdb9-4099-a840-196e47179f03";
+WHERE META(b).id = "42641d7a-cde3-4a4d-bfd5-fec321510f70";
 
 -- Check the content of the booking and user
 SELECT b.*, u.name
 FROM `travel-sample`.tenant_agent_00.bookings b
 JOIN `travel-sample`.tenant_agent_00.users u
 ON b.`user` = META(u).id
-WHERE META(b).id = "bf7ad6fa-bdb9-4099-a840-196e47179f03";
+WHERE META(b).id = "42641d7a-cde3-4a4d-bfd5-fec321510f70";
 
 -- <mark>Roll back the transaction to the second savepoint</mark>
 ROLLBACK TRAN TO SAVEPOINT s2;
@@ -347,7 +347,7 @@ SELECT b.*, u.name
 FROM `travel-sample`.tenant_agent_00.bookings b
 JOIN `travel-sample`.tenant_agent_00.users u
 ON b.`user` = META(u).id
-WHERE META(b).id = "bf7ad6fa-bdb9-4099-a840-196e47179f03";
+WHERE META(b).id = "42641d7a-cde3-4a4d-bfd5-fec321510f70";
 
 -- <mark>Roll back the entire transaction</mark>
 ROLLBACK WORK;</code></pre>
@@ -377,7 +377,7 @@ ROLLBACK WORK;</code></pre>
   },
   {
     "_sequence_num": 3,
-    "_sequence_query": "\n\n-- Create a booking document\nUPSERT INTO `travel-sample`.tenant_agent_00.bookings\nVALUES(\"bf7ad6fa-bdb9-4099-a840-196e47179f03\", {\n  \"date\": \"07/24/2021\",\n  \"flight\": \"WN533\",\n  \"flighttime\": 7713,\n  \"price\": 964.13,\n  \"route\": \"63986\"\n});",
+    "_sequence_query": "\n\n-- Create a booking document\nUPSERT INTO `travel-sample`.tenant_agent_00.bookings\nVALUES(\"42641d7a-cde3-4a4d-bfd5-fec321510f70\", {\n  \"date\": \"07/24/2021\",\n  \"flight\": \"WN533\",\n  \"flighttime\": 7713,\n  \"price\": 964.13,\n  \"route\": \"63986\"\n});",
     "_sequence_query_status": "success",
     "_sequence_result": {
       "results": []
@@ -393,7 +393,7 @@ ROLLBACK WORK;</code></pre>
   },
   {
     "_sequence_num": 5,
-    "_sequence_query": "\n\n-- Update the booking document to include a user\nUPDATE `travel-sample`.tenant_agent_00.bookings AS b\nSET b.`user` = \"0\"\nWHERE META(b).id = \"bf7ad6fa-bdb9-4099-a840-196e47179f03\";",
+    "_sequence_query": "\n\n-- Update the booking document to include a user\nUPDATE `travel-sample`.tenant_agent_00.bookings AS b\nSET b.`user` = \"0\"\nWHERE META(b).id = \"42641d7a-cde3-4a4d-bfd5-fec321510f70\";",
     "_sequence_query_status": "success",
     "_sequence_result": {
       "results": []
@@ -401,7 +401,7 @@ ROLLBACK WORK;</code></pre>
   },
   {
     "_sequence_num": 6,
-    "_sequence_query": "\n\n-- Check the content of the booking and user\nSELECT b.*, u.name\nFROM `travel-sample`.tenant_agent_00.bookings b\nJOIN `travel-sample`.tenant_agent_00.users u\nON b.`user` = META(u).id\nWHERE META(b).id = \"bf7ad6fa-bdb9-4099-a840-196e47179f03\";",
+    "_sequence_query": "\n\n-- Check the content of the booking and user\nSELECT b.*, u.name\nFROM `travel-sample`.tenant_agent_00.bookings b\nJOIN `travel-sample`.tenant_agent_00.users u\nON b.`user` = META(u).id\nWHERE META(b).id = \"42641d7a-cde3-4a4d-bfd5-fec321510f70\";",
     "_sequence_query_status": "success",
     "_sequence_result": [
       {
@@ -425,7 +425,7 @@ ROLLBACK WORK;</code></pre>
   },
   {
     "_sequence_num": 8,
-    "_sequence_query": "\n\n-- Update the booking documents to change the user\nUPDATE `travel-sample`.tenant_agent_00.bookings AS b\nSET b.`user` = \"1\"\nWHERE META(b).id = \"bf7ad6fa-bdb9-4099-a840-196e47179f03\";",
+    "_sequence_query": "\n\n-- Update the booking documents to change the user\nUPDATE `travel-sample`.tenant_agent_00.bookings AS b\nSET b.`user` = \"1\"\nWHERE META(b).id = \"42641d7a-cde3-4a4d-bfd5-fec321510f70\";",
     "_sequence_query_status": "success",
     "_sequence_result": {
       "results": []
@@ -433,7 +433,7 @@ ROLLBACK WORK;</code></pre>
   },
   {
     "_sequence_num": 9,
-    "_sequence_query": "\n\n-- Check the content of the booking and user\nSELECT b.*, u.name\nFROM `travel-sample`.tenant_agent_00.bookings b\nJOIN `travel-sample`.tenant_agent_00.users u\nON b.`user` = META(u).id\nWHERE META(b).id = \"bf7ad6fa-bdb9-4099-a840-196e47179f03\";",
+    "_sequence_query": "\n\n-- Check the content of the booking and user\nSELECT b.*, u.name\nFROM `travel-sample`.tenant_agent_00.bookings b\nJOIN `travel-sample`.tenant_agent_00.users u\nON b.`user` = META(u).id\nWHERE META(b).id = \"42641d7a-cde3-4a4d-bfd5-fec321510f70\";",
     "_sequence_query_status": "success",
     "_sequence_result": [
       {
@@ -457,7 +457,7 @@ ROLLBACK WORK;</code></pre>
   },
   {
     "_sequence_num": 11,
-    "_sequence_query": "\n\n-- Check the content of the booking and user again\nSELECT b.*, u.name\nFROM `travel-sample`.tenant_agent_00.bookings b\nJOIN `travel-sample`.tenant_agent_00.users u\nON b.`user` = META(u).id\nWHERE META(b).id = \"bf7ad6fa-bdb9-4099-a840-196e47179f03\";",
+    "_sequence_query": "\n\n-- Check the content of the booking and user again\nSELECT b.*, u.name\nFROM `travel-sample`.tenant_agent_00.bookings b\nJOIN `travel-sample`.tenant_agent_00.users u\nON b.`user` = META(u).id\nWHERE META(b).id = \"42641d7a-cde3-4a4d-bfd5-fec321510f70\";",
     "_sequence_query_status": "success",
     "_sequence_result": [
       {
@@ -513,7 +513,7 @@ ROLLBACK WORK;</code></pre>
 FROM `travel-sample`.tenant_agent_00.bookings b
 JOIN `travel-sample`.tenant_agent_00.users u
 ON b.`user` = META(u).id
-WHERE META(b).id = "bf7ad6fa-bdb9-4099-a840-196e47179f03";</code></pre>
+WHERE META(b).id = "42641d7a-cde3-4a4d-bfd5-fec321510f70";</code></pre>
 </div>
 </div>
 <div class="listingblock">

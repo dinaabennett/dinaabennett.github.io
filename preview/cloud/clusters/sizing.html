@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Sizing a Database | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/clusters/sizing.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/clusters/sizing.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
@@ -32,7 +32,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +54,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -173,7 +173,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Configure Database</li>
+<li class="crumb">Manage Your Database</li>
 <li class="crumb"><a href="sizing.html">Database Sizing</a></li>
 </ul>
 </nav>
@@ -315,8 +315,24 @@ If you&#8217;re using the Ultra disk type, you can choose between fixed storage 
 <div class="sect2">
 <h3 id="iops"><a class="anchor" href="#iops"></a>IOPS</h3>
 <div class="paragraph">
-<p>The required amount of input and output operations per second (IOPS) for the service.
-Increase the IOPS for a better disk throughput, but this does cost more to do so.</p>
+<p>The required amount of input and output operations per second (IOPS) for the service.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Adjusting the IOPS rate affects performance and cost.
+When creating or modifying a database with AWS gp3, AWS io2, or Azure Ultra Disk and choosing a storage option, Capella uses recommended defaults for the IOPS field.
+You can replace the default IOPS value with one higher than the default but not lower.
+For the recommended IOPS values for databases using AWS gp3, AWS io2, or Azure Ultra Disk, see <a href="scale-database.html#IOPS-Defaults" class="xref page">IOPS Defaults</a>.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <div class="title">AWS</div>
@@ -326,10 +342,10 @@ The storage speed is configurable based on the volume type used:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>GP3</strong>: 3000 to 16000 IOPS</p>
+<p><strong>gp3</strong>: 3000 to 16000 IOPS</p>
 </li>
 <li>
-<p><strong>IO2</strong>: 1000 to 64000 IOPS</p>
+<p><strong>io2</strong>: 1000 to 64000 IOPS</p>
 </li>
 </ul>
 </div>

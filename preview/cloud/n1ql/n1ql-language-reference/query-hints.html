@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Query Block Hints | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/n1ql/n1ql-language-reference/query-hints.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/n1ql/n1ql-language-reference/query-hints.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Query block hints are hints that apply to an entire query block.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/n1ql/pages/n1ql-language-reference/query-hints.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/n1ql/pages/n1ql-language-reference/query-hints.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,9 +174,9 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../../index.html">Couchbase Capella</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="../query.html">Query</a></li>
-<li class="crumb"><a href="index.html">SQL++ Language Reference</a></li>
+<li class="crumb">Query Your Data</li>
+<li class="crumb"><a href="../query.html">Query Your Database</a></li>
+<li class="crumb"><a href="../../clusters/query-service/query-service.html">Use the Query Service</a></li>
 <li class="crumb"><a href="optimizer-hints.html">Hints</a></li>
 <li class="crumb"><a href="query-hints.html">Query Block Hints</a></li>
 </ul>
@@ -224,7 +224,7 @@ If not specified, the optimizer determines the optimal join order.</p>
 <h3 id="simple-syntax"><a class="anchor" href="#simple-syntax"></a>Simple Syntax</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/hints.ebnf#L32">ordered-hint-simple ::= 'ORDERED'</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/hints.ebnf#L32">ordered-hint-simple ::= 'ORDERED'</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -241,7 +241,7 @@ You may only use this hint once within the hint comment.</p>
 <h3 id="json-syntax"><a class="anchor" href="#json-syntax"></a>JSON Syntax</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/hints.ebnf#L64">ordered-hint-json ::= '"ordered"' ':' 'true'</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/hints.ebnf#L64">ordered-hint-json ::= '"ordered"' ':' 'true'</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -273,7 +273,7 @@ For more information, see <a href="../n1ql-intro/queriesandresults.html#query-co
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/select/ordered-hint.n1ql#L28-L34">SELECT a.airportname AS source, r.id AS route, l.name AS airline
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/select/ordered-hint.n1ql#L28-L34">SELECT a.airportname AS source, r.id AS route, l.name AS airline
 FROM airport AS a
 JOIN route AS r <i class="conum" data-value="1"></i><b>(1)</b>
   ON r.sourceairport = a.faa
@@ -325,7 +325,7 @@ WHERE l.name = "40-Mile Air";</code></pre>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/select/ordered-hint.n1ql#L6-L13">SELECT /*+ ORDERED */
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/select/ordered-hint.n1ql#L6-L13">SELECT /*+ ORDERED */
        a.airportname AS source, r.id AS route, l.name AS airline
 FROM airport AS a
 JOIN route AS r <i class="conum" data-value="1"></i><b>(1)</b>
@@ -378,7 +378,7 @@ WHERE l.name = "40-Mile Air";</code></pre>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/select/ordered-hint.n1ql#L17-L24">SELECT /*+ {"ordered": true} */
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/select/ordered-hint.n1ql#L17-L24">SELECT /*+ {"ordered": true} */
        a.airportname AS source, r.id AS route, l.name AS airline
 FROM airport AS a
 JOIN route AS r <i class="conum" data-value="1"></i><b>(1)</b>

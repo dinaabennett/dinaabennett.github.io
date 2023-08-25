@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
-<title>Selecting Data | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/guides/select.html">
+<title>Select Data | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/cloud/guides/select.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="How to use a SQL++ selection query to read data from a data source and return results.">
@@ -42,7 +42,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -64,7 +64,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -124,7 +124,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/guides/pages/select.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/guides/pages/select.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -183,16 +183,17 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="intro.html">Developer Guides</a></li>
+<li class="crumb">Query Your Data</li>
+<li class="crumb"><a href="../n1ql/query.html">Query Your Database</a></li>
+<li class="crumb"><a href="../clusters/query-service/query-service.html">Use the Query Service</a></li>
 <li class="crumb"><a href="query.html">Selection Queries</a></li>
-<li class="crumb"><a href="select.html">Selecting Data</a></li>
+<li class="crumb"><a href="select.html">Select Data</a></li>
 </ul>
 </nav>
 </div>
 <article class="doc">
 <div class="page-heading-title">
-<h1 class="page">Selecting Data</h1>
+<h1 class="page">Select Data</h1>
 <div class="labels">
 <ul><li class="guide"><span><i class="far fa-check-square"></i> how-to</span></li>
 </ul>
@@ -241,30 +242,17 @@ To read data from a data source using SQL++, you must use a selection query; tha
 <div class="paragraph">
 <p>Read the following for further information about the tools available for editing and executing queries:</p>
 </div>
-<div class="paragraph">
-<p>+</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>cbq&gt;</pre>
-</div>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../clusters/query-service/query-workbench.html" class="xref page">Query Workbench</a></p>
-<div class="imageblock text-left unresolved">
-<div class="content">
-<img src="manage:manage-ui/queryTab.png" alt="queryTab" width="100">
-</div>
-</div>
+<p><a href="../clusters/query-service/query-workbench.html" class="xref page">Query Tab</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="selecting"><a class="anchor" href="#selecting"></a>Selecting</h2>
+<h2 id="select-clause"><a class="anchor" href="#select-clause"></a>Select Clause</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A selection query enables you to read information from a data source, perform operations on the data, and return the results.</p>
@@ -300,13 +288,13 @@ To read data from a data source using SQL++, you must use a selection query; tha
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/guides/examples/query/select-clause.n1ql">SELECT "Hello world" AS greeting;</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/guides/examples/query/select-clause.n1ql">SELECT "Hello world" AS greeting;</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Result</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/guides/examples/query/select-clause.jsonc">[
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="file:///C:/Docs/docs-devex/modules/guides/examples/query/select-clause.jsonc">[
   {
     "greeting": "Hello world"
   }
@@ -378,7 +366,7 @@ The result object includes an array of rows found.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="specifying-a-data-source"><a class="anchor" href="#specifying-a-data-source"></a>Specifying a Data Source</h2>
+<h2 id="specify-a-data-source"><a class="anchor" href="#specify-a-data-source"></a>Specify a Data Source</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To specify the data source for a query, use the FROM clause.
@@ -409,14 +397,14 @@ The sample dataset already contains all the indexes you need to run the example 
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/guides/examples/query/from-clause.n1ql">SELECT airportname, city
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/guides/examples/query/from-clause.n1ql">SELECT airportname, city
 FROM `travel-sample`.inventory.airport;</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Result</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/guides/examples/query/from-clause.jsonc">[
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="file:///C:/Docs/docs-devex/modules/guides/examples/query/from-clause.jsonc">[
   {
     "airportname": "Calais Dunkerque",
     "city": "Calais"
@@ -437,7 +425,7 @@ FROM `travel-sample`.inventory.airport;</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="query-context"><a class="anchor" href="#query-context"></a>Setting the Query Context</h2>
+<h2 id="query-context"><a class="anchor" href="#query-context"></a>Set the Query Context</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The query context enables you to specify a bucket and scope to resolve partial keyspace references within your queries.
@@ -461,7 +449,7 @@ When a query specifies a data source using the full path to a keyspace, the quer
 <div class="ulist tabs">
 <ul>
 <li>
-<p><a id="tabset2_query-workbench"></a>Query Workbench</p>
+<p><a id="tabset2_query-tab"></a>Query Tab</p>
 </li>
 <li>
 <p><a id="tabset2_cbq-shell"></a>CBQ Shell</p>
@@ -469,7 +457,7 @@ When a query specifies a data source using the full path to a keyspace, the quer
 </ul>
 </div>
 <div class="content">
-<div class="tab-pane" aria-labelledby="tabset2_query-workbench">
+<div class="tab-pane" aria-labelledby="tabset2_query-tab">
 <div class="paragraph">
 <p>To set the query context:</p>
 </div>
@@ -502,7 +490,7 @@ When a query specifies a data source using the full path to a keyspace, the quer
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/guides/examples/query/context-set.n1ql">\SET -query_context travel-sample.inventory;</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/guides/examples/query/context-set.n1ql">\SET -query_context travel-sample.inventory;</code></pre>
 </div>
 </div>
 </div>
@@ -516,7 +504,7 @@ To specify the data source using the bucket name only, you must unset the query 
 <div class="ulist tabs">
 <ul>
 <li>
-<p><a id="tabset3_query-workbench"></a>Query Workbench</p>
+<p><a id="tabset3_query-tab"></a>Query Tab</p>
 </li>
 <li>
 <p><a id="tabset3_cbq-shell"></a>CBQ Shell</p>
@@ -524,7 +512,7 @@ To specify the data source using the bucket name only, you must unset the query 
 </ul>
 </div>
 <div class="content">
-<div class="tab-pane" aria-labelledby="tabset3_query-workbench">
+<div class="tab-pane" aria-labelledby="tabset3_query-tab">
 <div class="paragraph">
 <p>To unset the query context, using the <strong>context</strong> controls at the top right of the Query Editor, open the bucket drop-down menu and select <code>unset</code>.</p>
 </div>
@@ -547,7 +535,7 @@ To specify the data source using the bucket name only, you must unset the query 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/guides/examples/query/context-unset.n1ql">\UNSET -query_context;</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/guides/examples/query/context-unset.n1ql">\UNSET -query_context;</code></pre>
 </div>
 </div>
 </div>
@@ -573,12 +561,12 @@ Only records that satisfy the comparison expression are returned.</p>
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="#query-context">Setting the Query Context</a>.</p>
+For more information, see <a href="#query-context">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/select/query-keyspace-idx.n1ql">SELECT t.airportname, t.city
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/select/query-keyspace-idx.n1ql">SELECT t.airportname, t.city
 FROM   airport t
 WHERE  tz = "America/Anchorage"
        AND geo.alt &gt;= 2100;</code></pre>
@@ -587,7 +575,7 @@ WHERE  tz = "America/Anchorage"
 <div class="listingblock">
 <div class="title">Result</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/select/query-keyspace-idx.jsonc">[
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/select/query-keyspace-idx.jsonc">[
   {
         "airportname": "Anaktuvuk Pass Airport",
         "city": "Anaktuvuk Pass",
@@ -603,7 +591,7 @@ WHERE  tz = "America/Anchorage"
 </div>
 </div>
 <div class="sect1">
-<h2 id="limiting-results"><a class="anchor" href="#limiting-results"></a>Limiting Results</h2>
+<h2 id="limit-results"><a class="anchor" href="#limit-results"></a>Limit Results</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To limit the number of documents returned by a query, use the <code>LIMIT</code> clause.</p>
@@ -616,12 +604,12 @@ WHERE  tz = "America/Anchorage"
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="#query-context">Setting the Query Context</a>.</p>
+For more information, see <a href="#query-context">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/select/limit-number.n1ql">SELECT name, address, city, country, url
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/select/limit-number.n1ql">SELECT name, address, city, country, url
 FROM hotel
 WHERE vacancy = true
 LIMIT 2;</code></pre>
@@ -630,7 +618,7 @@ LIMIT 2;</code></pre>
 <div class="listingblock">
 <div class="title">Result</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/select/limit-result.jsonc">[
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/select/limit-result.jsonc">[
   {
     "address": "Capstone Road, ME7 3JE",
     "city": "Medway",
@@ -656,7 +644,7 @@ LIMIT 2;</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ordering-results"><a class="anchor" href="#ordering-results"></a>Ordering Results</h2>
+<h2 id="order-results"><a class="anchor" href="#order-results"></a>Order Results</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To sort the documents in the resultset by one or more fields, use the <code>ORDER BY</code> clause.</p>
@@ -669,12 +657,12 @@ LIMIT 2;</code></pre>
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="#query-context">Setting the Query Context</a>.</p>
+For more information, see <a href="#query-context">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/select/order-by.n1ql">SELECT city, name
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/select/order-by.n1ql">SELECT city, name
 FROM landmark
 ORDER BY city DESC, name ASC
 LIMIT 5;</code></pre>
@@ -683,7 +671,7 @@ LIMIT 5;</code></pre>
 <div class="listingblock">
 <div class="title">Results:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/select/order-by.jsonc">[
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/select/order-by.jsonc">[
   {
     "city": "Évreux",
     "name": "Cafe des Arts"
@@ -773,7 +761,7 @@ LIMIT 5;</code></pre>
                     <span class="prev"><a href="query.html">Selection Queries</a></span>
 
 
-                    <span class="next"><a href="join.html">Querying Across Relationships</a></span>
+                    <span class="next"><a href="join.html">Query Across Relationships</a></span>
 
 </article>
 </main>

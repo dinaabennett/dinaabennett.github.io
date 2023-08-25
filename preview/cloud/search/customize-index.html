@@ -7,10 +7,10 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Customize a Search Index with the Capella UI | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/search/customize-index.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/search/customize-index.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
-<meta name="description" content="Configure additional options for a Search index to improve performance and the quality of your search results.">
+<meta name="description" content="Configure additional options for a Search index to improve performance and fine tune your search results.">
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
 
 
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/search/pages/customize-index.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/search/pages/customize-index.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,7 +174,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Your Data</li>
+<li class="crumb">Add Search to Your Application - (work in progress)</li>
 <li class="crumb"><a href="search.html">Add Search to Your Application</a></li>
 <li class="crumb"><a href="customize-index.html">Customize a Search Index with the Capella UI</a></li>
 </ul>
@@ -199,7 +199,7 @@
 <div class="sectionbody">
 <div class="quoteblock abstract">
 <blockquote>
-Configure additional options for a Search index to improve performance and the quality of your search results.
+Configure additional options for a Search index to improve performance and fine tune your search results.
 </blockquote>
 </div>
 <div class="paragraph">
@@ -217,18 +217,6 @@ Configure additional options for a Search index to improve performance and the q
 </tr>
 </thead>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="type-identifiers"></a>Type Identifier</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Set a type identifier to change how the Search index finds a document&#8217;s type.</p>
-</div>
-<div class="paragraph">
-<p>The type identifier tells the Search Service the document field or location in the document&#8217;s ID value to use as the document&#8217;s type.</p>
-</div>
-<div class="paragraph">
-<p>For more information about how to set a type identifier, see <a href="set-type-identifier.html" class="xref page">Set a Search Index Type Identifier</a>.</p>
-</div></div></td>
-</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="type-mappings"></a>Mappings</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -256,6 +244,37 @@ Child fields set the specific fields from a document that you want to include or
 </div>
 <div class="paragraph">
 <p>For more information about how to add a type mapping to an index, see <a href="create-type-mapping.html" class="xref page">Create a Type Mapping</a>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">General Settings</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Set general settings to change your index&#8217;s default analyzer, replication, and more.</p>
+</div>
+<div class="paragraph">
+<p>For more information about how to change general settings, see <a href="set-advanced-settings.html" class="xref page">Set Search Index General Settings</a>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="type-identifiers"></a>Type Identifier</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Set a type identifier to add a filter to the documents added to your Search index:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>JSON Type Field: Selects only documents that contain a specific field with a specified string value.</p>
+</li>
+<li>
+<p>Doc ID up to Separator: Selects only documents with an ID or key up to a specific substring.</p>
+</li>
+<li>
+<p>Doc ID with Regex: Selects only documents with an ID or key that matches a regular expression.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information about how to configure a type identifier, see <a href="set-type-identifier.html" class="xref page">Set a Search Index Type Identifier</a>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -297,15 +316,6 @@ When you create a custom analyzer, you can choose these components.</p>
 </div>
 <div class="paragraph">
 <p>For more information about how to add a custom date/time parser, see <a href="create-custom-date-time-parser.html" class="xref page">Create a Custom Date/Time Parser</a>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">General</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Set general settings to change your index&#8217;s default analyzer, replication, and more.</p>
-</div>
-<div class="paragraph">
-<p>For more information about how to change general settings, see <a href="set-advanced-settings.html" class="xref page">Set Search Index General Settings</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -407,6 +417,24 @@ For more information about the available default wordlists, see <a href="default
 <div class="paragraph">
 <p>For more information about how to create your own wordlist, see <a href="create-custom-wordlist.html" class="xref page">Create a Custom Wordlist</a>.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="create-search-indexes.html" class="xref page">Create a Search Index</a></p>
+</li>
+<li>
+<p><a href="index-aliases.html" class="xref page">Create Search Index Aliases</a></p>
+</li>
+<li>
+<p><a href="run-searches.html" class="xref page">Run a Search With a Search Index</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>

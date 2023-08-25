@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Create a Search Index | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/search/create-search-indexes.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/search/create-search-indexes.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Create a Search index to get started with the Search Service in your database.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/search/pages/create-search-indexes.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/search/pages/create-search-indexes.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,7 +174,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Your Data</li>
+<li class="crumb">Add Search to Your Application - (work in progress)</li>
 <li class="crumb"><a href="search.html">Add Search to Your Application</a></li>
 <li class="crumb"><a href="create-search-indexes.html">Create a Search Index</a></li>
 </ul>
@@ -223,7 +223,7 @@ Create a Search index to get started with the Search Service in your database.
 </td>
 <td class="content">
 If you&#8217;re new to developing with the Search Service, <a href="create-search-index-ui.html" class="xref page">create a Search index with the UI</a>.
-You can copy the JSON payload from the UI to create your index with the REST API.
+You can copy the Search index definition JSON payload from the UI to create your index <a href="create-search-index-rest-api.html" class="xref page">with the REST API</a>.
 </td>
 </tr>
 </table>
@@ -234,7 +234,7 @@ You can copy the JSON payload from the UI to create your index with the REST API
 <h2 id="ui"><a class="anchor" href="#ui"></a>Creating a Search Index with the Capella UI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To <a href="create-search-index-ui.html" class="xref page">create a basic Search index</a>, you only need to provide the following information:</p>
+<p>To <a href="create-search-index-ui.html" class="xref page">create a basic Search index</a>, provide the following information:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -242,10 +242,7 @@ You can copy the JSON payload from the UI to create your index with the REST API
 <p>The name of the index.</p>
 </li>
 <li>
-<p>The bucket where you want to create the index.</p>
-</li>
-<li>
-<p>The scope and collection where you want to create the index.</p>
+<p>The bucket, scope and collection or collections where you want to create the index.</p>
 </li>
 <li>
 <p>A <a href="customize-index.html#type-mappings" class="xref page">type mapping</a> for the documents that you want to add to the index.</p>
@@ -253,7 +250,11 @@ You can copy the JSON payload from the UI to create your index with the REST API
 </ul>
 </div>
 <div class="paragraph">
-<p>After you create a Search index, you can customize it to improve search results and performance.
+<p>After you create a Search index, the Search Service streams data from your chosen collection or collections, and any document mutations, into the index builder.
+Before your index finishes building, you can run a search and return partial results.</p>
+</div>
+<div class="paragraph">
+<p>You can also customize a Search index to improve search results and performance.
 For more information about how you can customize a Search index with the Capella UI, see <a href="customize-index.html" class="xref page">Customize a Search Index with the Capella UI</a>.</p>
 </div>
 </div>
@@ -262,11 +263,35 @@ For more information about how you can customize a Search index with the Capella
 <h2 id="api"><a class="anchor" href="#api"></a>Creating a Search Index with the REST API</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can create a Search index with the REST API through a JSON payload.
-The properties in the JSON payload correspond to the settings in the Capella UI.</p>
+<p>You can create a Search index with the REST API through a JSON payload.</p>
+</div>
+<div class="paragraph">
+<p>Most properties in the JSON payload correspond to settings in the Capella UI.
+You can also copy the Search index definition JSON payload from a Search index in the Capella UI to use in a REST API call.</p>
+</div>
+<div class="paragraph">
+<p>For more information about how to use the REST API to create a Search index, see <a href="create-search-index-rest-api.html" class="xref page">Create a Search Index with the REST API and curl/HTTP</a>.</p>
 </div>
 <div class="paragraph">
 <p>For more information about the available properties for a Search index, see <a href="search-index-params.html" class="xref page">Search Index JSON Properties</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="customize-index.html" class="xref page">Customize a Search Index with the Capella UI</a></p>
+</li>
+<li>
+<p><a href="index-aliases.html" class="xref page">Create Search Index Aliases</a></p>
+</li>
+<li>
+<p><a href="run-searches.html" class="xref page">Run a Search With a Search Index</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>

@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>REST API reference | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/rest-api/rest-intro.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="The REST API supports the management of Couchbase-Server clusters.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -620,24 +621,34 @@ The APIs for each area are assigned a table, below.</p>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>POST</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/controller/startLogsCollection</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-manage-log-collection.html" class="xref page">Collecting Logs</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>POST</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/controller/cancelLogsCollection</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-manage-log-collection.html" class="xref page">Collecting Logs</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>GET</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/pools/default/tasks</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-get-cluster-tasks.html" class="xref page">Getting Cluster Tasks</a></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>GET</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>/diag</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-logs-get.html" class="xref page">Retrieving Log Information</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-logs-get.html" class="xref page">Retrieving Diagnostic and Log Information</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>GET</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>/sasl_logs</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-logs-get.html" class="xref page">Retrieving Log Information</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>GET</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/sasl_logs/[log-name]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-logs-get.html" class="xref page">Retrieving Log Information</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-logs-get.html" class="xref page">Retrieving Diagnostic and Log Information</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>POST</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>/logClientError</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-client-logs.html" class="xref page">Creating Client Logs</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-client-logs.html" class="xref page">Logging Client-Side Errors</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1085,12 +1096,12 @@ These APIs are listed in the tables below.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>POST</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>/node/controller/changeMasterPassword</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-secret-mgmt.html#post-nodecontrollerchangemasterpassword" class="xref page">Secret Management API</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-secret-mgmt.html#post-nodecontrollerchangemasterpassword" class="xref page">Secret-Management API</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>POST</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>/node/controller/rotateDataKey</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-secret-mgmt.html#post-nodecontrollerrotatedatakey" class="xref page">Secret Management API</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-secret-mgmt.html#post-nodecontrollerrotatedatakey" class="xref page">Secret-Management API</a></p></td>
 </tr>
 </tbody>
 </table>

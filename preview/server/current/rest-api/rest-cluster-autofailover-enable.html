@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Enabling and Disabling Auto-Failover | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/rest-api/rest-cluster-autofailover-enable.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Auto-failover is enabled and disabled by means of the &lt;code&gt;POST /settings/autoFailover&lt;/code&gt; HTTP method and URI.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -227,11 +228,13 @@ The Full Admin, Cluster Admin, or Backup Full Admin role is required, to establi
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bourne hljs" data-lang="bourne">curl -X POST http://&lt;ip-address-or-hostname&gt;:8091/settings/autoFailover
   -u &lt;username&gt;:&lt;password&gt;
+  -d enabled=[true|false]
   -d timeout=&lt;number-of-seconds&gt;
   -d maxCount=&lt;number-of-nodes&gt;
   -d failoverOnDataDiskIssues[enabled]=[true|false]
   -d failoverOnDataDiskIssues[timePeriod]=&lt;number-of-seconds&gt;
-  -d canAbortRebalance=[true|false]</code></pre>
+  -d canAbortRebalance=[true|false]
+  -d failoverPreserveDurabilityMajority=[true|false]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -291,6 +294,12 @@ Whether or not auto-failover can be triggered if a <em>rebalance</em> is in prog
 This parameter is optional, and is only available in Couchbase Enterprise Edition.
 The value can be either <code>true</code> (the default) or <code>false</code>.
 The parameter and its value are ignored, if <code>enabled</code> is set to <code>false</code>.</p>
+</li>
+<li>
+<p><code>failoverPreserveDurabilityMajority</code>.
+Can be <code>true</code> or <code>false</code> (the default).
+If this setting is <code>true</code>, a node is <em>not</em> failed over if this might result in the loss of durably written data.
+For information, see <a href="../learn/data/durability.html#preserving-durable-writes" class="xref page">Preserving Durable Writes</a>.</p>
 </li>
 </ul>
 </div>
@@ -355,6 +364,10 @@ For information on managing auto-failover with Couchbase Web Console, see <a hre
 </div>
 <div class="paragraph">
 <p>A full description of auto-failover is provided in <a href="../learn/clusters-and-availability/automatic-failover.html" class="xref page">Automatic Failover</a>.</p>
+</div>
+<div class="paragraph">
+<p>An overview of durability is provided in <a href="../learn/data/durability.html" class="xref page">Durability</a>.
+For information on establishing durability settings for a bucket, see <a href="rest-bucket-create.html" class="xref page">Creating and Editing Buckets</a>.</p>
 </div>
 </div>
 </div>

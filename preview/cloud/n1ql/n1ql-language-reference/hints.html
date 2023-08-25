@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>USE Clause | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/n1ql/n1ql-language-reference/hints.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/n1ql/n1ql-language-reference/hints.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="The USE clause enables you to specify that the query should use particular keys, or a particular index.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/n1ql/pages/n1ql-language-reference/hints.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/n1ql/pages/n1ql-language-reference/hints.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,9 +174,9 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../../index.html">Couchbase Capella</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="../query.html">Query</a></li>
-<li class="crumb"><a href="index.html">SQL++ Language Reference</a></li>
+<li class="crumb">Query Your Data</li>
+<li class="crumb"><a href="../query.html">Query Your Database</a></li>
+<li class="crumb"><a href="../../clusters/query-service/query-service.html">Use the Query Service</a></li>
 <li class="crumb">Statements</li>
 <li class="crumb"><a href="selectintro.html">SELECT</a></li>
 <li class="crumb"><a href="hints.html">USE Clause</a></li>
@@ -277,7 +277,7 @@ For more details about user roles, see
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L320">use-clause ::= use-keys-clause | use-index-clause</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L320">use-clause ::= use-keys-clause | use-index-clause</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -324,7 +324,7 @@ Only documents having those document keys will be included as inputs to a query.
 <h3 id="syntax-2"><a class="anchor" href="#syntax-2"></a>Syntax</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L324">use-keys-clause ::= 'USE' use-keys-term</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L324">use-keys-clause ::= 'USE' use-keys-term</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -334,7 +334,7 @@ Only documents having those document keys will be included as inputs to a query.
 </div>
 <div id="use-keys-term" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L328">use-keys-term ::= 'PRIMARY'? 'KEYS' expr</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L328">use-keys-term ::= 'PRIMARY'? 'KEYS' expr</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -481,7 +481,7 @@ For more details, refer to <a href="keyspace-hints.html" class="xref page">Keysp
 <h3 id="syntax-3"><a class="anchor" href="#syntax-3"></a>Syntax</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L332">use-index-clause ::= 'USE' use-index-term</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L332">use-index-clause ::= 'USE' use-index-term</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -491,7 +491,7 @@ For more details, refer to <a href="keyspace-hints.html" class="xref page">Keysp
 </div>
 <div id="use-index-term" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L336">use-index-term ::= 'INDEX' '(' index-ref ( ',' index-ref )* ')'</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L336">use-index-term ::= 'INDEX' '(' index-ref ( ',' index-ref )* ')'</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -501,7 +501,7 @@ For more details, refer to <a href="keyspace-hints.html" class="xref page">Keysp
 </div>
 <div id="index-ref" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L340">index-ref ::= index-name? index-type?</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L340">index-ref ::= index-name? index-type?</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -536,7 +536,7 @@ index-type
 <h4 id="index-type"><a class="anchor" href="#index-type"></a>USING clause</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L348">index-type ::= 'USING' ( 'GSI' | 'FTS' )</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L348">index-type ::= 'USING' ( 'GSI' | 'FTS' )</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -582,7 +582,7 @@ For more information, see <a href="../n1ql-intro/queriesandresults.html#query-co
 <div class="listingblock">
 <div class="title">INDEX hint</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/select/index-legacy.n1ql#L5-L8">SELECT id FROM route
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/select/index-legacy.n1ql#L5-L8">SELECT id FROM route
 USE INDEX (def_inventory_route_route_src_dst_day USING GSI)
 WHERE sourceairport = "SFO"
 LIMIT 1;</code></pre>

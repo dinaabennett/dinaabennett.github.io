@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Request Support | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/support/manage-support.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/support/manage-support.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
@@ -32,7 +32,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +54,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -173,7 +173,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Billing &amp; Support</li>
+<li class="crumb">Manage Billing and Support</li>
 <li class="crumb"><a href="manage-support.html">Request Support</a></li>
 </ul>
 </nav>
@@ -204,13 +204,8 @@ You can request support through the Couchbase Capella UI.
 <h2 id="requesting-support-through-the-couchbase-capella-ui"><a class="anchor" href="#requesting-support-through-the-couchbase-capella-ui"></a>Requesting Support Through the Couchbase Capella UI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Support tickets can be created and managed under the <strong class="ui">Support</strong> tab in the main navigation.
-A summary of the organization&#8217;s support tickets is displayed in table format.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/support-tab.png" alt="The 'Support' tab showing a table of multiple new support tickets.">
-</div>
+<p>Support tickets are created and managed on the <strong class="ui">Support</strong> tab.
+A summary of the organization&#8217;s support tickets is displayed here.</p>
 </div>
 <div class="paragraph">
 <p>Support tickets can be viewed and created by any user with the <a href="../organizations/organization-user-roles.html#organization-role-view" class="xref page"><code>Organization Member</code></a> role.</p>
@@ -218,39 +213,54 @@ A summary of the organization&#8217;s support tickets is displayed in table form
 <div class="sect2">
 <h3 id="support-ticket-summary"><a class="anchor" href="#support-ticket-summary"></a>Support Ticket Summary</h3>
 <div class="paragraph">
-<p>The <strong class="ui">Support</strong> tab shows a summary of all the organization&#8217;s open and closed support tickets.
-The summary is displayed in table format, with sortable columns and a row for each bucket.
-You can click the <strong class="ui">Open Tickets</strong> and <strong class="ui">Closed Tickets</strong> panels to display just the open or closed tickets, respectively.
-To go back to seeing all open and closed tickets together, click <strong class="ui">Show all tickets</strong>.</p>
+<p>The <strong class="ui">Support</strong> tab shows a summary of the organization&#8217;s open and solved support tickets.</p>
 </div>
 <div class="paragraph">
-<p>The support ticket summary displays the following information about each support ticket:</p>
+<p>The following information is shown for each support ticket:</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Status</dt>
-<dd>
-<p>The current status of the support ticket.</p>
-</dd>
-<dt class="hdlist1">ID</dt>
-<dd>
-<p>A unique identification number for the support ticket, which can be used for reference in communications with Couchbase Capella Support staff.</p>
-</dd>
-<dt class="hdlist1">Subject</dt>
-<dd>
-<p>The subject of the issue, specified by the user who created the support ticket.</p>
-</dd>
-<dt class="hdlist1">Requester</dt>
-<dd>
-<p>The organization user that was specified as the <strong class="ui">Requester</strong> when the support ticket was created.</p>
-</dd>
-<dt class="hdlist1">Updated</dt>
-<dd>
-<p>The timestamp of the last activity associated with the ticket.
-Activity is classified as any updates made to the ticket by users in your organization, Couchbase Capella Support staff, or Couchbase Capella Support automation.</p>
-</dd>
-</dl>
-</div>
+<table id="ticket-information" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Information</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A unique identification number for the support ticket, which can be used for reference in communications with Couchbase Capella Support staff.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The current status of the support ticket.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subject</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The subject of the issue, specified by the user who created the support ticket.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Priority</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The importance of the issue.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Requester</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The organization user that was specified as the <strong class="ui">Requester</strong> when the support ticket was created.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The date and time when the issue was created.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The timestamp of the last activity associated with the ticket.
+Activity is classified as any updates made to the ticket by users in your organization, Couchbase Capella Support staff, or Couchbase Capella Support automation.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -258,72 +268,87 @@ Activity is classified as any updates made to the ticket by users in your organi
 <h2 id="create-support-ticket"><a class="anchor" href="#create-support-ticket"></a>Create a Support Ticket</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Support tickets can be created by any user with the <a href="../organizations/organization-user-roles.html#organization-role-member" class="xref page"><code>Organization Member</code></a> role.</p>
+<p>You can expect a response from Couchbase Capella Support in accordance with the database&#8217;s <a href="../billing/billing.html#support-plans" class="xref page">Support Plan</a> and <a href="support.html#support-time-zones" class="xref page">Support Time Zone</a>.</p>
+</div>
+<div class="paragraph">
+<p>To create a support ticket:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>From the <strong class="ui">Support</strong> tab, click <b class="button">Create Support Ticket</b>.</p>
-<div class="paragraph">
-<p>This opens the <strong class="ui">New Support Ticket</strong> fly-out menu.</p>
+<p>Do one of the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Go to your organization and click the <strong class="ui">Support</strong> tab.</p>
+</li>
+<li>
+<p>Next to your user profile, click <span class="menuseq"><b class="menu">Support Resources (?)</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Support</b></span></p>
+</li>
+</ul>
 </div>
 </li>
 <li>
-<p>Configure the necessary fields to describe your issue.</p>
-<div class="openblock">
-<div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Topic</dt>
-<dd>
-<p>Use the drop-down menu to select an available category that best fits your issue.</p>
-</dd>
-<dt class="hdlist1">Subject</dt>
-<dd>
-<p>Enter a concise subject that summarizes the overall issue and/or the type of support that you are requesting.</p>
-</dd>
-<dt class="hdlist1">Description</dt>
-<dd>
-<p>Enter a detailed description of your issue.</p>
-</dd>
-<dt class="hdlist1">Production Impact (Optional)</dt>
-<dd>
-<p>Use the drop-down menu to select the level of impact that the issue is having in your environment.</p>
-</dd>
-<dt class="hdlist1">Requester</dt>
-<dd>
-<p>Enter the email address of the organization user that is to be recognized as the requester for the support ticket.
-This field automatically populates with the email address of the organization user who is creating the ticket, but it can be changed to any user in your organization.</p>
-</dd>
-<dt class="hdlist1">Project (Optional)</dt>
-<dd>
-<p>Use the drop-down menu to select either the project that is associated with the issue, or the project that contains a cluster that is experiencing the issue.
-Note that only the projects of which you are a member will appear in this menu.</p>
-</dd>
-<dt class="hdlist1">Cluster (Optional)</dt>
-<dd>
-<p>Use the drop-down menu to specify the cluster that is associated with the issue.
-Note that only clusters from the project that you selected in the <strong class="ui">Project</strong> drop-down will appear in this menu.</p>
-</dd>
-<dt class="hdlist1">SDK Type/Version (Optional)</dt>
-<dd>
-<p>If the issue has to do with interactions between a cluster and your application, use this drop-down menu to specify the language and version of the Couchbase SDK that your application is using.</p>
-</dd>
-</dl>
-</div>
-</div>
-</div>
+<p>Click <b class="button">Create Support Ticket</b>.</p>
 </li>
 <li>
-<p>Once you&#8217;ve finished filling out the necessary fields, click <b class="button">Submit Ticket</b>.</p>
+<p>Configure the <strong>Create Support Ticket</strong> fields to describe your issue.</p>
+<table id="support-ticket" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subject</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a concise subject that summarizes the overall issue and/or the type of support that you are requesting.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a detailed description of your issue.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an available category that best fits your issue.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Impact</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the level of impact that the issue is having in your environment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select either the project that is associated with the issue, or the project that contains a database that is experiencing the issue.
+Only the projects of which you are a member display in this menu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Database</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the database that is associated with the issue.
+Only databases from the project that you selected in the <strong class="ui">Project</strong> drop-down display in this menu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SDK Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If the issue is about interactions between a database and your application, select the language and version of the Couchbase SDK that your application is using.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose a file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click <strong class="ui">Choose a file</strong> and attach it to the issue, or drag and drop to add a file.</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Click <b class="button">Create</b>.</p>
 <div class="paragraph">
-<p>The fly-out menu will close and the newly-created ticket will appear in the <a href="#support-ticket-summary">support ticket summary</a>.</p>
+<p>The newly-created ticket displays in the <a href="#support-ticket-summary">support ticket summary</a>.</p>
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p>You can expect a response from Couchbase Capella Support in accordance with the cluster&#8217;s <a href="../billing/billing.html#support-plans" class="xref page">Support Plan</a> and <a href="support.html#support-time-zones" class="xref page">Support Time Zone</a>.</p>
 </div>
 </div>
 </div>

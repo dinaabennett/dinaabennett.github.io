@@ -6,11 +6,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
-<title>Indexing and Query Performance | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/learn/services-and-indexes/indexes/indexing-and-query-perf.html">
+<title>Index Types | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/cloud/learn/services-and-indexes/indexes/indexing-and-query-perf.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
-<meta name="description" content="This topic provides an overview of the types of index that you can create using the Index Service, and explains how they help to query for data efficiently and improve query performance.">
+<meta name="description" content="This topic provides an overview of the types of index that you can create using the Index Service, and explains how they help to query for data efficiently in the Query service and improve query performance.">
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
 
 
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/learn/pages/services-and-indexes/indexes/indexing-and-query-perf.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/learn/pages/services-and-indexes/indexes/indexing-and-query-perf.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,16 +174,17 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../../../index.html">Couchbase Capella</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="../../../n1ql/query.html">Query</a></li>
+<li class="crumb">Query Your Data</li>
+<li class="crumb"><a href="../../../n1ql/query.html">Query Your Database</a></li>
+<li class="crumb"><a href="../../../clusters/query-service/query-service.html">Use the Query Service</a></li>
 <li class="crumb"><a href="global-secondary-indexes.html">Using Indexes</a></li>
-<li class="crumb"><a href="indexing-and-query-perf.html">Indexing and Query Performance</a></li>
+<li class="crumb"><a href="indexing-and-query-perf.html">Index Types</a></li>
 </ul>
 </nav>
 </div>
 <article class="doc">
 <div class="page-heading-title">
-<h1 class="page">Indexing and Query Performance</h1>
+<h1 class="page">Index Types</h1>
 <div class="labels">
 <ul>
 <li class="concept"><span><i class="far fa-lightbulb"></i> concept</span></li>
@@ -199,9 +200,10 @@
 </div><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Creating the right index&#8201;&#8212;&#8201;with the right keys, in the right order, and using the right expressions&#8201;&#8212;&#8201;is critical to query performance in any database system.
-This is true for Couchbase as well.
-This topic provides an overview of the types of index that you can create using the Index Service, and explains how they help to query for data efficiently and improve query performance.</p>
+<p>Creating the right index&#8201;&#8212;&#8201;with the right keys, in the right order, and using the right expressions&#8201;&#8212;&#8201;is critical to query performance in a database system.</p>
+</div>
+<div class="paragraph">
+<p>This topic provides an overview of the types of index that you can create using the Index Service, and explains how they help to query for data efficiently in the Query service and improve query performance.</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -279,7 +281,7 @@ LIMIT 1;</code></pre>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/create-pri-nameless.n1ql#L2">CREATE PRIMARY INDEX ON airline;</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/create-pri-nameless.n1ql#L2">CREATE PRIMARY INDEX ON airline;</code></pre>
 </div>
 </div>
 </div>
@@ -308,13 +310,13 @@ Refer to <a href="../../../n1ql/n1ql-language-reference/aggregatefun.html" class
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/create-pri-nameless.n1ql#L5">SELECT * FROM system:indexes WHERE name = '#primary';</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/create-pri-nameless.n1ql#L5">SELECT * FROM system:indexes WHERE name = '#primary';</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Results</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/create-pri-nameless.jsonc">[
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/create-pri-nameless.jsonc">[
   {
     "indexes": {
       "bucket_id": "travel-sample",
@@ -350,7 +352,7 @@ Refer to <a href="../../../n1ql/n1ql-language-reference/aggregatefun.html" class
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/create-pri-name.n1ql">CREATE PRIMARY INDEX travel_primary ON airline;</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/create-pri-name.n1ql">CREATE PRIMARY INDEX travel_primary ON airline;</code></pre>
 </div>
 </div>
 </div>
@@ -376,7 +378,7 @@ The query has to use the same type of object for the query engine to use the ind
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/create-idx-name.n1ql">CREATE INDEX `idx-name` ON airline(name);</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/create-idx-name.n1ql">CREATE INDEX `idx-name` ON airline(name);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -485,7 +487,7 @@ This is commonly used for performance optimization.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/learn/examples/services-and-indexes/indexes/create-idx-composite.n1ql">CREATE INDEX travel_info ON airline(name, id, icao, iata);</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/learn/examples/services-and-indexes/indexes/create-idx-composite.n1ql">CREATE INDEX travel_info ON airline(name, id, icao, iata);</code></pre>
 </div>
 </div>
 </div>
@@ -512,7 +514,7 @@ For example:</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/learn/examples/services-and-indexes/indexes/create-idx-expr.n1ql">CREATE INDEX travel_cxname ON airport(LOWER(name));</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/learn/examples/services-and-indexes/indexes/create-idx-expr.n1ql">CREATE INDEX travel_cxname ON airport(LOWER(name));</code></pre>
 </div>
 </div>
 </div>
@@ -658,7 +660,7 @@ Consider the following example array.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/learn/examples/services-and-indexes/indexes/create-idx-array.n1ql">CREATE INDEX travel_sched ON route
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/learn/examples/services-and-indexes/indexes/create-idx-array.n1ql">CREATE INDEX travel_sched ON route
 (DISTINCT ARRAY v.day FOR v IN schedule END);</code></pre>
 </div>
 </div>
@@ -845,7 +847,7 @@ You can include a distinguishing field in your document to differentiate distinc
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/learn/examples/services-and-indexes/indexes/create-idx-partial.n1ql">CREATE INDEX travel_eat ON landmark(name, id, address)
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/learn/examples/services-and-indexes/indexes/create-idx-partial.n1ql">CREATE INDEX travel_eat ON landmark(name, id, address)
 WHERE activity='eat';</code></pre>
 </div>
 </div>

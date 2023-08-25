@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Upload and Retrieve a Node Certificate | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/rest-api/upload-retrieve-node-cert.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="The REST API can be used to upload and retrieve a node certificate.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -232,9 +233,9 @@ The <code>GET</code> API can likewise be used: however, node-certificates for pr
 For the loading of the node-certificate to succeed, the private key and chain file must both be readable by user <code>couchbase</code>.</p>
 </div>
 <div class="sect2">
-<h3 id="node-certificate-validation"><a class="anchor" href="#node-certificate-validation"></a>Node-Certificate Validation</h3>
+<h3 id="node-certificate-validation"><a class="anchor" href="#node-certificate-validation"></a>Validating Node Certificates</h3>
 <div class="paragraph">
-<p>In Couchbase Enterprise Server Version 7.2+, the node-name <em>must</em> be correctly identified in the node-certificate as a Subject Alternative Name.
+<p>In Couchbase Enterprise Server Version 7.2+, the node-name <em>must</em> be correctly identified in the node certificate as a Subject Alternative Name.
 If such identification is not correctly configured, failure may occur when uploading the certificate.
 For information, see <a href="../learn/security/certificates.html#node-certificate-validation" class="xref page">Node-Certificate Validation</a>.</p>
 </div>

@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Supported Platforms | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/install/install-platforms.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Couchbase Server is supported on several popular operating systems and virtual environments.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -199,21 +200,14 @@ Couchbase Server is supported on several popular operating systems and virtual e
 <h2 id="supported-operating-systems"><a class="anchor" href="#supported-operating-systems"></a>Supported Operating Systems</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Make sure that your chosen operating system is listed in one of the following tables before you install Couchbase Server.
-See the <a href="../release-notes/relnotes.html" class="xref page">release notes</a> for information about platform support changes, including deprecated platforms.</p>
+<p>Make sure that your chosen operating system is listed below, before you install Couchbase Server.</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Couchbase clusters on mixed platforms are not supported.
-Nodes in a Couchbase cluster should all be running on the same OS, and every effort should be made to apply the same OS patches across the entire cluster.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Note that Couchbase clusters on mixed platforms are not supported.
+Nodes in a Couchbase cluster should all be running on the same OS, and every effort should be made to apply the same OS patches across the entire cluster.</p>
+</div>
+<div class="paragraph">
+<p>ARM64 support requires ARMv8 CPUs, such as the Amazon Graviton series.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Supported Operating Systems for Development, Testing, and Production</caption>
@@ -230,13 +224,16 @@ Nodes in a Couchbase cluster should all be running on the same OS, and every eff
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Amazon Linux 2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">LTS</p>
-<p class="tableblock">AL2023 (x86 and ARM)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LTS (x86-64, ARM64)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon Linux 2023</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AL2023 (x86-64, ARM64)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Debian</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">11.x</p>
-<p class="tableblock">10.x</p></td>
+<p class="tableblock">10.x (deprecated in 7.2)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oracle Linux<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p></td>
@@ -255,8 +252,8 @@ Nodes in a Couchbase cluster should all be running on the same OS, and every eff
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ubuntu</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">20.04</p>
-<p class="tableblock">22.x</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20.04 LTS (x86, ARM64)</p>
+<p class="tableblock">22.x LTS (x86, ARM64)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Windows Server</p></td>
@@ -280,9 +277,8 @@ Nodes in a Couchbase cluster should all be running on the same OS, and every eff
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">macOS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12 "Monterey"</p>
-<p class="tableblock">Apple Silicon (ARM)</p>
-<p class="tableblock">11 "Big Sur"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11 "Big Sur" (deprecated in 7.2)</p>
+<p class="tableblock">12 "Monterey" (x86-64 and Apple Silicon ARM64)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Windows Desktop</p></td>
@@ -337,45 +333,13 @@ Follow the best practices to run <a href="best-practices-vm.html" class="xref pa
 </div>
 </div>
 <div class="sect1">
-<h2 id="supported-ARM-platforms"><a class="anchor" href="#supported-ARM-platforms"></a>ARM Platforms</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. Supported ARM platforms</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Operating system</th>
-<th class="tableblock halign-left valign-top">Couchbase Version</th>
-<th class="tableblock halign-left valign-top">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon  Linux 2 (64 bits)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Requires a ARMv8 CPU such as the Amazon Graviton2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MacOS 11+</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Requires MacOS Rosetta2 emulation layer</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
 <h2 id="supported-browsers"><a class="anchor" href="#supported-browsers"></a>Supported Web Browsers</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Couchbase Web Console is supported on a variety of modern Web browsers.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Couchbase Web Console Supported Web Browsers</caption>
+<caption class="title">Table 4. Couchbase Web Console Supported Web Browsers</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -395,47 +359,43 @@ Follow the best practices to run <a href="best-practices-vm.html" class="xref pa
 <td class="tableblock halign-left valign-top"><p class="tableblock">Apple Safari</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">macOS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">11.1+</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7.1<br>
-7.0<br>
-6.5<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.2<br>
+7.1<br>
+7.0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Google Chrome</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">macOS, Windows</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">67+</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7.1<br>
-7.0<br>
-6.5<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.2<br>
+7.1<br>
+7.0<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft Edge</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Windows</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">80+</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7.1<br>
-7.0<br>
-6.5<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.2<br>
+7.1<br>
+7.0<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mozilla Firefox</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">macOS, Windows</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">67+</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7.1<br>
-7.0<br>
-6.5<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.2<br>
+7.1<br>
+7.0<br></p></td>
 </tr>
 </tbody>
 </table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If you&#8217;re using the <a href="../../../cloud/index.html" class="xref page">Capella platform</a>, then you can find the supported web browsers for Capella  <a href="../../../cloud/reference/browser-compatibility.html" class="xref page">here</a>.
-</td>
-</tr>
-</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="capella-browser-support"><a class="anchor" href="#capella-browser-support"></a>Capella Browser Support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A list of the supported web browsers for Capella is provided <a href="../../../cloud/reference/browser-compatibility.html" class="xref page">here</a>.</p>
 </div>
 </div>
 </div>

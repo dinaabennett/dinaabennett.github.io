@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Update Statistics for Index Expressions | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/n1ql/n1ql-language-reference/statistics-expressions.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/n1ql/n1ql-language-reference/statistics-expressions.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="You can use the UPDATE STATISTICS statement to gather statistics for an index key expression.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/n1ql/pages/n1ql-language-reference/statistics-expressions.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/n1ql/pages/n1ql-language-reference/statistics-expressions.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,9 +174,9 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../../index.html">Couchbase Capella</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="../query.html">Query</a></li>
-<li class="crumb"><a href="index.html">SQL++ Language Reference</a></li>
+<li class="crumb">Query Your Data</li>
+<li class="crumb"><a href="../query.html">Query Your Database</a></li>
+<li class="crumb"><a href="../../clusters/query-service/query-service.html">Use the Query Service</a></li>
 <li class="crumb">Statements</li>
 <li class="crumb"><a href="updatestatistics.html">UPDATE STATISTICS</a></li>
 <li class="crumb"><a href="statistics-expressions.html">Update Statistics for Index Expressions</a></li>
@@ -262,7 +262,7 @@ To use the cost-based optimizer with that query, you must collect statistics on 
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/utility.ebnf#L47-L49">update-statistics-expr ::= ( 'UPDATE' 'STATISTICS' 'FOR'? |
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/utility.ebnf#L47-L49">update-statistics-expr ::= ( 'UPDATE' 'STATISTICS' 'FOR'? |
                              'ANALYZE' ( 'KEYSPACE' | 'COLLECTION')? )
                              keyspace-ref '(' index-key ( ',' index-key )* ')' index-with?</code></pre>
 </div>
@@ -316,7 +316,7 @@ index-with
 <h3 id="keyspace-ref"><a class="anchor" href="#keyspace-ref"></a>Keyspace Reference</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L86">keyspace-ref ::= keyspace-path | keyspace-partial</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L86">keyspace-ref ::= keyspace-path | keyspace-partial</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -326,7 +326,7 @@ index-with
 </div>
 <div id="keyspace-path" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L90">keyspace-path ::= ( namespace ':' )? bucket ( '.' scope '.' collection )?</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L90">keyspace-path ::= ( namespace ':' )? bucket ( '.' scope '.' collection )?</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -336,7 +336,7 @@ index-with
 </div>
 <div id="keyspace-partial" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/dql.ebnf#L94">keyspace-partial ::= collection</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/dql.ebnf#L94">keyspace-partial ::= collection</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -373,7 +373,7 @@ This may be any expression that is supported as an index key, including, but not
 <h3 id="index-with"><a class="anchor" href="#index-with"></a>WITH Clause</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/partials/grammar/ddl.ebnf#L61">index-with ::= 'WITH' expr</code></pre>
+<pre class="highlightjs highlight"><code class="language-ebnf hljs" data-lang="ebnf" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/partials/grammar/ddl.ebnf#L61">index-with ::= 'WITH' expr</code></pre>
 </div>
 </div>
 <div class="imageblock text-left">
@@ -444,33 +444,37 @@ Note that when index expressions are processed in batches, the <code>update_stat
 <div class="sect1">
 <h2 id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>To try the examples in this section, set the query context to the <code>inventory</code> scope in the travel sample dataset.
+For more information, see <a href="../n1ql-intro/queriesandresults.html#query-context" class="xref page">Query Context</a>.</p>
+</div>
 <div id="ex1" class="exampleblock">
 <div class="title">Example 1. Single predicate</div>
 <div class="content">
 <div class="listingblock">
 <div class="title">Create indexes</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr.n1ql#L2-L3">CREATE INDEX idx_country_city ON hotel(country, city);
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr.n1ql#L2-L3">CREATE INDEX idx_country_city ON hotel(country, city);
 CREATE INDEX idx_city_country ON hotel(city, country);</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Update statistics</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr.n1ql#L7">UPDATE STATISTICS FOR hotel(city, country);</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr.n1ql#L7">UPDATE STATISTICS FOR hotel(city, country);</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr.n1ql#L11-L14">EXPLAIN
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr.n1ql#L11-L14">EXPLAIN
 SELECT COUNT(*) FROM hotel WHERE country = 'France';</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Result</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr.jsonc">[
+<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr.jsonc">[
   {
     "cardinality": 1, <i class="conum" data-value="1"></i><b>(1)</b>
     "cost": 36.39093947963759, <i class="conum" data-value="2"></i><b>(2)</b>
@@ -586,7 +590,7 @@ SELECT COUNT(*) FROM hotel WHERE country = 'France';</code></pre>
 <div class="listingblock">
 <div class="title">Update statistics</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr-predicate.n1ql#L10">UPDATE STATISTICS FOR hotel(city, country, free_breakfast);</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr-predicate.n1ql#L10">UPDATE STATISTICS FOR hotel(city, country, free_breakfast);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -596,7 +600,7 @@ However, the query below refers to this field as a predicate, so we collect stat
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr-predicate.n1ql#L14-L18">EXPLAIN
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr-predicate.n1ql#L14-L18">EXPLAIN
 SELECT COUNT(*) FROM hotel
 WHERE country = 'United States' AND free_breakfast = true;</code></pre>
 </div>
@@ -604,7 +608,7 @@ WHERE country = 'United States' AND free_breakfast = true;</code></pre>
 <div class="listingblock">
 <div class="title">Result</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr-predicate.jsonc">[
+<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr-predicate.jsonc">[
   {
     "cardinality": 1, <i class="conum" data-value="1"></i><b>(1)</b>
     "cost": 1319.7883498503274,
@@ -785,20 +789,20 @@ WHERE country = 'United States' AND free_breakfast = true;</code></pre>
 <div class="listingblock">
 <div class="title">Create index</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr-array.n1ql#L2-L3">CREATE INDEX idx_public_likes
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr-array.n1ql#L2-L3">CREATE INDEX idx_public_likes
 ON hotel((DISTINCT (`public_likes`)));</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Update statistics</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-N1Ql hljs" data-lang="N1Ql" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr-array.n1ql#L7">UPDATE STATISTICS FOR hotel((DISTINCT (`public_likes`)));</code></pre>
+<pre class="highlightjs highlight"><code class="language-N1Ql hljs" data-lang="N1Ql" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr-array.n1ql#L7">UPDATE STATISTICS FOR hotel((DISTINCT (`public_likes`)));</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-N1Ql hljs" data-lang="N1Ql" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr-array.n1ql#L11-L15">EXPLAIN
+<pre class="highlightjs highlight"><code class="language-N1Ql hljs" data-lang="N1Ql" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr-array.n1ql#L11-L15">EXPLAIN
 SELECT COUNT(1) FROM hotel
 WHERE ANY p IN public_likes SATISFIES p LIKE 'A%' END;</code></pre>
 </div>
@@ -806,7 +810,7 @@ WHERE ANY p IN public_likes SATISFIES p LIKE 'A%' END;</code></pre>
 <div class="listingblock">
 <div class="title">Results</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr-array.jsonc">[
+<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr-array.jsonc">[
   {
     "cardinality": 1,
     "cost": 39.80787755862344,
@@ -874,7 +878,7 @@ WHERE ANY p IN public_likes SATISFIES p LIKE 'A%' END;</code></pre>
 <div class="listingblock">
 <div class="title">Create index</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr-nested.n1ql#L2-L4">CREATE INDEX idx_reviews_ratings_overall
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr-nested.n1ql#L2-L4">CREATE INDEX idx_reviews_ratings_overall
 ON hotel(DISTINCT ARRAY r.ratings.Overall
 FOR r IN reviews END);</code></pre>
 </div>
@@ -882,7 +886,7 @@ FOR r IN reviews END);</code></pre>
 <div class="listingblock">
 <div class="title">Update statistics</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-N1Ql hljs" data-lang="N1Ql" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr-nested.n1ql#L8-L10">UPDATE STATISTICS
+<pre class="highlightjs highlight"><code class="language-N1Ql hljs" data-lang="N1Ql" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr-nested.n1ql#L8-L10">UPDATE STATISTICS
 FOR hotel(DISTINCT ARRAY r.ratings.Overall
 FOR r IN reviews END);</code></pre>
 </div>
@@ -890,7 +894,7 @@ FOR r IN reviews END);</code></pre>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-N1Ql hljs" data-lang="N1Ql" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr-nested.n1ql#L14-L18">EXPLAIN
+<pre class="highlightjs highlight"><code class="language-N1Ql hljs" data-lang="N1Ql" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr-nested.n1ql#L14-L18">EXPLAIN
 SELECT COUNT(1) FROM hotel
 WHERE ANY r IN reviews SATISFIES r.ratings.Overall = 4 END;</code></pre>
 </div>
@@ -898,7 +902,7 @@ WHERE ANY r IN reviews SATISFIES r.ratings.Overall = 4 END;</code></pre>
 <div class="listingblock">
 <div class="title">Results</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/utility/statistics-expr-nested.jsonc">[
+<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/utility/statistics-expr-nested.jsonc">[
   {
     "cardinality": 1,
     "cost": 118.0080501905589,

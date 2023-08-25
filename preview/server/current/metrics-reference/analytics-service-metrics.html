@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Analytics Service Metrics | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/metrics-reference/analytics-service-metrics.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="A list of the metrics provided by the Analytics Service.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -179,11 +180,6 @@
 <div class="labels">
 <ul></ul>
 </div>
-<div class="labels">
-<ul>
-<li class="status"><span>UNDER CONSTRUCTION</span></li>
-</ul>
-</div>
 
 
 </div>
@@ -191,9 +187,7 @@
 <span class="last-commit-date" id="commitdate">    </span>
 <ul id="contributorList"></ul>
 <span  id="otherContributor"> + </span>
-</div><div id="preamble">
-<div class="sectionbody">
-<div class="quoteblock abstract">
+</div><div class="quoteblock abstract">
 <blockquote>
 A list of the metrics provided by the Analytics Service.
 </blockquote>
@@ -201,245 +195,30 @@ A list of the metrics provided by the Analytics Service.
 <div class="paragraph">
 <p>The following Analytics Service metrics can be queried by means of the REST APIs described in <a href="../rest-api/rest-statistics.html" class="xref page">Statistics</a>.</p>
 </div>
-<div class="paragraph">
-<p>See also the metrics provided in <a href="all-services-metrics.html" class="xref page">Metrics for All Services</a>; which are indeed for <em>all</em> Couchbase-Server services, and so support the Analytics Service.</p>
-</div>
-<div class="admonitionblock note">
-<table>
+<div class="openblock template">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
 <tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-This section is currently under construction.
-</td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unit</p>
+<p class="tableblock">{{#each this}}</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{{@key}}</code></p>
+<p class="tableblock">{{help}}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{{type}}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{{unit}}
+{{/each}}</p></td>
+</tr>
+</tbody>
 </table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cbas_direct_memory_used_bytes"><a class="anchor" href="#cbas_direct_memory_used_bytes"></a><code>cbas_direct_memory_used_bytes</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Units</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Labels</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong>: NA</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cbas_disk_used_bytes_total"><a class="anchor" href="#cbas_disk_used_bytes_total"></a><code>cbas_disk_used_bytes_total</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Units</strong>: bytes</p>
-</div>
-<div class="paragraph">
-<p><strong>Labels</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong>: The total disk size used by Analytics.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cbas_failed_to_parse_records_count"><a class="anchor" href="#cbas_failed_to_parse_records_count"></a><code>cbas_failed_to_parse_records_count</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Units</strong>: number/sec</p>
-</div>
-<div class="paragraph">
-<p><strong>Labels</strong>: bucket, scope</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong>: Number of records Analytics failed to parse per second.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cbas_gc_count_total"><a class="anchor" href="#cbas_gc_count_total"></a><code>cbas_gc_count_total</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Units</strong>: number/sec</p>
-</div>
-<div class="paragraph">
-<p><strong>Labels</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong>: Number of JVM garbage collections per second for this Analytics node.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cbas_gc_time_milliseconds_total"><a class="anchor" href="#cbas_gc_time_milliseconds_total"></a><code>cbas_gc_time_milliseconds_total</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Units</strong>: millisecond/sec</p>
-</div>
-<div class="paragraph">
-<p><strong>Labels</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong>: The amount of time in milliseconds spent performing JVM garbage collections for Analytics node.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cbas_heap_memory_committed_bytes"><a class="anchor" href="#cbas_heap_memory_committed_bytes"></a><code>cbas_heap_memory_committed_bytes</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Units</strong>: bytes</p>
-</div>
-<div class="paragraph">
-<p><strong>Labels</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong>: Bytes of JVM heap committed for Analytics on this server.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cbas_heap_memory_used_bytes"><a class="anchor" href="#cbas_heap_memory_used_bytes"></a><code>cbas_heap_memory_used_bytes</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Units</strong>: bytes</p>
-</div>
-<div class="paragraph">
-<p><strong>Labels</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong>: Bytes of JVM heap used by Analytics on this server.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cbas_incoming_records_count"><a class="anchor" href="#cbas_incoming_records_count"></a><code>cbas_incoming_records_count</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Units</strong>: number</p>
-</div>
-<div class="paragraph">
-<p><strong>Labels</strong>: bucket, scope</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong>: Number of operations (gets + sets + deletes) processed by Analytics for this bucket since last bucket connect.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cbas_io_reads_total"><a class="anchor" href="#cbas_io_reads_total"></a><code>cbas_io_reads_total</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Units</strong>: bytes/sec</p>
-</div>
-<div class="paragraph">
-<p><strong>Labels</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong>: Number of disk bytes read on Analytics node per second.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cbas_io_writes_total"><a class="anchor" href="#cbas_io_writes_total"></a><code>cbas_io_writes_total</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Units</strong>: bytes/sec</p>
-</div>
-<div class="paragraph">
-<p><strong>Labels</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong>: Number of disk bytes written on Analytics node per second.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cbas_pending_flush_ops"><a class="anchor" href="#cbas_pending_flush_ops"></a><code>cbas_pending_flush_ops</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Units</strong>: number</p>
-</div>
-<div class="paragraph">
-<p><strong>Labels</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong>: Number of pending flush operations per node.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cbas_pending_merge_ops"><a class="anchor" href="#cbas_pending_merge_ops"></a><code>cbas_pending_merge_ops</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Units</strong>: number</p>
-</div>
-<div class="paragraph">
-<p><strong>Labels</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong>: Number of pending merge operations per node.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cbas_pending_replicate_ops"><a class="anchor" href="#cbas_pending_replicate_ops"></a><code>cbas_pending_replicate_ops</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Units</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Labels</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong>: NA</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cbas_system_load_average"><a class="anchor" href="#cbas_system_load_average"></a><code>cbas_system_load_average</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Units</strong>: number</p>
-</div>
-<div class="paragraph">
-<p><strong>Labels</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong>: System load average for the last minute.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cbas_thread_count"><a class="anchor" href="#cbas_thread_count"></a><code>cbas_thread_count</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Units</strong>: number</p>
-</div>
-<div class="paragraph">
-<p><strong>Labels</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong>: Number of threads for Analytics node.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cbas_virtual_buffer_cache_used_pages"><a class="anchor" href="#cbas_virtual_buffer_cache_used_pages"></a><code>cbas_virtual_buffer_cache_used_pages</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Units</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Labels</strong>: NA</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong>: NA</p>
-</div>
 </div>
 </div>
 </article>

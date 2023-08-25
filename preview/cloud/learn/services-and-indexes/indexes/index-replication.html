@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Availability and Performance | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/learn/services-and-indexes/indexes/index-replication.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/learn/services-and-indexes/indexes/index-replication.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="The Index Service ensures availability and performance through replication and partitioning.">
@@ -34,7 +34,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -56,7 +56,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -116,7 +116,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/learn/pages/services-and-indexes/indexes/index-replication.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/learn/pages/services-and-indexes/indexes/index-replication.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -175,8 +175,9 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../../../index.html">Couchbase Capella</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="../../../n1ql/query.html">Query</a></li>
+<li class="crumb">Query Your Data</li>
+<li class="crumb"><a href="../../../n1ql/query.html">Query Your Database</a></li>
+<li class="crumb"><a href="../../../clusters/query-service/query-service.html">Use the Query Service</a></li>
 <li class="crumb"><a href="global-secondary-indexes.html">Using Indexes</a></li>
 <li class="crumb"><a href="index-replication.html">Availability and Performance</a></li>
 </ul>
@@ -254,7 +255,7 @@ In the following example, an index with two replicas is created.
 The active index is on <code>node1</code>, and the replicas are on <code>node2</code> and <code>node3</code>:</p>
 <div id="nodes-example2" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/learn/examples/services-and-indexes/indexes/replication-nodes.n1ql">CREATE INDEX country_idx ON airport(country, city)
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/learn/examples/services-and-indexes/indexes/replication-nodes.n1ql">CREATE INDEX country_idx ON airport(country, city)
 WITH {"nodes": ["node1:8091", "node2:8091", "node3:8091"]};</code></pre>
 </div>
 </div>
@@ -267,7 +268,7 @@ The replicas are automatically distributed across those nodes of the database th
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/learn/examples/services-and-indexes/indexes/replication-num.n1ql">CREATE INDEX country_idx ON airport(country, city)
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/learn/examples/services-and-indexes/indexes/replication-num.n1ql">CREATE INDEX country_idx ON airport(country, city)
 WITH {"num_replica": 2};</code></pre>
 </div>
 </div>

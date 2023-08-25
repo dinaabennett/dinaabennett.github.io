@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Add Autocomplete to Your Application | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/search/search-query-auto-complete-code.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/search/search-query-auto-complete-code.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Use autocomplete to add suggestions for a user&#x27;s Search query as they type in your application.">
@@ -33,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -55,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -115,7 +115,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/search/pages/search-query-auto-complete-code.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/search/pages/search-query-auto-complete-code.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,7 +174,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Your Data</li>
+<li class="crumb">Add Search to Your Application - (work in progress)</li>
 <li class="crumb"><a href="search.html">Add Search to Your Application</a></li>
 <li class="crumb"><a href="search-query-auto-complete.html">Use Autocomplete with the Search Service</a></li>
 <li class="crumb"><a href="search-query-auto-complete-code.html">Add Autocomplete to Your Application</a></li>
@@ -203,7 +203,7 @@ Use autocomplete to add suggestions for a user&#8217;s Search query as they type
 </blockquote>
 </div>
 <div class="paragraph">
-<p>Create and configure a Search index that supports autocomplete, then configure your application to return results from the Search Service.</p>
+<p>After you <a href="search-query-auto-complete-ui.html" class="xref page">create and configure a Search index that supports autocomplete</a>, configure your application to return results from the Search Service.</p>
 </div>
 </div>
 </div>
@@ -219,7 +219,7 @@ Use autocomplete to add suggestions for a user&#8217;s Search query as they type
 <p>You have a bucket with scopes and collections in your database.</p>
 </li>
 <li>
-<p>Your user account has the <strong>Search Admin</strong> role for the bucket where you want to create the index.</p>
+<p>You&#8217;ve created a compatible Search index. For more information, see <a href="search-query-auto-complete-ui.html" class="xref page">Configure an Autocomplete Search Index</a>.</p>
 </li>
 </ul>
 </div>
@@ -234,102 +234,20 @@ Use autocomplete to add suggestions for a user&#8217;s Search query as they type
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="search-query-auto-complete-ui.html#search-index" class="xref page">Create an autocomplete Search index with the UI</a> or <a href="create-search-index-rest-api.html" class="xref page">Create a Search Index with the REST API and curl/HTTP</a> with the following JSON payload:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/search/examples/autocomplete-search-index.jsonc">{
-    "type": "fulltext-index",
-    "name": "e-ngram-2-8",
-    "uuid": "$GENERATED_INDEX_UUID",
-    "sourceType": "gocbcore",
-    "sourceName": "$BUCKET_NAME",
-    "sourceUUID": "$BUCKET_UUID",
-    "planParams": {
-      "maxPartitionsPerPIndex": 1024,
-      "indexPartitions": 1
-    },
-    "params": {
-      "doc_config": {
-        "docid_prefix_delim": "",
-        "docid_regexp": "",
-        "mode": "scope.collection.type_field",
-        "type_field": "type"
-      },
-      "mapping": {
-        "analysis": {
-          "analyzers": {
-            "edge_ngram": {
-              "token_filters": [
-                "to_lower",
-                "edge_ngram_2_8"
-              ],
-              "tokenizer": "unicode",
-              "type": "custom"
-            },
-            "keyword_to_lower": {
-              "token_filters": [
-                "to_lower"
-              ],
-              "tokenizer": "single",
-              "type": "custom"
-            }
-          },
-          "token_filters": {
-            "edge_ngram_2_8": {
-              "back": false,
-              "max": 8,
-              "min": 2,
-              "type": "edge_ngram"
-            }
-          }
-        },
-        "default_analyzer": "keyword_to_lower",
-        "default_datetime_parser": "dateTimeOptional",
-        "default_field": "_all",
-        "default_mapping": {
-          "dynamic": true,
-          "enabled": false
-        },
-        "default_type": "_default",
-        "docvalues_dynamic": false,
-        "index_dynamic": true,
-        "store_dynamic": false,
-        "type_field": "_type",
-        "types": {
-          "$SCOPE_NAME.$COLLECTION_NAME": {
-            "dynamic": false,
-            "enabled": true,
-            "properties": {
-              "$FIELD_NAME": {
-                "dynamic": false,
-                "enabled": true,
-                "fields": [
-                  {
-                    "analyzer": "edge_ngram",
-                    "include_in_all": true,
-                    "index": true,
-                    "name": "$FIELD_NAME",
-                    "store": true,
-                    "type": "text"
-                  }
-                ]
-              }
-            }
-          }
-        }
-      },
-      "store": {
-        "indexType": "scorch",
-        "segmentVersion": 15
-      }
-    },
-    "sourceParams": {}
-  }</code></pre>
-</div>
-</div>
+<p>To test that your Search index was configured correctly, do one of the following:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><a href="simple-search-rest-api.html" class="xref page">Run a Search query from the REST API</a> with 2-8 characters in the <code>query</code> property.</p>
 </li>
 <li>
-<p><a href="simple-search-rest-api.html" class="xref page">Run a Search query</a> with 2-8 characters in the <code>query</code> property to test the Search index.</p>
+<p><a href="simple-search-ui.html" class="xref page">Run a Search query from the Capella UI</a> with 2-8 characters in the <strong>Search</strong> field.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For example, with the <code>travel-sample</code> bucket, you could enter the strings <code>Be</code>, <code>Bea</code>, <code>Beau</code>, and <code>Beauf</code> to find a document with the text <code>Beaufort Hotel</code>.</p>
+</div>
 </li>
 <li>
 <p>Configure your application to return results from the Search Service.</p>
@@ -360,7 +278,7 @@ Use autocomplete to add suggestions for a user&#8217;s Search query as they type
 <div class="tab-pane" aria-labelledby="tabset1_c">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-csharp hljs" data-lang="csharp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/search/examples/autocomplete-sample.cs">using Couchbase;
+<pre class="highlightjs highlight"><code class="language-csharp hljs" data-lang="csharp" data-source-url="file:///C:/Docs/docs-devex/modules/search/examples/autocomplete-sample.cs">using Couchbase;
 using Couchbase.Search.Queries.Simple;
 
 await using var cluster = await Cluster.ConnectAsync(new ClusterOptions
@@ -404,7 +322,7 @@ async Task FtsMatchPrefix(string letters)
 <div class="tab-pane" aria-labelledby="tabset1_go">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-go hljs" data-lang="go" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/search/examples/autocomplete-sample.go">package main
+<pre class="highlightjs highlight"><code class="language-go hljs" data-lang="go" data-source-url="file:///C:/Docs/docs-devex/modules/search/examples/autocomplete-sample.go">package main
 
 import (
     "os"
@@ -465,7 +383,7 @@ func main() {
 <div class="tab-pane" aria-labelledby="tabset1_java">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/search/examples/autocomplete-sample.java">import com.couchbase.client.java.Cluster;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java" data-source-url="file:///C:/Docs/docs-devex/modules/search/examples/autocomplete-sample.java">import com.couchbase.client.java.Cluster;
 import com.couchbase.client.java.json.JsonObject;
 import com.couchbase.client.java.search.SearchOptions;
 import com.couchbase.client.java.search.SearchQuery;
@@ -500,7 +418,7 @@ public class MockTypeAheadEnGram {
 <div class="tab-pane" aria-labelledby="tabset1_javascript">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/search/examples/autocomplete-sample.js">const couchbase = require('couchbase')
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript" data-source-url="file:///C:/Docs/docs-devex/modules/search/examples/autocomplete-sample.js">const couchbase = require('couchbase')
 
 const main = async () =&gt; {
   const hostname = process.env.CB_HOSTNAME
@@ -537,7 +455,7 @@ main()</code></pre>
 <div class="tab-pane" aria-labelledby="tabset1_python">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/search/examples/autocomplete-sample.py">from couchbase.cluster import Cluster, ClusterOptions
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python" data-source-url="file:///C:/Docs/docs-devex/modules/search/examples/autocomplete-sample.py">from couchbase.cluster import Cluster, ClusterOptions
 from couchbase.auth import PasswordAuthenticator
 from couchbase.exceptions import CouchbaseException
 import couchbase.search as search
@@ -582,7 +500,17 @@ except CouchbaseException as ex:
 <h2 id="next-steps"><a class="anchor" href="#next-steps"></a>Next Steps</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After you add autocomplete to your application, you can <a href="customize-index.html" class="xref page">Customize a Search Index with the Capella UI</a> or change the <a href="search-index-params.html" class="xref page">JSON payload</a> for your Search index to improve your search results.</p>
+<p>After you add autocomplete to your application, to improve your search results, you can:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="customize-index.html" class="xref page">Customize your Search index with the Capella UI</a>.</p>
+</li>
+<li>
+<p>Change the <a href="search-index-params.html" class="xref page">JSON payload</a> for your Search index.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>

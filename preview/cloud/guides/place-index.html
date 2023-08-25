@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Index Placement | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/guides/place-index.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/guides/place-index.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="How to place indexes on specified nodes, create index replicas, and partition indexes.">
@@ -42,7 +42,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -64,7 +64,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -124,7 +124,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="https://github.com/couchbaselabs/docs-devex/edit/capella/modules/guides/pages/place-index.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/guides/pages/place-index.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -183,9 +183,11 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="intro.html">Developer Guides</a></li>
-<li class="crumb"><a href="indexes.html">Indexes</a></li>
+<li class="crumb">Query Your Data</li>
+<li class="crumb"><a href="../n1ql/query.html">Query Your Database</a></li>
+<li class="crumb"><a href="../clusters/query-service/query-service.html">Use the Query Service</a></li>
+<li class="crumb"><a href="../learn/services-and-indexes/indexes/global-secondary-indexes.html">Using Indexes</a></li>
+<li class="crumb"><a href="indexes.html">Create and Modify Indexes</a></li>
 <li class="crumb"><a href="place-index.html">Index Placement</a></li>
 </ul>
 </nav>
@@ -233,7 +235,7 @@ Read the following for further information about the tools available for editing
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../clusters/query-service/query-workbench.html" class="xref page">Query Workbench</a></p>
+<p><a href="../clusters/query-service/query-workbench.html" class="xref page">Query Tab</a></p>
 </li>
 </ul>
 </div>
@@ -253,7 +255,7 @@ The SDKs do not currently support all of these features fully.
 </div>
 </div>
 <div class="sect1">
-<h2 id="placing-a-single-index"><a class="anchor" href="#placing-a-single-index"></a>Placing a Single Index</h2>
+<h2 id="place-a-single-index"><a class="anchor" href="#place-a-single-index"></a>Place a Single Index</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>When you create a primary or secondary index, you can specify the placement of the index.</p>
@@ -280,12 +282,12 @@ The node name must include the cluster administration port, by default 8091.</p>
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/create-idx-node.n1ql">CREATE INDEX idx_airport_over1000
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/create-idx-node.n1ql">CREATE INDEX idx_airport_over1000
   ON airport(geo.alt)
   WHERE geo.alt &gt; 1000
   USING GSI
@@ -300,7 +302,7 @@ For more information, see <a href="select.html#query-context" class="xref page">
 </div>
 </div>
 <div class="sect1">
-<h2 id="partitioning-an-index"><a class="anchor" href="#partitioning-an-index"></a>Partitioning an Index</h2>
+<h2 id="partition-an-index"><a class="anchor" href="#partition-an-index"></a>Partition an Index</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>When you create a secondary index, you can split the index into multiple partitions.
@@ -328,12 +330,12 @@ If you don&#8217;t specify the number of partitions, the index has 8 partitions.
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/partition-idx.n1ql">CREATE INDEX idx ON airline
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/partition-idx.n1ql">CREATE INDEX idx ON airline
 (country, name, id)
  PARTITION BY HASH(META().id);</code></pre>
 </div>
@@ -346,7 +348,7 @@ For more information, see <a href="select.html#query-context" class="xref page">
 </div>
 </div>
 <div class="sect1">
-<h2 id="replicating-an-index"><a class="anchor" href="#replicating-an-index"></a>Replicating an Index</h2>
+<h2 id="replicate-an-index"><a class="anchor" href="#replicate-an-index"></a>Replicate an Index</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>When you create a secondary index, you can replicas of the index across multiple nodes.</p>
@@ -379,13 +381,12 @@ The value of this attribute must be less than or equal to the number of index no
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/660a57d3303763d027a1e03146d3f5de5087b8ef/modules/learn/examples/services-and-indexes/indexes/replication-num.n1ql">CREATE INDEX country_idx ON airport(country, city)
-WITH {"num_replica": 2};</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp">Unresolved include directive in modules/guides/pages/place-index.adoc - include::server:learn:example$services-and-indexes/indexes/replication-num.n1ql[]</code></pre>
 </div>
 </div>
 </div>
@@ -415,13 +416,12 @@ Each node name must include the cluster administration port, by default 8091.</p
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/660a57d3303763d027a1e03146d3f5de5087b8ef/modules/learn/examples/services-and-indexes/indexes/replication-nodes.n1ql">CREATE INDEX country_idx ON airport(country, city)
-WITH {"nodes": ["node1:8091", "node2:8091", "node3:8091"]};</code></pre>
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp">Unresolved include directive in modules/guides/pages/place-index.adoc - include::server:learn:example$services-and-indexes/indexes/replication-nodes.n1ql[]</code></pre>
 </div>
 </div>
 </div>
@@ -439,12 +439,12 @@ If you specify both <code>num_replica</code> <em>and</em> <code>nodes</code>, th
 </table>
 </div>
 <div class="paragraph">
-<p>For further details and examples, refer to <a href="../../server/current/learn/services-and-indexes/indexes/index-replication.html#index-replication" class="xref page">Index Replication</a>.</p>
+<p>For further details and examples, refer to <a href="#server:learn:services-and-indexes/indexes/index-replication.adoc#index-replication" class="xref unresolved">Index Replication</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="altering-index-placement"><a class="anchor" href="#altering-index-placement"></a>Altering Index Placement</h2>
+<h2 id="alter-index-placement"><a class="anchor" href="#alter-index-placement"></a>Alter Index Placement</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can alter the placement of an existing index or replica, increase or decrease the number of replicas, or to drop a replica temporarily.
@@ -474,12 +474,12 @@ You can also perform the same alterations to a partitioned index and any replica
 <div class="paragraph">
 <div class="title">Context</div>
 <p>Set the query context to the <code>inventory</code> scope in the travel sample dataset.
-For more information, see <a href="select.html#query-context" class="xref page">Setting the Query Context</a>.</p>
+For more information, see <a href="select.html#query-context" class="xref page">Set the Query Context</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Query</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="https://github.com/couchbaselabs/docs-devex/blob/8b5ffaf76f7a79cafde4f51983291aef92fb7266/modules/n1ql/examples/n1ql-language-reference/alter-idx-move.n1ql">ALTER INDEX def_inventory_airport_faa ON airport
+<pre class="highlightjs highlight"><code class="language-sqlpp hljs" data-lang="sqlpp" data-source-url="file:///C:/Docs/docs-devex/modules/n1ql/examples/n1ql-language-reference/alter-idx-move.n1ql">ALTER INDEX def_inventory_airport_faa ON airport
 WITH {"action": "move", "nodes": ["192.168.10.11:8091"]};</code></pre>
 </div>
 </div>
@@ -499,7 +499,7 @@ WITH {"action": "move", "nodes": ["192.168.10.11:8091"]};</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../../server/current/learn/services-and-indexes/indexes/global-secondary-indexes.html" class="xref page">Using Indexes</a></p>
+<p><a href="#server:learn:services-and-indexes/indexes/global-secondary-indexes.adoc" class="xref unresolved">Using Indexes</a></p>
 </li>
 </ul>
 </div>
@@ -539,10 +539,10 @@ WITH {"action": "move", "nodes": ["192.168.10.11:8091"]};</code></pre>
 
         <nav class="pagination">
 
-                    <span class="prev"><a href="create-index.html">Creating Indexes</a></span>
+                    <span class="prev"><a href="create-index.html">Create Indexes</a></span>
 
 
-                    <span class="next"><a href="defer-index.html">Deferring Indexes</a></span>
+                    <span class="next"><a href="defer-index.html">Defer Indexes</a></span>
 
 </article>
 </main>

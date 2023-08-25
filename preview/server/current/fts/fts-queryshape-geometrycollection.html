@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>GeometryCollection Query | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/fts/fts-queryshape-geometrycollection.html">
 <link rel="stylesheet" href="../../../_/css/site.css">
 <script src="../../../_/js/vendor/jquery.js"></script>
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
@@ -31,7 +32,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -53,7 +54,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -166,11 +167,6 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../introduction/intro.html">Couchbase Server</a></li>
-<li class="crumb">Develop</li>
-<li class="crumb"><a href="fts-introduction.html">Search</a></li>
-<li class="crumb"><a href="fts-supported-queries.html">Supported Queries</a></li>
-<li class="crumb"><a href="fts-supported-queries-geospatial.html">Geo Spatial Queries</a></li>
-<li class="crumb"><a href="fts-supported-queries-geojson-spatial.html">GeoJSON Queries</a></li>
 <li class="crumb"><a href="fts-queryshape-geometrycollection.html">GeometryCollection Query</a></li>
 </ul>
 </nav>
@@ -195,18 +191,16 @@
 A GeoJSON GeometryCollection Query against any GeoJSON type.
 </blockquote>
 </div>
-<div class="paragraph">
-<p><span class="status">Couchbase Server 7.1.2</span></p>
 </div>
 </div>
-</div>
-<h1 id="queryshape-for-a-geometrycollection-query" class="sect0"><a class="anchor" href="#queryshape-for-a-geometrycollection-query"></a>QueryShape for a GeometryCollection Query</h1>
+<div class="sect1">
+<h2 id="queryshape-for-a-geometrycollection-query"><a class="anchor" href="#queryshape-for-a-geometrycollection-query"></a>QueryShape for a GeometryCollection Query</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>A GeoJSON query via a GeoShape of GeometryCollection to find GeoJSON types in a Search index using the 3 relations intersects, contains, and within.</p>
 </div>
-<div class="sect1">
-<h2 id="geometrycollection-intersects-query"><a class="anchor" href="#geometrycollection-intersects-query"></a>GeometryCollection <code>Intersects</code> Query</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="geometrycollection-intersects-query"><a class="anchor" href="#geometrycollection-intersects-query"></a>GeometryCollection <code>Intersects</code> Query</h3>
 <div class="paragraph">
 <p>An <code>intersect</code> query for geometrycollection returns all the matched documents with shapes that overlap with the area of any of the shapes in the geometrycollection array within the query.</p>
 </div>
@@ -265,10 +259,8 @@ The rules will be applied to any indexed GeoJSON shape in the array.
 If any of the query shapes within the geometries array intersects with any of the indexed shapes, then it will be a matching document.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="geometrycollection-contains-query"><a class="anchor" href="#geometrycollection-contains-query"></a>GeometryCollection <code>Contains</code> Query</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="geometrycollection-contains-query"><a class="anchor" href="#geometrycollection-contains-query"></a>GeometryCollection <code>Contains</code> Query</h3>
 <div class="paragraph">
 <p>A <code>contains</code> query for geometrycollection returns all the matched documents with shapes that contain the geometrycollection within the query.</p>
 </div>
@@ -327,10 +319,8 @@ The rules will be applied to any indexed GeoJSON shape in the array.
 If all of the query shapes within the geometries array contained within any (cumulatively) of the indexed shapes completely, then it will be a matching document.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="geometrycollection-within-query"><a class="anchor" href="#geometrycollection-within-query"></a>GeometryCollection <code>WithIn</code> Query</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="geometrycollection-within-query"><a class="anchor" href="#geometrycollection-within-query"></a>GeometryCollection <code>WithIn</code> Query</h3>
 <div class="paragraph">
 <p>The Within query is not supported by line geometries.</p>
 </div>
@@ -393,7 +383,10 @@ If any of the query shapes within the geometries array contain any of the indexe
 </div>
 </div>
 </div>
-<h1 id="example-geometrycollection-query-against-points" class="sect0"><a class="anchor" href="#example-geometrycollection-query-against-points"></a>Example GeometryCollection Query (against Points)</h1>
+</div>
+<div class="sect1">
+<h2 id="example-geometrycollection-query-against-points"><a class="anchor" href="#example-geometrycollection-query-against-points"></a>Example GeometryCollection Query (against Points)</h2>
+<div class="sectionbody">
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -622,7 +615,11 @@ It is assumed that you your cluster has 1) a modified <a href="fts-supported-que
 }</code></pre>
 </div>
 </div>
-<h1 id="example-geometrycollection-query-against-circles" class="sect0"><a class="anchor" href="#example-geometrycollection-query-against-circles"></a>Example GeometryCollection Query (against Circles)</h1>
+</div>
+</div>
+<div class="sect1">
+<h2 id="example-geometrycollection-query-against-circles"><a class="anchor" href="#example-geometrycollection-query-against-circles"></a>Example GeometryCollection Query (against Circles)</h2>
+<div class="sectionbody">
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -849,6 +846,8 @@ It is assumed that you your cluster has 1) a modified <a href="fts-supported-que
   "took": 18306647,
   "facets": null
 }</code></pre>
+</div>
+</div>
 </div>
 </div>
 </article>

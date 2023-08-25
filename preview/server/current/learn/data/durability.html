@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Durability | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/learn/data/durability.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="&lt;em&gt;Durability&lt;/em&gt; ensures the greatest likelihood of data-writes surviving unexpected anomalies, such as node-outages.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -284,6 +285,20 @@ The correspondences are as follows:</p>
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In consequence of the correspondences listed above, if a bucket is configured with one replica, and a node fails, durable writes are immediately unavailable for any vBucket whose data resides on the failed node.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -519,7 +534,7 @@ If a durable write is attempted on a bucket that has been configured with three 
 <div class="paragraph">
 <p><a href="../clusters-and-availability/automatic-failover.html" class="xref page">Automatic Failover</a> removes a non-responsive node from the cluster automatically, following an administrator-configured timeout.
 Active vBuckets thereby lost are replaced by the promotion of replica vBuckets, on the surviving nodes.
-A maximum of three sequential automatic failovers can be configured to occur.</p>
+The maximum number of sequential automatic failovers is configurable by the administrator.</p>
 </div>
 <div class="paragraph">
 <p>In cases where commitment based on <em>persistToMajority</em> has occurred, but no further propagation of the new data across the cluster has yet occurred, automatic failover of the nodes containing the new data results in the data&#8217;s loss &#8212; since no updated replica vBucket yet exists elsewhere on the cluster.</p>
@@ -530,8 +545,48 @@ After commitment, if those two nodes become unresponsive, automatic failover, if
 In such a case, the durable write is lost, and the success message already delivered to the application rendered false.</p>
 </div>
 <div class="paragraph">
-<p>To prevent this, and thereby maintain guaranteed protection, at least one of the unresponsive nodes containing the new data should <em>not</em> be failed over.
-Therefore, auto-failover should be configured to occur sequentially only up to the number of times that supports this requirement.</p>
+<p>To prevent this, and thereby maintain guaranteed protection, at least one of the unresponsive nodes containing the new data should <em>not</em> be failed over; and auto-failover should be allowed to occur sequentially only up to the number of times that supports this requirement.
+This may be best achieved as described immediately below, in <a href="#preserving-durable-writes">Preserving Durable Writes</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="preserving-durable-writes"><a class="anchor" href="#preserving-durable-writes"></a>Preserving Durable Writes</h4>
+<div class="paragraph">
+<p>In Couchbase Enterprise Server 7.2+, auto-failover can be configured <em>not</em> to occur if a node&#8217;s failover might result in the loss of durably written data.
+This is a <em>global</em> configuration that affects <em>all</em> buckets, regardless of their durability settings.
+The configuration causes a check to be performed on the non-communicative node: if the node passes the check, the node continues to be a candidate for auto-failover.
+Note that for auto-failover actually to occur, the additional requirements listed in <a href="../clusters-and-availability/automatic-failover.html" class="xref page">Automatic Failover</a> must also be met.</p>
+</div>
+<div class="paragraph">
+<p>If auto-failover is configured to preserve durable writes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If a bucket has been configured with <em>one</em> replica, and the Data Service runs on <em>two</em> nodes, only <em>one</em> of the nodes (either the active or the replica) can be a candidate for auto-failover.</p>
+</li>
+<li>
+<p>If a bucket has been configured with <em>two</em> replicas, and the Data Service runs on <em>three</em> nodes, only <em>one</em> of the nodes (either the active or one of the replicas) can be a candidate for auto-failover.
+(Note that in this case, <em>two</em> candidates for auto-failover are not permitted; since data may have been written only to the required durability majority, which is <em>two</em>; and one of these two nodes must therefore be protected from auto-failover.)</p>
+</li>
+<li>
+<p>If a bucket has been configured with <em>three</em> replicas, and the Data Service runs on <em>four</em> nodes, only <em>two</em> of the nodes (either the active and a replica, or two of the replicas) can be candidates for auto-failover.
+(Note that this constraint is applied even though durability is not supported for buckets with three replicas.)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For information on configuring auto-failover to preserve durable writes by means of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Couchbase Web Console, see <a href="../../manage/manage-settings/general-settings.html#node-availability" class="xref page">Node Availability</a>.</p>
+</li>
+<li>
+<p>The REST API, see <a href="../../rest-api/rest-cluster-autofailover-enable.html" class="xref page">Enabling and Disabling Auto-Failover</a>.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>

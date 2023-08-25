@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Buckets | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/learn/buckets-memory-and-storage/buckets.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="A &lt;em&gt;bucket&lt;/em&gt; is the fundamental space for storing data in Couchbase Server.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -361,9 +362,9 @@ Ejection removes all of an item&#8217;s data.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">All except disk-related</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Client support</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Full smart client support</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Full smart client support</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Full client support</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Backup</p></td>
@@ -371,13 +372,28 @@ Ejection removes all of an item&#8217;s data.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standard Index Storage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Couchstore (standard data storage)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Magma (high-performance data storage)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Change History (for Magma only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standard index storage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For versions prior to 7.0.2, No.
 For version 7.0.2 and after, Yes.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Memory Optimized Index Storage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Memory Optimized index storage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
@@ -520,17 +536,8 @@ However, you are strongly recommended ensuring that all buckets are fully protec
 <div class="paragraph">
 <p>See <a href="storage-engines.html" class="xref page">Storage Engines</a> for more information.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The bucket storage mechanism only applies to Couchbase buckets, not Ephemeral buckets.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Note that the bucket storage backends apply only to Couchbase buckets: they do <em>not</em> apply to Ephemeral buckets.</p>
 </div>
 </div>
 </div>

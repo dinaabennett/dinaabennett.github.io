@@ -7,7 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Welcome to Couchbase Capella | Couchbase Docs</title>
-<link rel="canonical" href="https://dinaabennett.github.io/preview/cloud/index.html">
+<link rel="canonical" href="https://docs.couchbase.com/cloud/index.html">
 <link rel="stylesheet" href="../_/css/site.css">
 <script src="../_/js/vendor/jquery.js"></script>
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
@@ -32,7 +32,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +54,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -104,197 +104,148 @@
 </aside>
 <main class="article" data-ceiling="topbar">
 <article class="doc landing-page-doc">
-<div id="preamble">
-<div class="sectionbody">
 <style>
-.info-banner {
-    display: block;
-    border: 1px solid #e5e5e5;
-    border-radius: 3px;
-    -webkit-box-shadow: 0 3px 10px rgba(0,0,0,.06);
-    box-shadow: 0 3px 10px rgba(0,0,0,.06);
-    background-image: linear-gradient(to right, #00ace0, #636cdc);
-    padding: 0.75em;
-    margin-top: 0;
-    margin-bottom: 1em;
+    .flex-2x3 > .content > .ulist > ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5em;
+        text-align: center;
+    }
+    .flex-2x3 > .content > .ulist > ul > li {
+        width: clamp(240px, 48%, 50%);
+        flex-grow: 1;
+    }
 
-}
-.doc.landing-page-doc .info-banner p {
-    text-align: center;
-    color: white;
-    font-weight: lighter;
-}
-.info-banner a {
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    display: inline-block;
-    border: solid 1px white;
-    padding: 0.5em 1em;
-}
+    .flex-2x3 > .content > .ulist > ul > li ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+
+    .flex-2x3 > .content > .ulist > ul > li li {
+        width: clamp(6em, 25%, 40%);
+        flex-grow: 1;
+        padding: 0.75em;
+        border: solid 1px #636cdc;
+        background-image: linear-gradient(140deg, rgba(0, 172, 224, 0) 30%, rgba(99, 108, 220, 0) 70%);
+        border-radius: 0.2em;
+        box-shadow: 2px 2px 2px #73768a;
+    }
+
+    .flex-2x3 > .content > .ulist > ul > li li:hover {
+        animation: fade-in 0.1s ease-in-out forwards;
+    }
+
+    @keyframes fade-in {
+        0% {
+            background-image: linear-gradient(140deg, rgba(0, 172, 224, 0) 30%, rgba(99, 108, 220, 0) 70%);
+        }
+        25% {
+            background-image: linear-gradient(140deg, rgba(0, 172, 224, 0.25) 30%, rgba(99, 108, 220, 0.25) 70%);
+        }
+        50% {
+            background-image: linear-gradient(140deg, rgba(0, 172, 224, 0.5) 30%, rgba(99, 108, 220, 0.5) 70%);
+        }
+        75% {
+            background-image: linear-gradient(140deg, rgba(0, 172, 224, 0.75) 30%, rgba(99, 108, 220, 0.75) 70%);
+        }
+        100% {
+            background-image: linear-gradient(140deg, rgba(0, 172, 224, 1) 30%, rgba(99, 108, 220, 1) 70%);
+            box-shadow: 3px 4px 2px #393a45;
+        }
+    }
+
 </style>
-<div class="paragraph info-banner">
-<p>The Capella Spring release is here!
-Introducing developer integrations for Netlify and VSCode, and more.
-<a href="https://www.couchbase.com/blog/couchbase-capella-spring-release-72">Check it out</a></p>
-</div>
-</div>
-</div>
-<h1 class="sect0">Welcome to Couchbase Capella</h1>
-<div class="card-row">
-<div class="sect5 column">
-<h6></h6>
-<div class="paragraph content">
-<p>Couchbase Capella is the easiest way to use the Couchbase NoSQL database and its many services, from SQL-like querying to connecting to mobile devices at the edge with our App Server.
-<a href="https://cloud.couchbase.com/sign-up">Sign up</a> today&#8201;&#8212;&#8201;or read on to help you choose which service fits your app.</p>
-</div>
-</div>
-<div class="sect5 column">
-<h6></h6>
-<div class="imageblock media-left">
+<div class="openblock flex-2x3">
 <div class="content">
-<img src="_images/couchbase-in-the-cloud.jpg" alt="couchbase in the cloud" width="300">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2>What Do You Want to Do Today?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>New here? <a href="https://cloud.couchbase.com/sign-up">Take the tour</a>, and see what Couchbase Capella can do for you.</p>
-</div>
-<div class="sect5">
-<h6></h6>
-
-</div>
-<div class="sect5">
-<h6></h6>
-<div class="card-row two-column-row">
-<div class="ulist column">
-<div class="title">Free Trial</div>
+<div class="ulist">
 <ul>
 <li>
-<p><a href="https://cloud.couchbase.com/sign-up" class="add-ext-icon" target="_blank" rel="noopener">Sign Up</a></p>
-</li>
+<p></p>
+<div class="ulist">
+<ul>
 <li>
-<p><a href="get-started/create-account.html" class="xref page">Getting Started Tutorial</a></p>
+<p>API and CLI Reference</p>
 </li>
 </ul>
 </div>
-<div class="ulist column">
-<div class="title">Connect an App</div>
+</li>
+<li>
+<p></p>
+<div class="ulist">
 <ul>
 <li>
-<p><a href="clouds/connect-an-sdk.html" class="xref page">SDKs for Client Apps</a></p>
+<p>SQL++ Reference</p>
 </li>
-<li>
-<p><a href="app-services/index.html" class="xref page">Connect mobile &amp; edge devices, or a stateless front end Web app</a></p>
-</li>
-<li>
-<p><a href="clouds/private-network.html" class="xref page">Speed up and Secure with a Private Network</a>.</p>
-</li>
-<li>
-<p><a href="public-api-guide/introducing-public-api.html" class="xref page">Connect to Public API</a></p>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2>Using Your Database</h2>
-<div class="sectionbody">
-<div class="card-row three-column-row">
-<div class="ulist column">
-<div class="title">Your Data</div>
+<div class="openblock flex-2x3">
+<div class="content">
+<div class="ulist">
 <ul>
 <li>
-<p><a href="clusters/data-service/data-service.html" class="xref page">Data Service</a></p>
+<p>Capella Developer</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Set Up Your Account</p>
 </li>
 <li>
-<p><a href="clusters/query-service/query-service.html" class="xref page">SQL++ Queries</a></p>
+<p>Load Your Data</p>
 </li>
 <li>
-<p><a href="clusters/backup-restore.html" class="xref page">Database Backups</a></p>
+<p>Connect to Your Database</p>
+</li>
+<li>
+<p>Build Mobile App Services</p>
+</li>
+<li>
+<p>Manage Your Data</p>
+</li>
+<li>
+<p>Query Data with SQL++</p>
+</li>
+<li>
+<p>Add Search to Your Application</p>
+</li>
+<li>
+<p>Secure Your Database</p>
+</li>
+<li>
+<p>Run a Function on Data Change</p>
+</li>
+<li>
+<p>Analyze Large Datasets (Online Analytical Processing)</p>
 </li>
 </ul>
 </div>
-<div class="ulist column">
-<div class="title">Organise Access</div>
+</li>
+<li>
+<p>Capella Admin</p>
+<div class="ulist">
 <ul>
 <li>
-<p><a href="projects/project-roles.html" class="xref page">Roles</a></p>
+<p>Manage Your Database</p>
 </li>
 <li>
-<p><a href="clusters/manage-database-users.html" class="xref page">Database Credentials</a></p>
+<p>Administer Databases and Access</p>
 </li>
 <li>
-<p><a href="security/security.html" class="xref page">Security Best Practices</a></p>
+<p>Monitor and Maintain</p>
+</li>
+<li>
+<p>Manage Billing and Support</p>
+</li>
+<li>
+<p>Replicate and Sync Data</p>
 </li>
 </ul>
 </div>
-<div class="ulist column">
-<div class="title">Configure Database</div>
-<ul>
-<li>
-<p><a href="clusters/sizing.html" class="xref page">Database Sizing</a></p>
-</li>
-<li>
-<p><a href="clusters/scale-database.html" class="xref page">Database Scaling</a></p>
-</li>
-<li>
-<p><a href="clusters/xdcr/xdcr.html" class="xref page">Data Replication (XDCR)</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2>Administration</h2>
-<div class="sectionbody">
-<div class="card-row three-column-row">
-<div class="ulist column">
-<div class="title">Billing &amp; Support</div>
-<ul>
-<li>
-<p><a href="billing/billing.html" class="xref page">Billing</a></p>
-</li>
-<li>
-<p><a href="billing/manage-billing.html" class="xref page">Manage Billing</a></p>
-</li>
-<li>
-<p><a href="https://www.couchbase.com/pricing" class="add-ext-icon" target="_blank" rel="noopener">Pricing</a></p>
-</li>
-</ul>
-</div>
-<div class="ulist column">
-<div class="title">Settings</div>
-<ul>
-<li>
-<p><a href="organizations/ui-auth/capella-ui-auth.html" class="xref page">Capella UI Authentication</a></p>
-</li>
-<li>
-<p><a href="organizations/manage-account.html" class="xref page">Capella Account Settings</a></p>
-</li>
-<li>
-<p><a href="organizations/manage-organizations.html" class="xref page">Manage Organizations</a></p>
-</li>
-</ul>
-</div>
-<div class="ulist column">
-<div class="title">Reference</div>
-<ul>
-<li>
-<p><a href="reference/aws.html" class="xref page">Supported Instance Types</a></p>
-</li>
-<li>
-<p><a href="reference/sdk-compatibility.html" class="xref page">SDK Compatibility</a></p>
-</li>
-<li>
-<p><a href="reference/rest-endpoints-all.html" class="xref page">API reference</a></p>
 </li>
 </ul>
 </div>

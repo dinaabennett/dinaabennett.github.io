@@ -7,6 +7,7 @@
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
 <title>Manage Backup and Restore | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/server/current/manage/manage-backup-and-restore/manage-backup-and-restore.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
 <meta name="description" content="Couchbase Server allows one or more buckets, and selected subsets of their data, to be backed up, restored, and archived.">
@@ -32,7 +33,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://dinaabennett.github.io/preview/home/index.html">
+                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com/home/index.html">
                     <img src="../../../../_/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="../../../../_/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
@@ -54,7 +55,7 @@
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
-                    <a href="https://dinaabennett.github.io/preview/home/index.html" class="nav-link">
+                    <a href="https://docs.couchbase.com/home/index.html" class="nav-link">
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
@@ -213,9 +214,6 @@ This can be configured by means of the <strong>Backup</strong> UI provided by Co
 </div>
 <div class="paragraph">
 <p>The technology that underlies the Backup Service includes that provided by <code>cbbackupmgr</code>: note, however, that <code>cbbackupmgr</code> and the Backup Service differ, in terms of the features they offer (as described below, in <a href="#the-backup-service-and-cbbackupmgr">The Backup Service and cbbackupmgr</a>).</p>
-</div>
-<div class="paragraph">
-<p>Note that two additional tools, <a href="#cli:cbtools/cbbackup.adoc" class="xref unresolved">cbbackup</a> and <a href="#cli:cbtools/cbrestore.adoc" class="xref unresolved">cbrestore</a>, continue to be available as of Couchbase Server 7.0: however, both are deprecated.</p>
 </div>
 <div class="paragraph">
 <p>Detailed information on <code>cbbackupmgr</code> is provided in <a href="#backup-restore:cbbackupmgr.adoc" class="xref unresolved">cbbackupmgr</a>.
@@ -647,7 +645,7 @@ Then, left-click on the <strong>Inspect Backups</strong> button:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The screen provides two possible views, which are <strong>Tasks</strong> and <strong>Backups</strong>: these can be selected by means of the buttons at the upper right:</p>
+<p>The screen provides two possible views, which are <strong>Inspect Backups</strong> and <strong>Task History</strong> : these can be selected by means of the buttons at the upper right:</p>
 </div>
 <div class="imageblock text-left">
 <div class="content">
@@ -655,8 +653,8 @@ Then, left-click on the <strong>Inspect Backups</strong> button:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The <strong>Backups</strong> view is selected by default.
-(Note the left-clicking the <strong>Tasks</strong> button displays the <strong>Tasks</strong> view: this is the same display as that accessed by means of the <strong>Tasks</strong> button, from the expanded row on the <strong>Repositories</strong> view of the <strong>Backup</strong> screen; and is described in <a href="#inspect-tasks">Inspect Tasks</a>, below.)</p>
+<p>The <strong>Inspect Backups</strong> view is selected by default.
+(Note the left-clicking the <strong>Task History</strong> button displays the <strong>Tasks History</strong> view: this is the same display as that accessed by means of the <strong>Task History button, from the expanded row on the *Repositories</strong> view of the <strong>Backup</strong> screen; and is described in <a href="#inspect-tasks">Inspect Tasks</a>, below.)</p>
 </div>
 <div class="paragraph">
 <p>The main, lower panel of the <strong>Backups</strong> view provides the ID of the repository (in this case, <code>83f3b752-78e6-49f8-a527-2844c30fbc75</code>) and its size (here, <code>235.551MiB</code>); and also provides a vertically arranged list of all backups that have occurred, with the earliest at the top.
@@ -796,10 +794,10 @@ Note that once it has been deleted, it cannot be restored.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Left-click on the <strong>Tasks</strong> button that appears on the expanded row for a repository, on the <strong>Repositories</strong> view of the <strong>Backup</strong> screen.</p>
+<p>Left-click on the <strong>Task History</strong> button that appears on the expanded row for a repository, on the <strong>Repositories</strong> view of the <strong>Backup</strong> screen.</p>
 </li>
 <li>
-<p>Left-click on the <strong>Tasks</strong> button that appears at the upper-right of the <strong>Backup</strong> screen, which has been accessed by means of the <strong>Inspect Backups</strong> button that appears on the expanded row for a repository, on the <strong>Backup</strong> screen.</p>
+<p>Left-click on the <strong>Task History</strong> tab that appears at the upper-right of the <strong>Backup</strong> screen, which has been accessed by means of the <strong>Inspect Backups</strong> button that appears on the expanded row for a repository, on the <strong>Backup</strong> screen.</p>
 </li>
 </ul>
 </div>
@@ -812,19 +810,13 @@ Note that once it has been deleted, it cannot be restored.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The screen provides two possible views, which are <strong>Tasks</strong> and <strong>Backups</strong>: these can be selected by means of the buttons at the upper right.
-The <strong>Tasks</strong> button is currently selected.
-(Left-clicking on the <strong>Backups</strong> button displays the <strong>Repository</strong> screen, described above in <a href="#inspect-backups">Inspect Backups</a>).</p>
-</div>
-<div class="paragraph">
-<p>The <strong>Running</strong> field provides information on any tasks currently running.
-The <strong>History</strong> button permits a refresh of data shown in the lower panel; which lists the current history of tasks performed.
-The <strong>Get Tasks</strong> button allows specific tasks to be identified by search, and displayed.
+<p>The <strong>Get Tasks</strong> button allows specific tasks to be identified by search, and displayed.
 The earliest date for the task can be specified in the <strong>Since Day</strong> field; and the name of the task in the <strong>Task Name</strong> field, so as to narrow the search.
 A limit on the number of tasks displayed can be specified as an integer, between 1 and 100 inclusive, in the <strong>Limit</strong> field.</p>
 </div>
 <div class="paragraph">
-<p>The main task list, in the lower panel has an <strong>Offset</strong> figure displayed at its head: this indicates the position in the list of the first displayed task; and changes when the <strong>prev batch</strong> and <strong>next batch</strong> controls, at the right-hand side, are left-clicked on.
+<p>The <strong>Refresh Tasks</strong> button causes the main list of tasks, in the lower panel, to be refreshed.
+The list has an <strong>Offset</strong> figure displayed at its head: this indicates the position in the list of the first displayed task; and changes when the <strong>prev batch</strong> and <strong>next batch</strong> controls, at the right-hand side, are left-clicked on.
 The task list is presented as a table, which shows, for each task that has been executed, the <strong>Task name</strong>, <strong>Task type</strong> (such as <strong>Backup</strong> or <strong>Merge</strong>), status (such as <strong>done</strong> or <strong>running</strong>), the <strong>Elapsed</strong> time for the task, the number of <strong>Items</strong> and size of data that was <strong>Transferred</strong> by the task, and the <strong>Start</strong> and <strong>End</strong> times for the task.</p>
 </div>
 <div class="paragraph">
@@ -1111,6 +1103,12 @@ To specify a scope within a bucket, use the syntax <em>bucket-name</em>.<em>scop
 To specify a collection within a scope within a bucket, use the syntax <em>bucket-name</em>.<em>scope-name</em>.<em>collection-name</em>.
 For example, entering <code>bucket1.scope1</code> in the <strong>Include Data</strong> field would ensure that only data from the scope <code>scope1</code> within <code>bucket1</code> is restored; while entering <code>bucket2.scope1.collection1</code> in the <strong>Exclude Data</strong> field would ensure that data from <code>collection1</code>, within <code>scope1</code> in <code>bucket2</code>, is <em>not</em> be restored.
 (For an overview of scopes and collections, see <a href="../../learn/data/scopes-and-collections.html" class="xref page">Scopes and Collections</a>.)</p>
+</div>
+<div class="paragraph">
+<p>The <strong>Replace TTL</strong> field allows a new <em>expiration</em> value to be established for restored documents.
+The dropdown menu provides the options <strong>none</strong> (the default), which means that no new expiration value is established for any document; <strong>all</strong>, which means that a new expiration value is established for every restored document; and <strong>expired</strong>, which means that a new expiration value is established for every document that has expired.
+The new expiration value must be specified by means of the <strong>Replace TTL-with</strong> field: the value must either be specified as an RFC3339 time stamp (such as <code>2006-01-02T15:04:05-07:00</code>); or must be <code>0</code>, which means that each affected document is restored with no expiration value established.
+For more information, see <a href="../../learn/data/expiration.html" class="xref page">Expiration</a>.</p>
 </div>
 <div class="paragraph">
 <p>Check the <strong>Force Updates</strong> field to ensure that data restored from the specified backup  overwrites the current values on the cluster when the current values are the more recent.
