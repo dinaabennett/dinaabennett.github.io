@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "generated": 1692976320130,
+  "generated": 1692977259125,
   "url": "https://docs.couchbase.com",
   "components": [
     {
@@ -516,12 +516,6 @@
               "path": "query-service/query-workbench.adoc",
               "url": "/cloud/clusters/query-service/query-workbench.html",
               "title": "Use the Query Tab"
-            },
-            {
-              "module": "clusters",
-              "path": "query-service/query-your-data.adoc",
-              "url": "/cloud/clusters/query-service/query-your-data.html",
-              "title": "Query Your Database"
             },
             {
               "alias": true,

@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://docs.couchbase.com/cloud/learn/services-and-indexes/indexes/global-secondary-indexes.html">
 <link rel="stylesheet" href="../../../../_/css/site.css">
 <script src="../../../../_/js/vendor/jquery.js"></script>
-<meta name="description" content="Primary Indexes and Global Secondary Indexes (GSI) support queries made by the Query Service.">
+<meta name="description" content="Use database indexing to speed up data retrieval.">
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
 
 
@@ -204,21 +204,23 @@
 </style>
 <div class="quoteblock abstract">
 <blockquote>
-Primary Indexes and Global Secondary Indexes (GSI) support queries made by the Query Service.
+Use database indexing to speed up data retrieval.
 </blockquote>
 </div>
 <div class="paragraph">
-<p>Use database indexing to speed up data retrieval. An index is a data structure that stores where specific data is in your database. Query indexes to lookup where the data you need is, instead of using a query to scan through every document.</p>
+<p>An index is a data structure that stores where specific data is in your database. Query indexes to lookup where the data you need is, instead of using a query to scan through every document.</p>
 </div>
 <div class="paragraph">
 <p>Indexes take up space in your database, so it is important to plan out the most efficient index to retrieve only what you need.</p>
 </div>
 <div class="paragraph">
-<p>Query, Analytics, and Search services use indexes as targets for search-routines.</p>
+<p><a href="../../../clusters/query-service/query-service.html" class="xref page">Query</a>, <a href="#services-and-indexes/services/analytics-service.adoc" class="xref unresolved">Analytics</a>, and <a href="../../../search/search.html" class="xref page">Search</a> services use indexes as targets for search-routines.</p>
 </div>
 <div class="paragraph">
-<p>The Query service relies on indexes created by the Index service.
-The Search and Analytics services provide their own indexes, internally.</p>
+<p>The Query service relies on indexes created by the Index service. Primary Indexes and Global Secondary Indexes (GSI) support queries made by the Query Service.</p>
+</div>
+<div class="paragraph">
+<p>The Search and Analytics services provide their own indexes, internally.</p>
 </div>
 </div>
 </div>
