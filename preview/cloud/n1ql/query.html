@@ -270,7 +270,27 @@ The Couchbase implementation of SQL++ was formerly known as <a href="https://www
 </div>
 <div class="paragraph">
 <p>SQL++ is an expressive, powerful, and complete SQL dialect for querying, transforming, and manipulating JSON data.
-Based on SQL, it’s immediately familiar to developers who can quickly start developing rich applications.</p>
+Based on SQL, it’s familiar to developers who can quickly start developing rich applications.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2>Indexes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An index is a data structure that stores where specific data is in your database. Database indexing speeds up data retrieval. Query indexes to look up where the data you need is, instead of using a query to scan through every document.</p>
+</div>
+<div class="paragraph">
+<p>Indexes take up space in your database, so it is important to plan out the most efficient index to store what you need to retrieve.</p>
+</div>
+<div class="paragraph">
+<p><a href="../clusters/query-service/query-service.html" class="xref page">Query</a>, <a href="../clusters/analytics-service/analytics-service.html" class="xref page">Analytics</a>, and <a href="../search/search.html" class="xref page">Search</a> services use indexes as targets for search-routines.</p>
+</div>
+<div class="paragraph">
+<p>The Query Service relies on indexes created by the <a href="../clusters/index-service/index-service.html" class="xref page">Index Service</a>. Primary Indexes and Global Secondary Indexes (GSI) support queries made by the Query Service.</p>
+</div>
+<div class="paragraph">
+<p>The Search and Analytics services provide their own indexes, internally.</p>
 </div>
 </div>
 </div>
@@ -280,16 +300,16 @@ Based on SQL, it’s immediately familiar to developers who can quickly start de
 <div class="ulist">
 <ul>
 <li>
-<p><a href="tutorial.html" class="xref page">Query Tutorials</a></p>
+<p><a href="tutorial.html" class="xref page">Query Service Tutorials</a></p>
 </li>
 <li>
 <p><a href="../clusters/query-service/query-workbench.html" class="xref page">Use the Query Tab</a></p>
 </li>
 <li>
-<p><a href="../learn/services-and-indexes/indexes/global-secondary-indexes.html" class="xref page">Indexes</a></p>
+<p><a href="../learn/services-and-indexes/indexes/global-secondary-indexes.html" class="xref page">Query Service Indexes</a></p>
 </li>
 <li>
-<p><a href="advanced.html" class="xref page">Advanced Features</a></p>
+<p><a href="advanced.html" class="xref page">Query Service Advanced Features</a></p>
 </li>
 <li>
 <p><a href="n1ql-language-reference/index.html" class="xref page">SQL++ Language Reference</a></p>
