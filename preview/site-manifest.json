@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "generated": 1692968691138,
+  "generated": 1692970294989,
   "url": "https://docs.couchbase.com",
   "components": [
     {
@@ -1918,7 +1918,7 @@
               "module": "n1ql",
               "path": "tutorial.adoc",
               "url": "/cloud/n1ql/tutorial.html",
-              "title": "Tutorials"
+              "title": "Query Tutorials"
             },
             {
               "alias": true,
