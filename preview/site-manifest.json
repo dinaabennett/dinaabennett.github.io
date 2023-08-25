@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "generated": 1692977259125,
+  "generated": 1692979866301,
   "url": "https://docs.couchbase.com",
   "components": [
     {
@@ -833,7 +833,7 @@
               "module": "guides",
               "path": "prep-statements.adoc",
               "url": "/cloud/guides/prep-statements.html",
-              "title": "Prepared Statements"
+              "title": "Use Prepared Statements"
             },
             {
               "module": "guides",
