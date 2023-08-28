@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "generated": 1693236149415,
+  "generated": 1693253074678,
   "url": "https://docs.couchbase.com",
   "components": [
     {
@@ -340,6 +340,12 @@
             },
             {
               "module": "clusters",
+              "path": "data-service/CRUD-intro.adoc",
+              "url": "/cloud/clusters/data-service/CRUD-intro.html",
+              "title": "Manage Documents (CRUD Operations)"
+            },
+            {
+              "module": "clusters",
               "path": "data-service/data-service.adoc",
               "url": "/cloud/clusters/data-service/data-service.html",
               "title": "Data Service"
@@ -360,7 +366,7 @@
               "module": "clusters",
               "path": "data-service/manage-documents.adoc",
               "url": "/cloud/clusters/data-service/manage-documents.html",
-              "title": "Manage Documents"
+              "title": "Manage Documents in Capella UI"
             },
             {
               "module": "clusters",
@@ -405,7 +411,7 @@
               "module": "clusters",
               "path": "document-inspector.adoc",
               "url": "/cloud/clusters/data-service/manage-documents.html",
-              "title": "Manage Documents"
+              "title": "Manage Documents in Capella UI"
             },
             {
               "module": "clusters",
@@ -515,7 +521,7 @@
               "module": "clusters",
               "path": "query-service/query-workbench.adoc",
               "url": "/cloud/clusters/query-service/query-workbench.html",
-              "title": "Run Queries From the Capella UI"
+              "title": "Run a Query from the Capella UI"
             },
             {
               "alias": true,
@@ -803,7 +809,7 @@
               "module": "guides",
               "path": "kv-operations.adoc",
               "url": "/cloud/guides/kv-operations.html",
-              "title": "Key-Value Operations"
+              "title": "Manage Documents with Couchbase SDK"
             },
             {
               "module": "guides",
@@ -2136,7 +2142,7 @@
               "module": "sdk",
               "path": "development-intro.adoc",
               "url": "/cloud/guides/kv-operations.html",
-              "title": "Key-Value Operations"
+              "title": "Manage Documents with Couchbase SDK"
             },
             {
               "module": "search",
