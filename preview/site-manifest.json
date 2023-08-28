@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "generated": 1692995021847,
+  "generated": 1693233982022,
   "url": "https://docs.couchbase.com",
   "components": [
     {
@@ -515,7 +515,7 @@
               "module": "clusters",
               "path": "query-service/query-workbench.adoc",
               "url": "/cloud/clusters/query-service/query-workbench.html",
-              "title": "Use the Query Tab"
+              "title": "Run Queries From the Capella UI"
             },
             {
               "alias": true,
@@ -1227,14 +1227,14 @@
               "module": "n1ql",
               "path": "index.adoc",
               "url": "/cloud/n1ql/query.html",
-              "title": "Query Your Database"
+              "title": "Understand Query, Analytics, Search, and Eventing"
             },
             {
               "alias": true,
               "module": "n1ql",
               "path": "n1ql-intro/data-access-using-n1ql.adoc",
               "url": "/cloud/n1ql/query.html",
-              "title": "Query Your Database"
+              "title": "Understand Query, Analytics, Search, and Eventing"
             },
             {
               "module": "n1ql",
@@ -1906,7 +1906,7 @@
               "module": "n1ql",
               "path": "query.adoc",
               "url": "/cloud/n1ql/query.html",
-              "title": "Query Your Database"
+              "title": "Understand Query, Analytics, Search, and Eventing"
             },
             {
               "module": "n1ql",

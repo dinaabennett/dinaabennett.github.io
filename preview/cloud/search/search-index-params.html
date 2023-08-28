@@ -174,7 +174,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Add Search to Your Application</li>
+<li class="crumb">Access Data with the Full Text Search Service</li>
 <li class="crumb"><a href="search.html">Add Search to Your Application</a></li>
 <li class="crumb"><a href="create-search-indexes.html">Create a Search Index</a></li>
 <li class="crumb"><a href="create-search-index-rest-api.html">Create a Search Index with the REST API and curl/HTTP</a></li>
@@ -1891,21 +1891,9 @@ You can also choose whether to create the new token from the start or backward f
 <div class="paragraph">
 <p>For example, if you have a wordlist that contains the word <code>and</code>, the token <code>beers and breweries</code> becomes <code>beers</code> and <code>breweries</code>.</p>
 </div>
-<div class="literalblock kroki-error">
+<div class="imageblock kroki">
 <div class="content">
-<pre>@startuml
-
-(beers and breweries) as Start &lt;&lt;Input Token&gt;&gt;
-(beers) &lt;&lt;Output&gt;&gt;
-(breweries) &lt;&lt;Output&gt;&gt;
-
-rectangle wordlist {
-    usecase "and" as WL1
-}
-
-Start --&gt; (beers)
-Start --&gt; (breweries)
-@enduml</pre>
+<img src="_images/diag-4f00125adebf1e62d098b2cc7c2ac55c63136add.svg" alt="stop">
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
