@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "generated": 1693233982022,
+  "generated": 1693236149415,
   "url": "https://docs.couchbase.com",
   "components": [
     {
@@ -1227,14 +1227,14 @@
               "module": "n1ql",
               "path": "index.adoc",
               "url": "/cloud/n1ql/query.html",
-              "title": "Understand Query, Analytics, Search, and Eventing"
+              "title": "Understand How to Access Your Data"
             },
             {
               "alias": true,
               "module": "n1ql",
               "path": "n1ql-intro/data-access-using-n1ql.adoc",
               "url": "/cloud/n1ql/query.html",
-              "title": "Understand Query, Analytics, Search, and Eventing"
+              "title": "Understand How to Access Your Data"
             },
             {
               "module": "n1ql",
@@ -1906,7 +1906,7 @@
               "module": "n1ql",
               "path": "query.adoc",
               "url": "/cloud/n1ql/query.html",
-              "title": "Understand Query, Analytics, Search, and Eventing"
+              "title": "Understand How to Access Your Data"
             },
             {
               "module": "n1ql",
