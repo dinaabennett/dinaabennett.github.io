@@ -6,17 +6,26 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <script>(window.dataLayer=window.dataLayer||[]).push({event:'gtm.js','gtm.start':+new Date()})</script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MVPNN2"></script>
-<title>Run a Simple Search with the REST API and curl/HTTP | Couchbase Docs</title>
-<link rel="canonical" href="https://docs.couchbase.com/cloud/search/simple-search-rest-api.html">
+<title>Run a Query with Couchbase SDK | Couchbase Docs</title>
+<link rel="canonical" href="https://docs.couchbase.com/cloud/guides/query-sdk.html">
 <link rel="stylesheet" href="../../_/css/site.css">
 <script src="../../_/js/vendor/jquery.js"></script>
-<meta name="description" content="You can use the REST API and a curl command to run a search against a Search index.">
+<meta name="description" content="You can query for documents using SDKs and the SQL++ (formerly N1QL) query language.">
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
+        <link rel="prev" href="../n1ql/n1ql-intro/queriesandresults.html">
+        <link rel="next" href="../clusters/query-service/query-workbench.html">
+
+
+
+                <link rel="prev" href="../n1ql/n1ql-intro/queriesandresults.html">
+
+
+                <link rel="next" href="../clusters/query-service/query-workbench.html">
 
 
 <meta name="dcterms.subject" content="cloud">
 <meta name="dcterms.identifier" content="">
-<meta name="page-url" content="/cloud/search/simple-search-rest-api.html">
+<meta name="page-url" content="/cloud/guides/query-sdk.html">
 <meta name="generator" content="Antora 3.1.2">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
 </head>
@@ -103,7 +112,7 @@
     <a href="#" class="menu-expand-toggle"><span>Navigation</span><i class="fas fa-times-circle"></i><i class="fas fa-chevron-circle-left"></i></a>
     <template id="page-versions" style="display: none">
       <select class="version_list" data-component="cloud">
-        <option value="" data-url="simple-search-rest-api.html" selected>Provisioned</option>
+        <option value="" data-url="query-sdk.html" selected>Provisioned</option>
         <option value="serverless" data-url="../serverless/index.html">Serverless</option>
       </select>
     </template>
@@ -115,7 +124,7 @@
   <div class="sidebar-box">
     <div class="tools" role="navigation">
 <ul>
-<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/search/pages/simple-search-rest-api.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
+<li class="tool edit"><a href="file:///C:/Docs/docs-devex/modules/guides/pages/query-sdk.adoc" title="Edit Page" target="_blank" rel="noopener" class="remove-ext-icon">Edit on GitHub</a></li>
 </ul>
 </div>
     <div class="toc-menu"></div>
@@ -174,19 +183,16 @@
 <nav class="crumbs" aria-label="breadcrumbs">
 <ul>
 <li class="crumb"><a href="../index.html">Couchbase Capella</a></li>
-<li class="crumb">Add Search to Your Application</li>
-<li class="crumb"><a href="search.html">Add Search to Your Application</a></li>
-<li class="crumb"><a href="run-searches.html">Run a Search With a Search Index</a></li>
-<li class="crumb"><a href="simple-search-rest-api.html">Run a Simple Search with the REST API and curl/HTTP</a></li>
+<li class="crumb">Query with the Query Service</li>
+<li class="crumb"><a href="query-sdk.html">Run a Query with Couchbase SDK</a></li>
 </ul>
 </nav>
 </div>
 <article class="doc">
 <div class="page-heading-title">
-<h1 class="page">Run a Simple Search with the REST API and curl/HTTP</h1>
+<h1 class="page">Run a Query with Couchbase SDK</h1>
 <div class="labels">
-<ul><li class="guide"><span><i class="far fa-check-square"></i> how-to</span></li>
-</ul>
+<ul></ul>
 </div>
 
 
@@ -199,113 +205,63 @@
 <div class="sectionbody">
 <div class="quoteblock abstract">
 <blockquote>
-You can use the REST API and a curl command to run a search against a Search index.
+<div class="paragraph">
+<p>You can query for documents using SDKs and the SQL++ (formerly N1QL) query language.<br>
+This
+
+is for Couchbase Capella.</p>
+</div>
 </blockquote>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
+<h2 id="query-with-sdks"><a class="anchor" href="#query-with-sdks"></a>Query with SDKs</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Choose your language to view Query SDK documentation:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>You&#8217;ve deployed the Search Service on a node in your database.</p>
+<p><a href="#c-sdk:howtos:n1ql-queries-with-sdk.adoc" class="xref unresolved">C</a></p>
 </li>
 <li>
-<p>You installed the Couchbase command-line tool (CLI).</p>
+<p><a href="#dotnet-sdk:howtos:n1ql-queries-with-sdk.adoc" class="xref unresolved">.NET</a></p>
 </li>
 <li>
-<p>You have the hostname or IP address for your database.</p>
+<p><a href="#go-sdk:howtos:n1ql-queries-with-sdk.adoc" class="xref unresolved">Go</a></p>
 </li>
 <li>
-<p>You&#8217;ve created a Search index.</p>
-<div class="paragraph">
-<p>For more information about how to create a Search index, see <a href="create-search-index-ui.html" class="xref page">Create a Basic Search Index with the Capella UI</a> or <a href="create-search-index-rest-api.html" class="xref page">Create a Search Index with the REST API and curl/HTTP</a>.</p>
-</div>
+<p><a href="#java-sdk:howtos:n1ql-queries-with-sdk.adoc" class="xref unresolved">Java</a></p>
+</li>
+<li>
+<p><a href="#nodejs-sdk:howtos:n1ql-queries-with-sdk.adoc" class="xref unresolved">Node.js</a></p>
+</li>
+<li>
+<p><a href="#php-sdk:howtos:n1ql-queries-with-sdk.adoc" class="xref unresolved">PHP</a></p>
+</li>
+<li>
+<p><a href="#python-sdk:howtos:n1ql-queries-with-sdk.adoc" class="xref unresolved">Python</a></p>
+</li>
+<li>
+<p><a href="#ruby-sdk:howtos:n1ql-queries-with-sdk.adoc" class="xref unresolved">Ruby</a></p>
+</li>
+<li>
+<p><a href="#scala-sdk:howtos:n1ql-queries-with-sdk.adoc" class="xref unresolved">Scala</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="procedure"><a class="anchor" href="#procedure"></a>Procedure</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To run a simple search with the REST API:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>In your command-line tool, enter a <code>curl</code> command with the <code>XPOST</code> verb.</p>
-</li>
-<li>
-<p>Set your header content to include <code>Content-Type: application/json</code>.</p>
-</li>
-<li>
-<p>Enter your username, password, and the Search Service endpoint on port <code>8094</code> with the name of the index you want to query:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console" data-source-url="file:///C:/Docs/docs-devex/modules/search/examples/run-search-header.sh">curl -s -XPUT -H "Content-Type: application/json" \
-    -u $CB_USERNAME:$CB_PASSWORD http://$CB_HOSTNAME:8094/api/index/$INDEX-NAME/query -d \</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Enter the JSON payload for your query.</p>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-You can copy the JSON for a Query Request from the Couchbase Server or Couchbase Capella UI to use in your REST API call.
-For more information about how to perform a search with the UI, see <a href="simple-search-ui.html" class="xref page">Run A Simple Search with the Capella UI</a>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>In the following example, the JSON payload queries an index named <code>landmark-content-index</code> for the strings <code>view</code>, <code>food</code>, and <code>beach</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console" data-source-url="file:///C:/Docs/docs-devex/modules/search/examples/run-search-payload.sh">curl -XPOST -H "Content-Type: application/json" \
-  -u $CB_USERNAME:$CB_PASSWORD http://$CB_HOSTNAME:8094/api/index/landmark-content-index/query \
-  -d '{
-    "explain": true,
-    "fields": [
-      "*"
-    ],
-    "highlight": {},
-    "query": {
-      "query": "+view +food +beach"
-    },
-    "size": 10,
-    "from": 0
-  }'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>For more information about the available properties for a Search query JSON payload, see <a href="search-request-params.html" class="xref page">Search Request JSON Properties</a>.</p>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="next-steps"><a class="anchor" href="#next-steps"></a>Next Steps</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you don&#8217;t get the search results you were expecting, you can change the JSON payload <a href="search-index-params.html" class="xref page">for your Search index</a> or <a href="search-request-params.html" class="xref page">for your Search query</a>.</p>
-</div>
-<div class="paragraph">
-<p>You can also <a href="customize-index.html" class="xref page">Customize a Search Index with the Capella UI</a>.</p>
-</div>
-</div>
-</div>
+
+        <nav class="pagination">
+
+                    <span class="prev"><a href="../n1ql/n1ql-intro/queriesandresults.html">Query Concepts</a></span>
+
+
+                    <span class="next"><a href="../clusters/query-service/query-workbench.html">Run a Query from the Capella UI</a></span>
+
 </article>
 </main>
 </div>

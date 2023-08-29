@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "generated": 1693253074678,
+  "generated": 1693319195712,
   "url": "https://docs.couchbase.com",
   "components": [
     {
@@ -840,6 +840,12 @@
               "path": "prep-statements.adoc",
               "url": "/cloud/guides/prep-statements.html",
               "title": "Use Prepared Statements"
+            },
+            {
+              "module": "guides",
+              "path": "query-sdk.adoc",
+              "url": "/cloud/guides/query-sdk.html",
+              "title": "Run a Query with Couchbase SDK"
             },
             {
               "module": "guides",
