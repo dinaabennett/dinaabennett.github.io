@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "generated": 1693319195712,
+  "generated": 1693427262576,
   "url": "https://docs.couchbase.com",
   "components": [
     {
@@ -1239,14 +1239,14 @@
               "module": "n1ql",
               "path": "index.adoc",
               "url": "/cloud/n1ql/query.html",
-              "title": "Understand How to Access Your Data"
+              "title": "Understand How to Use Your Data"
             },
             {
               "alias": true,
               "module": "n1ql",
               "path": "n1ql-intro/data-access-using-n1ql.adoc",
               "url": "/cloud/n1ql/query.html",
-              "title": "Understand How to Access Your Data"
+              "title": "Understand How to Use Your Data"
             },
             {
               "module": "n1ql",
@@ -1918,7 +1918,7 @@
               "module": "n1ql",
               "path": "query.adoc",
               "url": "/cloud/n1ql/query.html",
-              "title": "Understand How to Access Your Data"
+              "title": "Understand How to Use Your Data"
             },
             {
               "module": "n1ql",

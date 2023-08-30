@@ -197,6 +197,20 @@
 <div class="ulist">
 <ul>
 <li>
+<p>Filtering enhancements to Capella Replications</p>
+<div class="paragraph">
+<p>Capella has already provided support for the creation of <em>filter expressions</em>.
+These allow you to <em>filter</em> items (so that the items are selectively included in or excluded from the replication) by referencing <em>document IDs</em>, <em>X-attributes</em>, and <em>values</em>.
+Now, to support the creation of complex expressions, a <em>syntax-checker</em> and an <em>expression-tester</em> are added.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, to support archival use-cases, Capella provides filters that remove <em>delete operations</em>, <em>document expirations</em>, and <em>Time To Live (TTL) configurations</em> from replicated items.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="../clusters/xdcr/manage-xdcr-replications.html#between-capella-dbs" class="xref page">Create a Replication Between Capella Databases</a>.</p>
+</div>
+</li>
+<li>
 <p>On-demand and Scheduled Hibernation of Provisioned Databases (On/Off)</p>
 <div class="paragraph">
 <p>You can now turn off your non-production provisioned databases when you are not using them, allowing you to save on costs. Turning off your database turns off the compute for your cluster but the storage remains&#8201;&#8212;&#8201;this means that all of your data, schema (buckets, scopes, collections), and indexes remain, as well as your cluster configuration, including users and allow lists.  You can turn on and off your cluster <a href="../clusters/off-on-database.html" class="xref page">on-demand</a> or using a <a href="../clusters/off-on-schedule.html" class="xref page">schedule</a>.  For example, you can set a schedule for your development cluster to be on from 9 am to 5 pm on week days and off at all other times.  Any linked App Service will also be turned off when the linked database is turned off.</p>
